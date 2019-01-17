@@ -1,4 +1,4 @@
-export interface IProgramma {
+export interface IWedstrijd {
     wedstrijddatum: Date;
     wedstrijdcode: number;
     wedstrijdnummer: number;

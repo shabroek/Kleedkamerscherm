@@ -1,2 +1,24 @@
-
+<table>
+<thead>
+    <td>Aanvang</td>
+    <td>Jong Brabant</td>
+    <td>Kl</td>
+    <td>Gasten</td>
+    <td>Kl gasten</td>
+    <td>Veld</td>
+    <td>Scheidsrechter</td>
+    <td>Kl. </td>
+</thead>
+<tr *ngFor="let wedstrijd of programma">
+        <td>{{wedstrijd.wedstrijddatum}}</td>
+        <td>{{wedstrijd.thuisteam}}</td>
+        <td>{{wedstrijd.kleedkamerthuisteam}}</td>
+        <td>{{wedstrijd.uitteam}}</td>
+        <td>{{wedstrijd.kleedkameruitteam}}</td>
+        <td>{{wedstrijd.veld}}</td>
+        <td>{{wedstrijd.scheidsrechter}}</td>
+        <td>{{wedstrijd.kleedkamerscheidsrechter}}</td>
+</tr>
+</table>
+Spullen tijdens de wedstrijd opbergen in de kast. Sleutel is tegen een borg verkrijgbaar bij het wedstrijdsecretariaat.
 

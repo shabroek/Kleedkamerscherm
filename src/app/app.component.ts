@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { IProgramma } from './models/programma.model';
+import { IWedstrijd } from './models/wedstrijd.model';
 import { ProgrammaService } from './services/programma.service';
 
 @Component({
@@ -9,7 +8,7 @@ import { ProgrammaService } from './services/programma.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  programma: IProgramma[];
+  programma: IWedstrijd[];
 
   constructor(private programmaService: ProgrammaService) {
   }
