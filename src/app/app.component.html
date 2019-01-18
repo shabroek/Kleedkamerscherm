@@ -10,7 +10,7 @@
     <td>Kl. </td>
 </thead>
 <tr *ngFor="let wedstrijd of programma">
-        <td>{{wedstrijd.wedstrijddatum}}</td>
+        <td>{{wedstrijd.wedstrijddatum | date }}</td>
         <td>{{wedstrijd.thuisteam}}</td>
         <td>{{wedstrijd.kleedkamerthuisteam}}</td>
         <td>{{wedstrijd.uitteam}}</td>
