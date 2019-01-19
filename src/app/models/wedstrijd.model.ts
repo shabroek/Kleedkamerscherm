@@ -5,12 +5,11 @@ export interface IWedstrijd {
     competitiesoort: string;
     datum: string;
     aanvangstijd: string;
-    wedstrijd: string;
     status: string;
     scheidsrechter: string;
     veld: string;
     kleedkamerthuisteam: string;
     kleedkameruitteam: string;
     kleedkamerscheidsrechter: string;
+    kast: string;
 }
-
