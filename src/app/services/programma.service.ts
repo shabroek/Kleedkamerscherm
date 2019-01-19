@@ -11,7 +11,7 @@ export class ProgrammaService {
 
   constructor(private http: HttpClient) {
   }
-    getProgramma(): Observable<IWedstrijd[]> {
-      return this.http.get<IWedstrijd[]>(this.programmaUrl);
+  getProgramma(): Observable<IWedstrijd[]> {
+    return this.http.get<IWedstrijd[]>(this.programmaUrl);
   }
 }
