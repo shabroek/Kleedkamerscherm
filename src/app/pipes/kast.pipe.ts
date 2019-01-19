@@ -6,7 +6,16 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class KastPipe implements PipeTransform {
 
   transform(value: any, args?: any): any {
-    return null;
+    if (typeof (value) === 'string') {
+      value = value.replace('-', '');
+      if (value.length > 0) {
+        const kast = value.substring(value.length - 1);
+        const number = +kast;
+        if (number === NaN) {
+          return kast;
+        }
+        return '';
+      }
+    }
   }
-
 }

@@ -7,6 +7,7 @@ import { KleedkamerPipe } from './pipes/kleedkamer.pipe';
 import { KastPipe } from './pipes/kast.pipe';
 import { JongbrabantPipe } from './pipes/jongbrabant.pipe';
 import { VeldPipe } from './pipes/veld.pipe';
+import { WedstrijdComponent } from './wedstrijd/wedstrijd.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { VeldPipe } from './pipes/veld.pipe';
     KleedkamerPipe,
     KastPipe,
     JongbrabantPipe,
-    VeldPipe
+    VeldPipe,
+    WedstrijdComponent
   ],
   imports: [
     BrowserModule,

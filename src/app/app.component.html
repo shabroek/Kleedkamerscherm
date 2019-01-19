@@ -1,24 +1,30 @@
+<div class='sleutel'>
+    Spullen tijdens de wedstrijd opbergen in de kast. Sleutel is tegen een borg verkrijgbaar bij het
+    wedstrijdsecretariaat.</div>
+
 <table>
-<thead>
-    <td>Aanvang</td>
-    <td>Jong Brabant</td>
-    <td>Kl</td>
-    <td>Gasten</td>
-    <td>Kl gasten</td>
-    <td>Veld</td>
-    <td>Scheidsrechter</td>
-    <td>Kl. </td>
-</thead>
-<tr *ngFor="let wedstrijd of programma">
-        <td>{{wedstrijd.wedstrijddatum | date }}</td>
-        <td>{{wedstrijd.thuisteam}}</td>
-        <td>{{wedstrijd.kleedkamerthuisteam}}</td>
+    <thead>
+        <td>Aanvang</td>
+        <td>Kl</td>
+        <td>Kast</td>
+        <td>Jong Brabant</td>
+        <td>Veld</td>
+        <td>Gasten</td>
+        <td>Kl gasten</td>
+        <td>Kast</td>
+        <td>Scheidsrechter</td>
+        <td>Kl. </td>
+    </thead>
+    <tr *ngFor="let wedstrijd of programma">
+        <td>{{wedstrijd.datum }} {{wedstrijd.aanvangstijd}}</td>
+        <td class='kleedkamer'>{{wedstrijd.kleedkamerthuisteam |kleedkamer}}</td>
+        <td class='kleedkamer'>{{wedstrijd.kleedkamerthuisteam |kast}}</td>
+        <td>{{wedstrijd.thuisteam | jongbrabant}}</td>
+        <td class='veld'>{{wedstrijd.veld | veld}}</td>
         <td>{{wedstrijd.uitteam}}</td>
-        <td>{{wedstrijd.kleedkameruitteam}}</td>
-        <td>{{wedstrijd.veld}}</td>
+        <td class='kleedkamer'>{{wedstrijd.kleedkameruitteam |kleedkamer}}</td>
+        <td class='kleedkamer'>{{wedstrijd.kleedkameruitteam |kast}}</td>
         <td>{{wedstrijd.scheidsrechter}}</td>
         <td>{{wedstrijd.kleedkamerscheidsrechter}}</td>
-</tr>
+    </tr>
 </table>
-Spullen tijdens de wedstrijd opbergen in de kast. Sleutel is tegen een borg verkrijgbaar bij het wedstrijdsecretariaat.
-
