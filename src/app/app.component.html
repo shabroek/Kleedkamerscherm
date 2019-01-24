@@ -5,8 +5,8 @@
 <table>
     <thead>
         <td>Aanvang</td>
-        <td>Kl</td>
         <td>Kast</td>
+        <td>Kl</td>
         <td>Jong Brabant</td>
         <td>Veld</td>
         <td>Gasten</td>
@@ -17,8 +17,8 @@
     </thead>
     <tr *ngFor="let wedstrijd of programma">
         <td>{{wedstrijd.datum }} {{wedstrijd.aanvangstijd}}</td>
-        <td class='kleedkamer'>{{wedstrijd.kleedkamerthuisteam |kleedkamer}}</td>
         <td class='kleedkamer'>{{wedstrijd.kleedkamerthuisteam |kast}}</td>
+        <td class='kleedkamer'>{{wedstrijd.kleedkamerthuisteam |kleedkamer}}</td>
         <td>{{wedstrijd.thuisteam | jongbrabant}}</td>
         <td class='veld'>{{wedstrijd.veld | veld}}</td>
         <td>{{wedstrijd.uitteam}}</td>
