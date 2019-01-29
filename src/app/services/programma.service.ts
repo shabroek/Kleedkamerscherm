@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProgrammaService {
-  programmaUrl = 'https://data.sportlink.com/programma?aantaldagen=3&uit=NEE';
+  programmaUrl = 'https://data.sportlink.com/programma?aantaldagen=6&uit=NEE';
 
   constructor(private http: HttpClient) {
   }

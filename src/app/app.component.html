@@ -8,22 +8,22 @@
         <td>Kast</td>
         <td>Kl</td>
         <td>Jong Brabant</td>
-        <td>Veld</td>
         <td>Gasten</td>
         <td>Kl</td>
         <td>Kast</td>
+        <td>Veld</td>
         <td>Scheidsrechter</td>
-        <td>Kl. </td>
+        <td>Kl</td>
     </thead>
     <tr *ngFor="let wedstrijd of programma">
         <td>{{wedstrijd.datum }} {{wedstrijd.aanvangstijd}}</td>
         <td class='kleedkamer'>{{wedstrijd.kleedkamerthuisteam |kast}}</td>
         <td class='kleedkamer'>{{wedstrijd.kleedkamerthuisteam |kleedkamer}}</td>
         <td>{{wedstrijd.thuisteam | jongbrabant}}</td>
-        <td class='veld'>{{wedstrijd.veld | veld}}</td>
         <td>{{wedstrijd.uitteam}}</td>
         <td class='kleedkamer'>{{wedstrijd.kleedkameruitteam |kleedkamer}}</td>
         <td class='kleedkamer'>{{wedstrijd.kleedkameruitteam |kast}}</td>
+        <td class='veld'>{{wedstrijd.veld | veld}}</td>
         <td>{{wedstrijd.scheidsrechter}}</td>
         <td>{{wedstrijd.kleedkamerscheidsrechter}}</td>
     </tr>
