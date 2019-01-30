@@ -7,11 +7,11 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProgrammaService {
-  programmaUrl = 'https://data.sportlink.com/programma?aantaldagen=6&uit=NEE';
+  programmaUrl = 'https://data.sportlink.com/programma?uit=NEE';
 
   constructor(private http: HttpClient) {
   }
-  getProgramma(): Observable<IWedstrijd[]> {
-    return this.http.get<IWedstrijd[]>(this.programmaUrl);
+  getProgramma(days: number): Observable<IWedstrijd[]> {
+    return this.http.get<IWedstrijd[]>(this.programmaUrl + '&aantaldagen=days');
   }
 }

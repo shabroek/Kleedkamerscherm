@@ -20,6 +20,13 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.programmaService.getProgramma().subscribe(data => this.programma = data);
+    this.startTimer();
+  }
+
+  getProgramma(): any {
+    this.programmaService.getProgramma(3).subscribe(data => this.programma = data);
+  }
+  startTimer() {
+    setInterval(() => this.getProgramma(), 60000);
   }
 }
