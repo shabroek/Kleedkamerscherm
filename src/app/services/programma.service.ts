@@ -12,6 +12,6 @@ export class ProgrammaService {
   constructor(private http: HttpClient) {
   }
   getProgramma(days: number): Observable<IWedstrijd[]> {
-    return this.http.get<IWedstrijd[]>(this.programmaUrl + '&aantaldagen=days');
+    return this.http.get<IWedstrijd[]>(this.programmaUrl + '&aantaldagen=' + days);
   }
 }
