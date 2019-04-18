@@ -28,3 +28,5 @@
         <td>{{wedstrijd.kleedkamerscheidsrechter}}</td>
     </tr>
 </table>
+
+<app-wedstrijd *ngFor="let wedstrijd of programma" [wedstrijd]="wedstrijd"></app-wedstrijd>

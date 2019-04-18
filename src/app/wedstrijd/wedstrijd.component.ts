@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { IWedstrijd } from '../models/wedstrijd.model';
 
 @Component({
   selector: 'app-wedstrijd',
@@ -6,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./wedstrijd.component.scss']
 })
 export class WedstrijdComponent implements OnInit {
+  component: { thuisteam: string; };
 
   constructor() { }
+
+  @Input() wedstrijd: IWedstrijd;
 
   ngOnInit() {
   }
