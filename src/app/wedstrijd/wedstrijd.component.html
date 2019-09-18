@@ -1,9 +1,22 @@
 <div class="container">
+  <div class="status">
+    <div class="main">{{wedstrijd.status}}</div>
+    <div class="detail">{{wedstrijd.competitiesoort}}</div>
+  </div>
+  <div class="info main">
+    <div>{{wedstrijd.aanvangstijd}}</div>
+  </div>
   <div class="thuis">
-    {{ wedstrijd.thuisteam | jongbrabant }}
+    <div class="main">{{ wedstrijd.thuisteam }}</div>
+    <div class="detail">{{ wedstrijd.kleedkamerthuisteam }} </div>
   </div>
   <div class="uit">
-    {{ wedstrijd.uitteam }}
-
+    <div class="main">{{ wedstrijd.uitteam }}</div>
+    <div class="detail">{{ wedstrijd.kleedkameruitteam }} </div>
+  </div>
+  <div class="veld">{{wedstrijd.veld}}</div>
+  <div class="scheidsrechter">
+    <div class="main">{{wedstrijd.scheidsrechter}}</div>
+    <div class="detail">{{wedstrijd.kleedkamerscheidsrechter}}</div>
   </div>
 </div>

@@ -6,18 +6,18 @@ body {
   font-size: 20px;
   line-height: 20px;
   color: #3b3b3b;
-  background: #2b2b2b;
 }
 
 table {
   font-family: "Helvetica Neue", Helvetica, Arial;
   line-height: 20px;
   color: #3b3b3b;
-  background: #2b2b2b;
+  background: #f0f0f0;
   margin: 0 0 40px 0;
-  width: 100%;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  width: calc(100% - 120px);
   display: table;
+  opacity: 0.9;
+  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.6);
 }
 
 tr {

@@ -1,0 +1,45 @@
+.container {
+    width: 100%;
+    background: white;
+    display: flex;
+    padding: 15px;
+}
+
+.info {
+    padding: 15px;
+}
+.thuis {
+    width: 30%;
+    padding: 15px;
+}
+
+.main {
+    font-weight: 700;
+    font-size: 20;
+    padding: 10px;
+}
+
+.detail {
+    font-weight: 400;
+    font-size:14;
+    padding: 5px;
+}
+
+.uit {
+    width: 30%;
+    padding: 15px;
+}
+
+.veld { 
+    background: green;
+    width:10%;
+    color: white;
+    text-align: center;
+    padding: 5px;
+    vertical-align: middle;
+}
+
+.scheidsrechter {
+    width: 20%;
+    margin: 5px;
+}

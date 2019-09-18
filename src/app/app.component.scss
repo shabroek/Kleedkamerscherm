@@ -3,6 +3,10 @@
   color: white;
   text-align: center;
 }
+ .table-container {
+   margin:50px;
+   padding: 10px;
+ }
 
 .veld {
   background: green;
@@ -19,3 +23,19 @@
   line-height: 50px;
   text-transform: uppercase;
 }
+ .programma {
+   margin: 10px;
+   border: 3px solid #b50102;
+ }
+
+ .white-background {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.2;
+    z-index: -1;
+    background-image: url('../assets/home_grass.jpg');
+  background-repeat: repeat;
+ }
