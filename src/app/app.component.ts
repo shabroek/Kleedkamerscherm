@@ -36,13 +36,13 @@ export class AppComponent implements OnInit {
   }
 
   getProgramma(): any {
-    this.programma$ = this.programmaService.getProgramma(0).pipe(
+    this.programma$ = this.programmaService.getProgramma(7).pipe(
       tap((data: IWedstrijd[]) => { this.sleutelMatch = data.some(x => x.kast); })
     );
   }
 
   getUitslagen(): any {
-    this.uitslagen$ = this.programmaService.getUitslagen(0).pipe(
+    this.uitslagen$ = this.programmaService.getUitslagen(7).pipe(
       tap((data: IUitslag[]) => { this.hasUitslagen = data.length > 0; })
     );
   }

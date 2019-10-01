@@ -1,3 +1,5 @@
+<div class="titel">Kleedkamers</div>
+
 <table class="table-container">
   <thead>
     <td>Aanvang</td>
@@ -11,7 +13,7 @@
     <td>Scheidsrechter</td>
     <td>Kl</td>
   </thead>
-  <tr *ngFor="let wedstrijd of programma$ | async">
+  <tr [class.afgelast]="wedstrijd.status === 'Afgelast'" *ngFor="let wedstrijd of programma$ | async">
     <td>{{wedstrijd.datum }} {{wedstrijd.aanvangstijd}}</td>
     <td *ngIf="sleutelMatch" class='kleedkamer'>{{wedstrijd.kleedkamerthuisteam |kast}}</td>
     <td class='kleedkamer'>{{wedstrijd.kleedkamerthuisteam |kleedkamer}}</td>
