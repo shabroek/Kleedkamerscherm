@@ -5,18 +5,18 @@ import { AppComponent } from './app.component';
 import { ClientIdInterceptor } from './interceptors/clientid.interceptor';
 import { KleedkamerPipe } from './pipes/kleedkamer.pipe';
 import { VeldPipe } from './pipes/veld.pipe';
-import { WedstrijdComponent } from './wedstrijd/wedstrijd.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
     AppComponent,
     KleedkamerPipe,
-    VeldPipe,
-    WedstrijdComponent
+    VeldPipe
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot([])
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ClientIdInterceptor, multi: true }],
