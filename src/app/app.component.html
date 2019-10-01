@@ -16,7 +16,7 @@
     <td>Kl</td>
   </thead>
   <tr [class.afgelast]="wedstrijd.status === 'Afgelast'" *ngFor="let wedstrijd of programma$ | async">
-    <td>{{wedstrijd.aanvangstijd}}</td>
+    <td>{{numberOfDays > 0 ? wedstrijd.datum : ''}} {{wedstrijd.aanvangstijd}}</td>
     <td class='kleedkamer'>{{wedstrijd.kleedkamerthuisteam |kleedkamer}}</td>
     <td>{{wedstrijd.thuisteam}}</td>
     <td>{{wedstrijd.uitteam}}</td>
