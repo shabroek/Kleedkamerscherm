@@ -6,6 +6,7 @@ import { KleedkamerPipe } from './pipes/kleedkamer.pipe';
 import { VeldPipe } from './pipes/veld.pipe';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
+import { IUitslag } from './models/uitslag.model';
 
 @Component({
   selector: 'app-root',
@@ -18,21 +19,35 @@ export class AppComponent implements OnInit {
   kleedkamer: KleedkamerPipe;
   veld: VeldPipe;
   sleutelMatch: boolean;
+  hasUitslagen: boolean;
+  uitslagen$: Observable<IUitslag[]>;
 
   constructor(private programmaService: ProgrammaService) {
   }
 
   ngOnInit(): void {
-    this.getProgramma();
+    this.laadData();
     this.startTimer();
   }
 
+  private laadData() {
+    this.getProgramma();
+    this.getUitslagen();
+  }
+
   getProgramma(): any {
-    this.programma$ = this.programmaService.getProgramma(10).pipe(
+    this.programma$ = this.programmaService.getProgramma(0).pipe(
       tap((data: IWedstrijd[]) => { this.sleutelMatch = data.some(x => x.kast); })
     );
   }
+
+  getUitslagen(): any {
+    this.uitslagen$ = this.programmaService.getUitslagen(0).pipe(
+      tap((data: IUitslag[]) => { this.hasUitslagen = data.length > 0; })
+    );
+  }
+
   startTimer() {
-    setInterval(() => this.getProgramma(), 60000);
+    setInterval(() => this.laadData(), 120000);
   }
 }

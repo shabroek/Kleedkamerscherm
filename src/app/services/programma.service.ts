@@ -1,14 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IWedstrijd } from '../models/wedstrijd.model';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
+import { IUitslag } from '../models/uitslag.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProgrammaService {
+
   programmaUrl = 'https://data.sportlink.com/programma?uit=NEE';
+  uitslagenUrl = 'https://data.sportlink.com/uitslagen?uit=NEE';
 
   constructor(private http: HttpClient) {
   }
@@ -20,6 +23,10 @@ export class ProgrammaService {
         || element.kleedkameruitteam.indexOf('A') > 0
         || element.kleedkameruitteam.indexOf('B') > 0; })),
       map((programma: IWedstrijd[]) => programma.sort(this.sortWedstrijd)));
+  }
+
+  getUitslagen(days: number): Observable<IUitslag[]> {
+    return this.http.get<IUitslag[]>(this.uitslagenUrl + '&aantaldagen=' + days);
   }
 
   sortWedstrijd(a: IWedstrijd, b: IWedstrijd) {

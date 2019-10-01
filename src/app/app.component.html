@@ -1,7 +1,3 @@
-<div *ngIf="sleutelMatch" class='sleutel'>
-  Spullen tijdens de wedstrijd opbergen in de kast. Sleutel is tegen een borg verkrijgbaar bij het
-  wedstrijdsecretariaat.</div>
-
 <table class="table-container">
   <thead>
     <td>Aanvang</td>
@@ -29,6 +25,25 @@
   </tr>
 </table>
 
+<div *ngIf="sleutelMatch" class='sleutel'>
+  Spullen tijdens de wedstrijd opbergen in de kast. Sleutel is tegen een borg verkrijgbaar bij het
+  wedstrijdsecretariaat.</div>
+
+<table class="table-container" *ngIf="hasUitslagen">
+  <thead>
+    <td>Aanvang</td>
+    <td>Jong Brabant</td>
+    <td>Uitslag</td>
+    <td>Gasten</td>
+  </thead>
+  <tr *ngFor="let uitslag of uitslagen$ | async">
+    <td>{{uitslag.aanvangstijd}}</td>
+    <td>{{uitslag.thuisteam}}</td>
+    <td class='veld'>{{uitslag.uitslag}}</td>
+    <td>{{uitslag.uitteam}}</td>
+  </tr>
+</table>
+
 <div class="white-background">
-  
+
 </div>
