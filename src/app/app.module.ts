@@ -4,8 +4,6 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { ClientIdInterceptor } from './interceptors/clientid.interceptor';
 import { KleedkamerPipe } from './pipes/kleedkamer.pipe';
-import { KastPipe } from './pipes/kast.pipe';
-import { JongbrabantPipe } from './pipes/jongbrabant.pipe';
 import { VeldPipe } from './pipes/veld.pipe';
 import { WedstrijdComponent } from './wedstrijd/wedstrijd.component';
 
@@ -13,8 +11,6 @@ import { WedstrijdComponent } from './wedstrijd/wedstrijd.component';
   declarations: [
     AppComponent,
     KleedkamerPipe,
-    KastPipe,
-    JongbrabantPipe,
     VeldPipe,
     WedstrijdComponent
   ],

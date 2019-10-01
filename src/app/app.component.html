@@ -1,51 +1,53 @@
-<div class="titel">Kleedkamers</div>
+<div class="titel-container">
+  <img src="assets/logo.png" alt="image" />
+  <div class="titel">{{ hasProgramma || !hasUitslagen ? 'Kleedkamerindeling' : 'Uitslagen'}}</div>
+  <img src="assets/logo.png" alt="image" />
+</div>
 
-<table class="table-container">
+<table class="table-container" *ngIf="hasProgramma">
   <thead>
-    <td>Aanvang</td>
-    <td *ngIf="sleutelMatch">Kast</td>
-    <td>Kl</td>
-    <td>Jong Brabant</td>
+    <td></td>
+    <td>{{sleutelMatch ? 'Kl+Kast' : 'Kl'}}</td>
+    <td>Thuis</td>
     <td>Gasten</td>
-    <td>Kl</td>
-    <td *ngIf="sleutelMatch">Kast</td>
+    <td>{{sleutelMatch ? 'Kl+Kast' : 'Kl'}}</td>
     <td>Veld</td>
     <td>Scheidsrechter</td>
     <td>Kl</td>
   </thead>
   <tr [class.afgelast]="wedstrijd.status === 'Afgelast'" *ngFor="let wedstrijd of programma$ | async">
-    <td>{{wedstrijd.datum }} {{wedstrijd.aanvangstijd}}</td>
-    <td *ngIf="sleutelMatch" class='kleedkamer'>{{wedstrijd.kleedkamerthuisteam |kast}}</td>
+    <td>{{wedstrijd.aanvangstijd}}</td>
     <td class='kleedkamer'>{{wedstrijd.kleedkamerthuisteam |kleedkamer}}</td>
     <td>{{wedstrijd.thuisteam}}</td>
     <td>{{wedstrijd.uitteam}}</td>
     <td class='kleedkamer'>{{wedstrijd.kleedkameruitteam |kleedkamer}}</td>
-    <td *ngIf="sleutelMatch" class='kleedkamer'>{{wedstrijd.kleedkameruitteam |kast}}</td>
     <td class='veld'>{{wedstrijd.veld | veld}}</td>
     <td>{{wedstrijd.scheidsrechter}}</td>
     <td>{{wedstrijd.kleedkamerscheidsrechter}}</td>
   </tr>
 </table>
 
+<div *ngIf="!hasUitslagen && !hasProgramma" class="geenProgramma">Vandaag zijn er geen wedstrijden bij Jong Brabant</div>
+
 <div *ngIf="sleutelMatch" class='sleutel'>
   Spullen tijdens de wedstrijd opbergen in de kast. Sleutel is tegen een borg verkrijgbaar bij het
   wedstrijdsecretariaat.</div>
 
-<table class="table-container" *ngIf="hasUitslagen">
-  <thead>
-    <td>Aanvang</td>
-    <td>Jong Brabant</td>
-    <td>Uitslag</td>
-    <td>Gasten</td>
-  </thead>
-  <tr *ngFor="let uitslag of uitslagen$ | async">
-    <td>{{uitslag.aanvangstijd}}</td>
-    <td>{{uitslag.thuisteam}}</td>
-    <td class='veld'>{{uitslag.uitslag}}</td>
-    <td>{{uitslag.uitteam}}</td>
-  </tr>
-</table>
-
+  <table class="table-container" *ngIf="hasUitslagen && !hasProgramma">
+    <thead>
+      <td>Aanvang</td>
+      <td>Jong Brabant</td>
+      <td>Uitslag</td>
+      <td>Gasten</td>
+    </thead>
+    <tr *ngFor="let uitslag of uitslagen$ | async">
+      <td>{{uitslag.aanvangstijd}}</td>
+      <td>{{uitslag.thuisteam}}</td>
+      <td class='veld'>{{uitslag.uitslag}}</td>
+      <td>{{uitslag.uitteam}}</td>
+    </tr>
+  </table>
+  
 <div class="white-background">
 
 </div>

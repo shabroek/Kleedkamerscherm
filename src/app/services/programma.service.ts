@@ -19,9 +19,10 @@ export class ProgrammaService {
     return this.http.get<IWedstrijd[]>(this.programmaUrl + '&aantaldagen=' + days).pipe(
       tap((programma: IWedstrijd[]) => programma.forEach(element => {
         element.kast = element.kleedkamerthuisteam.indexOf('A') > 0
-        || element.kleedkamerthuisteam.indexOf('B') > 0
-        || element.kleedkameruitteam.indexOf('A') > 0
-        || element.kleedkameruitteam.indexOf('B') > 0; })),
+          || element.kleedkamerthuisteam.indexOf('B') > 0
+          || element.kleedkameruitteam.indexOf('A') > 0
+          || element.kleedkameruitteam.indexOf('B') > 0;
+      })),
       map((programma: IWedstrijd[]) => programma.sort(this.sortWedstrijd)));
   }
 

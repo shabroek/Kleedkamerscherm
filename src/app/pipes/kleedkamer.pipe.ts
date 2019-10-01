@@ -7,7 +7,8 @@ export class KleedkamerPipe implements PipeTransform {
 
   transform(value: any, args?: any): any {
     if (typeof (value) === 'string') {
-      return value.replace('Kleedkamer ', '');
+      const kleedkamer: string = value.replace('Kleedkamer ', '');
+      return kleedkamer;
     }
     return value;
   }
