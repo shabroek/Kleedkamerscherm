@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
   hasUitslagen: boolean;
   hasProgramma: boolean;
   uitslagen$: Observable<IUitslag[]>;
-  numberOfDays: number;
+  numberOfDays = 0;
 
   constructor(private programmaService: ProgrammaService, private route: ActivatedRoute) {
   }
@@ -53,6 +53,6 @@ export class AppComponent implements OnInit {
   }
 
   startTimer() {
-    setInterval(() => this.laadData(this.numberOfDays), 120000);
+      setInterval(() => this.laadData(this.numberOfDays), 120000);
   }
 }
