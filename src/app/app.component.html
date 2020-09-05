@@ -1,29 +1,29 @@
 <div class="titel-container">
   <img src="assets/logo.png" alt="image" />
-  <div class="titel">{{ hasProgramma || !hasUitslagen ? 'Kleedkamerindeling' : 'Uitslagen'}}</div>
+  <div class="titel">{{ hasProgramma || !hasUitslagen ? 'Veldindeling' : 'Uitslagen'}}</div>
   <img src="assets/logo.png" alt="image" />
 </div>
 
 <table class="table-container" *ngIf="hasProgramma">
   <thead>
     <td></td>
-    <td>{{sleutelMatch ? 'Kl+Kast' : 'Kl'}}</td>
+    <!-- <td>{{sleutelMatch ? 'Kl+Kast' : 'Kl'}}</td> -->
     <td>Thuis</td>
     <td>Gasten</td>
-    <td>{{sleutelMatch ? 'Kl+Kast' : 'Kl'}}</td>
+    <!-- <td>{{sleutelMatch ? 'Kl+Kast' : 'Kl'}}</td> -->
     <td>Veld</td>
     <td>Scheidsrechter</td>
-    <td>Kl</td>
+    <!-- <td>Kl</td> -->
   </thead>
   <tr [class.afgelast]="wedstrijd.status && wedstrijd.status.startsWith('Afgelast')" *ngFor="let wedstrijd of programma$ | async">
     <td>{{numberOfDays > 0 ? wedstrijd.datum : ''}} {{wedstrijd.aanvangstijd}}</td>
-    <td class='kleedkamer'>{{wedstrijd.kleedkamerthuisteam |kleedkamer}}</td>
+    <!-- <td class='kleedkamer'>{{wedstrijd.kleedkamerthuisteam |kleedkamer}}</td> -->
     <td>{{wedstrijd.thuisteam}}</td>
     <td>{{wedstrijd.uitteam}}</td>
-    <td class='kleedkamer'>{{wedstrijd.kleedkameruitteam |kleedkamer}}</td>
+    <!-- <td class='kleedkamer'>{{wedstrijd.kleedkameruitteam |kleedkamer}}</td> -->
     <td class='veld'>{{wedstrijd.veld | veld}}</td>
     <td>{{wedstrijd.scheidsrechter}}</td>
-    <td>{{wedstrijd.kleedkamerscheidsrechter}}</td>
+    <!-- <td>{{wedstrijd.kleedkamerscheidsrechter}}</td> -->
   </tr>
 </table>
 
