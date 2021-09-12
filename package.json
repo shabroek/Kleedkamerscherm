@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "publish": "ng build --prod --base-href https://shabroek.github.io/Kleedkamerscherm/ && ngh"
+    "publish": "ng build --prod --base-href https://shabroek.github.io/Kleedkamerscherm/ && npx angular-cli-ghpages --dir=dist"
   },
   "private": true,
   "dependencies": {
@@ -21,6 +21,7 @@
     "@angular/platform-browser-dynamic": "~8.2.6",
     "@angular/router": "~8.2.6",
     "core-js": "^2.5.4",
+    "ngh": "^0.2.12",
     "rxjs": "~6.5.3",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"
@@ -30,9 +31,10 @@
     "@angular/cli": "~8.3.4",
     "@angular/compiler-cli": "~8.2.6",
     "@angular/language-service": "~8.2.6",
-    "@types/node": "~8.9.4",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "~8.9.4",
+    "angular-cli-ghpages": "^1.0.0-rc.2",
     "codelyzer": "^5.0.1",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
