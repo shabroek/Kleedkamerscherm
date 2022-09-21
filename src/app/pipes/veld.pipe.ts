@@ -7,7 +7,7 @@ export class VeldPipe implements PipeTransform {
 
   transform(value: any, args?: any): any {
     if (typeof (value) === 'string') {
-      return value.replace('Veld ', '')
+      return value.replace('veld ', '')
       .replace('veld 1', '-')
       .replace('veld 2', '-')
       .replace('veld 3', '-')
