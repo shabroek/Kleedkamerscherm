@@ -12,4 +12,5 @@ export interface IWedstrijd {
     kleedkameruitteam: string;
     kleedkamerscheidsrechter: string;
     kast: boolean;
+    afgelast: boolean;
 }

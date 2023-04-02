@@ -335,3 +335,4 @@ ASALocalRun/
 .localhistory/
 .vscode/
 dist/
+.angular/

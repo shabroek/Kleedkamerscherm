@@ -23,6 +23,9 @@ export class ProgrammaService {
           || element.kleedkameruitteam.indexOf('A') > 0
           || element.kleedkameruitteam.indexOf('B') > 0;
       })),
+      tap((programma: IWedstrijd[]) => programma.forEach(element => {
+        element.afgelast = element.status?.startsWith('Afgelast');
+      })),
       map((programma: IWedstrijd[]) => programma.sort(this.sortWedstrijd)));
   }
 
