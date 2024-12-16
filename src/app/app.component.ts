@@ -1,19 +1,17 @@
-
-import { ActivatedRoute } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
-import { IWedstrijd } from './models/wedstrijd.model';
-import { ProgrammaService } from './services/programma.service';
-import { KleedkamerPipe } from './pipes/kleedkamer.pipe';
-import { VeldPipe } from './pipes/veld.pipe';
-import { Observable } from 'rxjs';
-import { tap, filter, map } from 'rxjs/operators';
-import { IUitslag } from './models/uitslag.model';
-
+import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
+import { Observable, of } from "rxjs";
+import { filter, map, tap } from "rxjs/operators";
+import { IUitslag } from "./models/uitslag.model";
+import { IWedstrijd } from "./models/wedstrijd.model";
+import { KleedkamerPipe } from "./pipes/kleedkamer.pipe";
+import { VeldPipe } from "./pipes/veld.pipe";
+import { ProgrammaService } from "./services/programma.service";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.scss"],
 })
 export class AppComponent implements OnInit {
   programma$: Observable<IWedstrijd[]>;
@@ -25,16 +23,20 @@ export class AppComponent implements OnInit {
   uitslagen$: Observable<IUitslag[]>;
   numberOfDays = 0;
 
-  constructor(private programmaService: ProgrammaService, private route: ActivatedRoute) {
-  }
+  constructor(
+    private programmaService: ProgrammaService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
-    this.route.queryParams.pipe(
-      filter(params => params.days),
-      map(params => params.days),
-      tap((numberOfDays: number) => this.numberOfDays = numberOfDays),
-      tap((numberOfDays: number) => this.laadData(numberOfDays))
-    ).subscribe();
+    this.route.queryParams
+      .pipe(
+        filter((params) => params.days),
+        map((params) => params.days),
+        tap((numberOfDays: number) => (this.numberOfDays = numberOfDays)),
+        tap((numberOfDays: number) => this.laadData(numberOfDays))
+      )
+      .subscribe();
 
     this.hasProgramma = true;
     this.hasUitslagen = true;
@@ -43,16 +45,69 @@ export class AppComponent implements OnInit {
   }
 
   private laadData(days: number) {
-    this.programma$ = this.programmaService.getProgramma(days).pipe(
-      tap((data: IWedstrijd[]) => { this.hasProgramma = data.length > 0; }),
-      tap((data: IWedstrijd[]) => { this.sleutelMatch = data.some(x => x.kast); })
-    );
-    this.uitslagen$ = this.programmaService.getUitslagen(days).pipe(
-      tap((data: IUitslag[]) => { this.hasUitslagen = data.length > 0; })
-    );
+    this.programmaService
+      .getProgramma(days)
+      .pipe(
+        tap((newData: IWedstrijd[]) => {
+          this.hasProgramma = newData.length > 0;
+          if (this.programma$) {
+            this.programma$ = this.programma$.pipe(
+              map((existingData) => {
+                const updatedData = existingData.map((item) => {
+                  const newItem = newData.find(
+                    (newItem) => newItem.wedstrijdcode === item.wedstrijdcode
+                  );
+                  return newItem ? newItem : item;
+                });
+                const newItems = newData.filter(
+                  (newItem) =>
+                    !existingData.some(
+                      (item) => item.wedstrijdcode === newItem.wedstrijdcode
+                    )
+                );
+                return [...updatedData, ...newItems];
+              })
+            );
+          } else {
+            this.programma$ = of(newData);
+          }
+          this.sleutelMatch = newData.some((x) => x.kast);
+        })
+      )
+      .subscribe();
+
+    this.programmaService
+      .getUitslagen(days)
+      .pipe(
+        tap((newData: IUitslag[]) => {
+          this.hasUitslagen = newData.length > 0;
+          if (this.uitslagen$) {
+            this.uitslagen$ = this.uitslagen$.pipe(
+              map((existingData) => {
+                const updatedData = existingData.map((item) => {
+                  const newItem = newData.find(
+                    (newItem) => newItem.wedstrijdcode === item.wedstrijdcode
+                  );
+                  return newItem ? newItem : item;
+                });
+                const newItems = newData.filter(
+                  (newItem) =>
+                    !existingData.some(
+                      (item) => item.wedstrijdcode === newItem.wedstrijdcode
+                    )
+                );
+                return [...updatedData, ...newItems];
+              })
+            );
+          } else {
+            this.uitslagen$ = of(newData);
+          }
+        })
+      )
+      .subscribe();
   }
 
   startTimer() {
-      setInterval(() => this.laadData(this.numberOfDays), 120000);
+    setInterval(() => this.laadData(this.numberOfDays), 60000);
   }
 }
