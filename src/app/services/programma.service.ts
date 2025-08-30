@@ -1,36 +1,46 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { IWedstrijd } from '../models/wedstrijd.model';
-import { Observable, of } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
-import { IUitslag } from '../models/uitslag.model';
+import { HttpClient } from "@angular/common/http";
+import { Injectable } from "@angular/core";
+import { Observable } from "rxjs";
+import { map, tap } from "rxjs/operators";
+import { IUitslag } from "../models/uitslag.model";
+import { IWedstrijd } from "../models/wedstrijd.model";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class ProgrammaService {
+  private verwijderdeWedstrijden: string[] = [];
 
-  programmaUrl = 'https://data.sportlink.com/programma?uit=NEE';
-  uitslagenUrl = 'https://data.sportlink.com/uitslagen?uit=NEE';
+  programmaUrl = "https://data.sportlink.com/programma?uit=NEE";
+  uitslagenUrl = "https://data.sportlink.com/uitslagen?uit=NEE";
 
-  constructor(private http: HttpClient) {
-  }
+  constructor(private http: HttpClient) {}
   getProgramma(days: number): Observable<IWedstrijd[]> {
-    return this.http.get<IWedstrijd[]>(this.programmaUrl + '&aantaldagen=' + days).pipe(
-      tap((programma: IWedstrijd[]) => programma.forEach(element => {
-        element.kast = element.kleedkamerthuisteam.indexOf('A') > 0
-          || element.kleedkamerthuisteam.indexOf('B') > 0
-          || element.kleedkameruitteam.indexOf('A') > 0
-          || element.kleedkameruitteam.indexOf('B') > 0;
-      })),
-      tap((programma: IWedstrijd[]) => programma.forEach(element => {
-        element.afgelast = element.status?.startsWith('Afgelast');
-      })),
-      map((programma: IWedstrijd[]) => programma.sort(this.sortWedstrijd)));
+    return this.http
+      .get<IWedstrijd[]>(this.programmaUrl + "&aantaldagen=" + days)
+      .pipe(
+        tap((programma: IWedstrijd[]) =>
+          programma.forEach((element) => {
+            element.kast =
+              element.kleedkamerthuisteam.indexOf("A") > 0 ||
+              element.kleedkamerthuisteam.indexOf("B") > 0 ||
+              element.kleedkameruitteam.indexOf("A") > 0 ||
+              element.kleedkameruitteam.indexOf("B") > 0;
+          })
+        ),
+        tap((programma: IWedstrijd[]) =>
+          programma.forEach((element) => {
+            element.afgelast = element.status?.startsWith("Afgelast");
+          })
+        ),
+        map((programma: IWedstrijd[]) => programma.sort(this.sortWedstrijd))
+      );
   }
 
   getUitslagen(days: number): Observable<IUitslag[]> {
-    return this.http.get<IUitslag[]>(this.uitslagenUrl + '&aantaldagen=' + days);
+    return this.http.get<IUitslag[]>(
+      this.uitslagenUrl + "&aantaldagen=" + days
+    );
   }
 
   sortWedstrijd(a: IWedstrijd, b: IWedstrijd) {

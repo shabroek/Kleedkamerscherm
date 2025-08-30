@@ -1,3 +1,18 @@
+// Progress bar bovenaan
+.refresh-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 2px;
+  background: rgba(0, 0, 0, 0.05);
+  z-index: 1000;
+}
+.refresh-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #007bff 0%, #00c853 100%);
+  transition: width 0.1s linear;
+}
 .kleedkamer {
   background: #222222;
   color: white;
@@ -27,7 +42,7 @@
   width: 100%;
   font-weight: 700;
   margin: 20px 50px;
-  line-height:120px;
+  line-height: 120px;
   text-transform: uppercase;
   text-align: center;
   font-size: 70px;
@@ -54,8 +69,8 @@
 }
 
 .afgelast {
-    opacity: 0.6;
-    text-decoration: line-through;
+  opacity: 0.6;
+  text-decoration: line-through;
 }
 
 .sleutel {
@@ -84,6 +99,6 @@
   height: 100%;
   opacity: 0.2;
   z-index: -1;
-  background-image: url('../assets/home_grass.jpg');
+  background-image: url("../assets/home_grass.jpg");
   background-repeat: repeat;
 }
