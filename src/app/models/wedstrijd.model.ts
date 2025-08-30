@@ -1,4 +1,5 @@
 export interface IWedstrijd {
+  isGestart?: boolean;
   wedstrijdcode: string;
   wedstrijddatum: Date;
   thuisteam: string;

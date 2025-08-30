@@ -34,8 +34,9 @@
     <td>Kl</td>
   </thead>
   <tr
-    [class.afgelast]="wedstrijd.afgelast"
     *ngFor="let wedstrijd of programma$ | async"
+    [class.afgelast]="wedstrijd.afgelast"
+    [class.gestart]="wedstrijd.isGestart"
   >
     <td>
       {{ numberOfDays > 0 ? wedstrijd.datum : "" }} {{ wedstrijd.aanvangstijd }}

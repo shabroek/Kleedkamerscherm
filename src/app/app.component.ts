@@ -14,6 +14,7 @@ import { ProgrammaService } from "./services/programma.service";
   styleUrls: ["./app.component.scss"],
 })
 export class AppComponent implements OnInit {
+  now: Date = new Date();
   progress = 0;
   progressInterval: any;
   refreshInterval = 60000;

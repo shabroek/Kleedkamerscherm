@@ -26,6 +26,8 @@ export class ProgrammaService {
               element.kleedkamerthuisteam.indexOf("B") > 0 ||
               element.kleedkameruitteam.indexOf("A") > 0 ||
               element.kleedkameruitteam.indexOf("B") > 0;
+            // isGestart property
+            element.isGestart = new Date(element.wedstrijddatum) <= new Date();
           })
         ),
         tap((programma: IWedstrijd[]) =>
@@ -44,10 +46,21 @@ export class ProgrammaService {
   }
 
   sortWedstrijd(a: IWedstrijd, b: IWedstrijd) {
-    if (a.wedstrijddatum < b.wedstrijddatum) {
+    const now = new Date();
+    const aStart = new Date(a.wedstrijddatum);
+    const bStart = new Date(b.wedstrijddatum);
+
+    const aIsStarted = aStart <= now;
+    const bIsStarted = bStart <= now;
+
+    if (aIsStarted !== bIsStarted) {
+      // Wedstrijden die al begonnen zijn komen onderaan
+      return aIsStarted ? 1 : -1;
+    }
+    if (aStart < bStart) {
       return -1;
     }
-    if (a.wedstrijddatum > b.wedstrijddatum) {
+    if (aStart > bStart) {
       return 1;
     }
     if (a.thuisteam < b.thuisteam) {
