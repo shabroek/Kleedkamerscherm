@@ -44,8 +44,8 @@ export class AppComponent implements OnInit {
       )
       .subscribe();
 
-    this.hasProgramma = true;
-    this.hasUitslagen = true;
+    this.hasProgramma = false;
+    this.hasUitslagen = false;
     this.laadData(0);
     this.startProgressBar();
   }

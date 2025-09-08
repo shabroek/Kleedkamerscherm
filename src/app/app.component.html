@@ -4,14 +4,8 @@
 <div *ngIf="programmaError" class="error-message">
   Kan programma niet ophalen. Controleer je internetverbinding.
 </div>
-<div *ngIf="!programmaError && hasProgramma === false" class="info-message">
-  Er zijn geen wedstrijden meer gepland.
-</div>
 <div *ngIf="uitslagenError" class="error-message">
   Kan uitslagen niet ophalen. Controleer je internetverbinding.
-</div>
-<div *ngIf="!uitslagenError && hasUitslagen === false" class="info-message">
-  Er zijn geen uitslagen beschikbaar.
 </div>
 
 <div class="titel-container">

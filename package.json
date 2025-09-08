@@ -5,10 +5,11 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:es5": "ng build --output-path=dist && node postbuild-es5.js",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "publish": "ng build --configuration production --base-href https://shabroek.github.io/Kleedkamerscherm/ && npx angular-cli-ghpages --dir=dist"
+    "publish": "ng build --configuration production --base-href https://shabroek.github.io/Kleedkamerscherm/ --output-path=dist && node postbuild-es5.js && npx angular-cli-ghpages --dir=dist-es5"
   },
   "private": true,
   "dependencies": {
@@ -31,6 +32,9 @@
     "@angular/cli": "^15.2.4",
     "@angular/compiler-cli": "^15.2.5",
     "@angular/language-service": "^15.2.5",
+    "@babel/cli": "^7.28.3",
+    "@babel/core": "^7.28.4",
+    "@babel/preset-env": "^7.28.3",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
