@@ -116,4 +116,8 @@ export class AppComponent implements OnInit {
       }
     }, 100);
   }
+  // Prevent flickering: trackBy wedstrijdcode
+  trackByWedstrijdCode(index: number, wedstrijd: IWedstrijd) {
+    return wedstrijd.wedstrijdcode;
+  }
 }

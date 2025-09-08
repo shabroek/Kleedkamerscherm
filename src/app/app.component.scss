@@ -106,3 +106,17 @@
   background-image: url("../assets/home_grass.jpg");
   background-repeat: repeat;
 }
+
+// Team logo styling
+.team-logo {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  border-radius: 2px;
+  vertical-align: middle;
+  margin-right: 4px;
+  // Prevent flickering
+  image-rendering: auto;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}

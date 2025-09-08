@@ -28,7 +28,7 @@
     <td>Kl</td>
   </thead>
   <tr
-    *ngFor="let wedstrijd of programma$ | async"
+    *ngFor="let wedstrijd of programma$ | async; trackBy: trackByWedstrijdCode"
     [class.afgelast]="wedstrijd.afgelast"
     [class.gestart]="wedstrijd.isGestart"
   >
@@ -36,8 +36,26 @@
       {{ numberOfDays > 0 ? wedstrijd.datum : "" }} {{ wedstrijd.aanvangstijd }}
     </td>
     <td class="kleedkamer">{{ wedstrijd.kleedkamerthuisteam | kleedkamer }}</td>
-    <td>{{ wedstrijd.thuisteam }}</td>
-    <td>{{ wedstrijd.uitteam }}</td>
+    <td>
+      <img
+        *ngIf="wedstrijd.thuisteamlogo"
+        [src]="wedstrijd.thuisteamlogo"
+        [alt]="wedstrijd.thuisteam + ' logo'"
+        class="team-logo"
+        (error)="$event.target.style.display = 'none'"
+      />
+      {{ wedstrijd.thuisteam }}
+    </td>
+    <td>
+      <img
+        *ngIf="wedstrijd.uitteamlogo"
+        [src]="wedstrijd.uitteamlogo"
+        [alt]="wedstrijd.uitteam + ' logo'"
+        class="team-logo"
+        (error)="$event.target.style.display = 'none'"
+      />
+      {{ wedstrijd.uitteam }}
+    </td>
     <td class="kleedkamer">{{ wedstrijd.kleedkameruitteam | kleedkamer }}</td>
     <td class="veld">
       {{ wedstrijd.afgelast ? "AFGELAST " : (wedstrijd.veld | veld) }}
@@ -72,9 +90,13 @@
   </thead>
   <tr *ngFor="let uitslag of uitslagen$ | async">
     <td>{{ uitslag.aanvangstijd }}</td>
-    <td>{{ uitslag.thuisteam }}</td>
+    <td class="team-with-logo">
+      <span class="team-name">{{ uitslag.thuisteam }}</span>
+    </td>
     <td class="veld">{{ uitslag.uitslag }}</td>
-    <td>{{ uitslag.uitteam }}</td>
+    <td class="team-with-logo">
+      <span class="team-name">{{ uitslag.uitteam }}</span>
+    </td>
   </tr>
 </table>
 

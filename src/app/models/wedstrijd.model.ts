@@ -3,7 +3,9 @@ export interface IWedstrijd {
   wedstrijdcode: string;
   wedstrijddatum: Date;
   thuisteam: string;
+  thuisteamlogo: string;
   uitteam: string;
+  uitteamlogo: string;
   competitiesoort: string;
   datum: string;
   aanvangstijd: string;

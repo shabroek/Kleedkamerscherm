@@ -53,22 +53,49 @@ export class ProgrammaService {
     const aIsStarted = aStart <= now;
     const bIsStarted = bStart <= now;
 
+    // First: separate started matches (they go to bottom)
     if (aIsStarted !== bIsStarted) {
-      // Wedstrijden die al begonnen zijn komen onderaan
       return aIsStarted ? 1 : -1;
     }
+
+    // Second: sort by time (earliest first)
     if (aStart < bStart) {
       return -1;
     }
     if (aStart > bStart) {
       return 1;
     }
+
+    // Third: sort by field (VELD) - matches with field come first
+    const aHasVeld = a.veld && a.veld.trim() !== "";
+    const bHasVeld = b.veld && b.veld.trim() !== "";
+
+    if (aHasVeld && !bHasVeld) {
+      return -1; // a has field, b doesn't - a comes first
+    }
+    if (!aHasVeld && bHasVeld) {
+      return 1; // b has field, a doesn't - b comes first
+    }
+
+    // Both have fields or both don't have fields
+    if (aHasVeld && bHasVeld) {
+      // Both have fields - sort by field name
+      if (a.veld < b.veld) {
+        return -1;
+      }
+      if (a.veld > b.veld) {
+        return 1;
+      }
+    }
+
+    // Fourth: if same time and same field status, sort by home team name
     if (a.thuisteam < b.thuisteam) {
       return -1;
     }
     if (a.thuisteam > b.thuisteam) {
       return 1;
     }
+
     return 0;
   }
 }
