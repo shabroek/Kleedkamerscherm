@@ -1,0 +1,44 @@
+<div class="programma-container" *ngIf="!isLoading">
+  <!-- Mobile/Tablet Compact Card Layout -->
+  <div class="mobile-cards">
+    <app-wedstrijd-card
+      *ngFor="let wedstrijd of programma$ | async; trackBy: trackByWedstrijdId"
+      [wedstrijd]="wedstrijd"
+      [sleutelMatch]="sleutelMatch"
+      [numberOfDays]="numberOfDays"
+    ></app-wedstrijd-card>
+
+    <!-- Desktop/TV Modern Grid Layout -->
+    <div class="desktop-grid">
+      <div class="grid-header">
+        <div class="header-item time">Tijd</div>
+        <div class="header-item team">Thuis</div>
+        <div class="header-item kleedkamer">
+          {{ sleutelMatch ? "Kl+K" : "Kl" }}
+        </div>
+        <div class="header-item team">Uit</div>
+        <div class="header-item kleedkamer">
+          {{ sleutelMatch ? "Kl+K" : "Kl" }}
+        </div>
+        <div class="header-item veld">VELD</div>
+        <div class="header-item scheids">Scheidsrechter</div>
+        <div
+          class="header-item scheids-kl"
+          *ngIf="hasKleedkamerScheidsrechter$ | async"
+        >
+          Kl
+        </div>
+      </div>
+
+      <app-wedstrijd-row
+        *ngFor="
+          let wedstrijd of programma$ | async;
+          trackBy: trackByWedstrijdId
+        "
+        [wedstrijd]="wedstrijd"
+        [sleutelMatch]="sleutelMatch"
+        [numberOfDays]="numberOfDays"
+      ></app-wedstrijd-row>
+    </div>
+  </div>
+</div>

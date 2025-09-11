@@ -1,0 +1,61 @@
+<div
+  class="match-card"
+  [class.afgelast]="wedstrijd.afgelast"
+  [class.gestart]="wedstrijd.isGestart"
+>
+  <div class="match-header">
+    <div class="match-time">{{ wedstrijd.aanvangstijd }}</div>
+    <div class="match-field">{{ wedstrijd.veld | veld }}</div>
+  </div>
+  <div class="teams-simple-layout">
+    <div class="team-row home-team-row">
+      <div class="team-info">
+        <img
+          *ngIf="wedstrijd.thuisteamlogo"
+          [src]="wedstrijd.thuisteamlogo"
+          [alt]="wedstrijd.thuisteam + ' logo'"
+          class="team-logo"
+          (error)="$event.target.style.display = 'none'"
+        />
+        <span class="team-name">{{ wedstrijd.thuisteam }}</span>
+        <span class="team-label">Thuis</span>
+      </div>
+      <div class="kleedkamer-badge">
+        {{ wedstrijd.kleedkamerthuisteam | kleedkamer }}
+      </div>
+    </div>
+    <div class="team-row away-team-row">
+      <div class="team-info">
+        <img
+          *ngIf="wedstrijd.uitteamlogo"
+          [src]="wedstrijd.uitteamlogo"
+          [alt]="wedstrijd.uitteam + ' logo'"
+          class="team-logo"
+          (error)="$event.target.style.display = 'none'"
+        />
+        <span class="team-name">{{ wedstrijd.uitteam }}</span>
+        <span class="team-label">Uit</span>
+      </div>
+      <div class="kleedkamer-badge">
+        {{ wedstrijd.kleedkameruitteam | kleedkamer }}
+      </div>
+    </div>
+  </div>
+  <div
+    class="match-details"
+    *ngIf="
+      !wedstrijd.afgelast &&
+      (wedstrijd.scheidsrechter || wedstrijd.kleedkamerscheidsrechter)
+    "
+  >
+    <div class="referee-info">
+      <div class="referee" *ngIf="wedstrijd.scheidsrechter">
+        <span class="referee-icon">⚖️</span>
+        <span>{{ wedstrijd.scheidsrechter }}</span>
+      </div>
+      <div class="referee-room" *ngIf="wedstrijd.kleedkamerscheidsrechter">
+        <span>{{ wedstrijd.kleedkamerscheidsrechter }}</span>
+      </div>
+    </div>
+  </div>
+</div>

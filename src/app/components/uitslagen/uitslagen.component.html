@@ -1,0 +1,60 @@
+<div class="results-container" *ngIf="!isLoading">
+  <!-- Mobile/Tablet Card Layout -->
+  <div class="mobile-cards">
+    <div class="result-card" *ngFor="let uitslag of uitslagen$ | async; trackBy: trackByUitslagId">
+      <div class="result-header">
+        <div class="match-time">{{ uitslag.aanvangstijd }}</div>
+        <div class="result-score">{{ uitslag.uitslag }}</div>
+      </div>
+      
+      <!-- Links/Rechts team layout voor uitslagen -->
+      <div class="teams-split-layout">
+        <!-- Thuis team (links) -->
+        <div class="team-half home-half">
+          <div class="team-header">THUIS</div>
+          <div class="team-content">
+            <div class="team-info">
+              <span class="team-name">{{ uitslag.thuisteam }}</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Uit team (rechts) -->
+        <div class="team-half away-half">
+          <div class="team-header">UIT</div>
+          <div class="team-content">
+            <div class="team-info">
+              <span class="team-name">{{ uitslag.uitteam }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Desktop/TV Compact Table Layout -->
+  <div class="desktop-table">
+    <table class="compact-results-table">
+      <thead>
+        <tr>
+          <th class="time-col">Aanvang</th>
+          <th class="team-col">Jong Brabant</th>
+          <th class="score-col">Uitslag</th>
+          <th class="team-col">Gasten</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let uitslag of uitslagen$ | async; trackBy: trackByUitslagId">
+          <td class="time-col">{{ uitslag.aanvangstijd }}</td>
+          <td class="team-col">
+            <span class="team-name">{{ uitslag.thuisteam }}</span>
+          </td>
+          <td class="score-col">{{ uitslag.uitslag }}</td>
+          <td class="team-col">
+            <span class="team-name">{{ uitslag.uitteam }}</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

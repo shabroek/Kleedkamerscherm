@@ -1,0 +1,209 @@
+// Mobile responsive cards (display up to 1199px)
+.mobile-cards {
+  display: block;
+  padding: 10px;
+  gap: 8px;
+
+  @media (min-width: 1200px) {
+    display: none;
+  }
+}
+
+.result-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 8px;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  border-left: 4px solid #22c55e; // Green for results
+}
+
+.result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px 6px 12px;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 12px;
+}
+
+.match-time {
+  font-weight: 600;
+  color: #22c55e;
+  font-size: 13px;
+}
+
+.result-score {
+  background: #22c55e;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 12px;
+  text-align: center;
+  min-width: 50px;
+}
+
+// Links/Rechts team split layout
+.teams-split-layout {
+  display: flex;
+  min-height: 50px; // Smaller for results
+}
+
+.team-half {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  position: relative;
+  
+  &.home-half {
+    background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(240,240,240,0.9) 100%);
+    border-right: 2px solid #e0e0e0;
+  }
+  
+  &.away-half {
+    background: linear-gradient(135deg, rgba(245,245,245,0.9) 0%, rgba(225,225,225,0.95) 100%);
+  }
+}
+
+.team-header {
+  font-size: 9px;
+  font-weight: 700;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+  opacity: 0.8;
+}
+
+.team-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px; // Smaller gap for results
+}
+
+.team-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  font-size: 13px;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.team-name {
+  color: #3b3b3b;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+  flex: 1;
+}
+
+// Desktop/TV Table Layout (display from 1200px+)
+.desktop-table {
+  display: none;
+  
+  @media (min-width: 1200px) {
+    display: block;
+    overflow-x: auto;
+    margin: 0 20px;
+  }
+}
+
+.compact-results-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-size: 14px;
+  
+  @media (min-width: 1400px) {
+    font-size: 16px;
+  }
+
+  th {
+    background: #22c55e; // Green for results
+    color: white;
+    padding: 8px 6px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 13px;
+    
+    @media (min-width: 1400px) {
+      padding: 10px 8px;
+      font-size: 14px;
+    }
+    
+    &:first-child {
+      border-top-left-radius: 8px;
+    }
+    
+    &:last-child {
+      border-top-right-radius: 8px;
+    }
+  }
+
+  td {
+    padding: 6px;
+    border-bottom: 1px solid #f0f0f0;
+    vertical-align: middle;
+    
+    @media (min-width: 1400px) {
+      padding: 8px;
+    }
+  }
+
+  tr {
+    &:last-child td {
+      border-bottom: none;
+    }
+  }
+
+  .time-col {
+    width: 80px;
+    font-weight: 600;
+    color: #22c55e;
+    white-space: nowrap;
+    
+    @media (min-width: 1400px) {
+      width: 100px;
+    }
+  }
+
+  .team-col {
+    min-width: 150px;
+    max-width: 250px;
+    
+    @media (min-width: 1400px) {
+      min-width: 180px;
+      max-width: 280px;
+    }
+    
+    .team-name {
+      font-weight: 600;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+
+  .score-col {
+    width: 80px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 14px;
+    background: #22c55e;
+    color: white;
+    
+    @media (min-width: 1400px) {
+      width: 100px;
+      font-size: 16px;
+    }
+  }
+}

@@ -1,13 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
 body {
   font-family: "Helvetica Neue", Helvetica, Arial;
-
   font-weight: 700;
   font-size: 20px;
   line-height: 20px;
   color: #3b3b3b;
+  margin: 0;
+  padding: 0;
+  
+  @media (max-width: 767px) {
+    font-size: 16px;
+    line-height: 18px;
+  }
 }
 
+/* Legacy table styles kept for backward compatibility if needed */
 table {
   font-family: "Helvetica Neue", Helvetica, Arial;
   line-height: 20px;

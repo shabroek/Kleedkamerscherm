@@ -1,0 +1,267 @@
+// Mobile responsive cards (display up to 1199px)
+.mobile-cards {
+  display: block;
+  padding: 10px;
+  gap: 8px;
+}
+.match-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 8px;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  border-left: 4px solid #b50102;
+
+  &.afgelast {
+
+    .programma-container {
+      width: 100%;
+    }
+
+    .mobile-cards {
+      display: block;
+      padding: 10px;
+      gap: 8px;
+    }
+  color: white;
+  font-weight: 600;
+  font-size: 12px;
+  
+  @media (min-width: 1400px) {
+    font-size: 13px;
+    grid-template-columns: 90px 2.5fr 70px 2.5fr 70px 90px 2.5fr 60px;
+  }
+}
+
+.header-item {
+  padding: 12px 8px;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  // Geen border-right - geen kolomscheidingen
+}
+
+.grid-row {
+  display: grid;
+  grid-template-columns: 80px 2fr 60px 2fr 60px 80px 2fr 50px;
+  transition: background-color 0.2s ease;
+  min-height: 40px;
+  border-bottom: 1.5px solid #e0e0e0; // Subtiele rij-scheiding
+
+  @media (min-width: 1400px) {
+    grid-template-columns: 90px 2.5fr 70px 2.5fr 70px 90px 2.5fr 60px;
+    min-height: 45px;
+  }
+
+  // Alternating row colors - duidelijker verschil
+  &:nth-child(odd) {
+    background: #f3f3f3; // Iets donkerder lichtgrijs
+  }
+
+  &:nth-child(even) {
+    background: #fff; // Wit
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:hover {
+    background: rgba(181, 1, 2, 0.05) !important;
+  }
+
+  &.afgelast {
+    background: rgba(255, 240, 240, 0.8) !important;
+    opacity: 0.7;
+  }
+
+  &.gestart {
+    background: rgba(240, 255, 240, 0.8) !important;
+  }
+}
+
+
+.grid-item.veld {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #228B22;
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 0 4px;
+  text-align: center;
+  min-width: 80px;
+  border-radius: 0 !important;
+  padding: 10px 8px 8px 8px;
+  .veld-type {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+    color: #e0ffe0;
+    opacity: 0.85;
+  }
+  .veld-nummer {
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    background: none;
+    border-radius: 0;
+    padding: 0;
+    margin-top: 0;
+    text-align: center;
+    min-width: 40px;
+    box-shadow: none;
+  }
+  @media (min-width: 1400px) {
+    font-size: 18px;
+    .veld-nummer {
+      font-size: 22px;
+    }
+    .veld-type {
+      font-size: 13px;
+    }
+  }
+}
+
+.grid-item.time {
+  font-weight: 700;
+  color: #000;
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2px;
+  text-align: center;
+
+  .date {
+    font-size: 13px;
+    font-weight: 500;
+    opacity: 0.8;
+    color: #000;
+  }
+
+  .time-only {
+    font-size: 28px;
+    font-weight: 700;
+    color: #000;
+    letter-spacing: 1px;
+  }
+}
+
+.grid-item.kleedkamer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #222;
+  color: #fff;
+  font-weight: 700;
+  font-size: 26px;
+  padding: 8px 0;
+  text-align: center;
+  border-radius: 8px;
+  min-width: 60px;
+
+  .kleedkamer-value {
+    font-size: 32px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 1px;
+    line-height: 1.1;
+    display: block;
+  }
+  svg, .kast-icoon {
+    font-size: 20px;
+    margin-top: 2px;
+    color: #fff;
+  }
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // Geen border-right - geen kolomscheidingen
+  
+  &.time {
+    font-weight: 600;
+    color: #000; // Zwart
+    font-size: 14px;
+    justify-content: flex-start;
+    padding-left: 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+
+    .date {
+      font-size: 11px;
+      font-weight: 500;
+      opacity: 0.8;
+      color: #000; // Zwart
+    }
+
+    .time-only {
+      font-size: 15px;
+      font-weight: 600;
+      color: #000; // Zwart
+    }
+  }
+  
+  &.team {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 0 6px;
+
+    &.home-team {
+      flex-direction: row-reverse;
+      .team-logo {
+        margin-left: 8px;
+        margin-right: 0;
+      }
+      .team-name {
+        text-align: right;
+      }
+    }
+
+    &.away-team {
+      flex-direction: row;
+      .team-logo {
+        margin-right: 8px;
+        margin-left: 0;
+      }
+      .team-name {
+        text-align: left;
+      }
+    }
+
+    .team-logo {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+      border-radius: 3px;
+      display: inline-block;
+      vertical-align: middle;
+      @media (min-width: 1400px) {
+        width: 28px;
+        height: 28px;
+      }
+    }
+
+    .team-name {
+      font-weight: 600;
+      color: #000;
+      font-size: 14px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      display: inline-block;
+      vertical-align: middle;
+      @media (min-width: 1400px) {
+        font-size: 15px;
+      }
+    }
+*** End Patch
