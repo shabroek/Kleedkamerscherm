@@ -1,0 +1,24 @@
+<!-- 404.html for Angular SPA on GitHub Pages (subfolder: /Kleedkamerscherm/test/) -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <meta http-equiv="refresh" content="0; url=/Kleedkamerscherm/test/">
+    <script type="text/javascript">
+      // If JS is enabled, redirect to the correct Angular route
+      var l = window.location;
+      var path = l.pathname.replace(/\/Kleedkamerscherm\/test\//, "");
+      var search = l.search || "";
+      var hash = l.hash || "";
+      window.location.replace("/Kleedkamerscherm/test/" + "#" + path + search + hash);
+    </script>
+    <style>
+      body { font-family: sans-serif; text-align: center; margin-top: 10vh; }
+    </style>
+  </head>
+  <body>
+    <h1>Redirecting...</h1>
+    <p>Mocht je niet automatisch doorgestuurd worden, <a href="/Kleedkamerscherm/test/">klik hier</a>.</p>
+  </body>
+</html>
