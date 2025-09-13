@@ -1,35 +1,68 @@
-<!DOCTYPE html><html lang="nl"><head>
-  <meta charset="utf-8">
-  <title>Kleedkamerscherm</title>
-  <base href="/Kleedkamerscherm/test/">
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <title>Kleedkamerscherm</title>
+    <base href="https://shabroek.github.io/Kleedkamerscherm/test/" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  
-  <!-- GitHub Pages SPA redirect script -->
-  <script>
-    // Single Page Apps for GitHub Pages
-    // MIT License
-    (function(l) {
-      if (l.search[1] === '/' ) {
-        var decoded = l.search.slice(1).split('&').map(function(s) { 
-          return s.replace(/~and~/g, '&')
-        }).join('?');
-        window.history.replaceState(null, null,
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+    <!-- GitHub Pages SPA redirect script -->
+    <script>
+      // Single Page Apps for GitHub Pages
+      // MIT License
+      (function (l) {
+        if (l.search[1] === "/") {
+          var decoded = l.search
+            .slice(1)
+            .split("&")
+            .map(function (s) {
+              return s.replace(/~and~/g, "&");
+            })
+            .join("?");
+          window.history.replaceState(
+            null,
+            null,
             l.pathname.slice(0, -1) + decoded + l.hash
-        );
+          );
+        }
+      })(window.location);
+    </script>
+    <style>
+      body {
+        font-family: Helvetica Neue, Helvetica, Arial;
+        font-weight: 700;
+        line-height: 20px;
+        color: #3b3b3b;
+        margin: 0;
+        padding: 0;
       }
-    }(window.location))
-  </script>
-<style>body{font-family:Helvetica Neue,Helvetica,Arial;font-weight:700;line-height:20px;color:#3b3b3b;margin:0;padding:0}@media (max-width: 767px){body{line-height:18px}}</style><link rel="stylesheet" href="styles.20369b803da1ac74.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.20369b803da1ac74.css"></noscript></head>
-<body>
-  <app-root></app-root>
-<script src="runtime.633d265d1d6249e1.js" type="module"></script><script src="polyfills.01ed8229fc589c1a.js" type="module"></script><script src="main.ce52d0fe4130631e.js" type="module"></script>
+      @media (max-width: 767px) {
+        body {
+          line-height: 18px;
+        }
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="styles.20369b803da1ac74.css"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript
+      ><link rel="stylesheet" href="styles.20369b803da1ac74.css"
+    /></noscript>
+  </head>
+  <body>
+    <app-root></app-root>
+    <script src="runtime.633d265d1d6249e1.js" type="module"></script>
+    <script src="polyfills.01ed8229fc589c1a.js" type="module"></script>
+    <script src="main.ce52d0fe4130631e.js" type="module"></script>
 
-
-
-<!-- ES5 fallback voor oude browsers (zoals veel TV's) -->
-<script src="runtime.633d265d1d6249e1.js" nomodule defer></script>
-<script src="polyfills.01ed8229fc589c1a.js" nomodule defer></script>
-<script src="main.ce52d0fe4130631e.js" nomodule defer></script>
-</body></html>
+    <!-- ES5 fallback voor oude browsers (zoals veel TV's) -->
+    <script src="runtime.633d265d1d6249e1.js" nomodule defer></script>
+    <script src="polyfills.01ed8229fc589c1a.js" nomodule defer></script>
+    <script src="main.ce52d0fe4130631e.js" nomodule defer></script>
+  </body>
+</html>
