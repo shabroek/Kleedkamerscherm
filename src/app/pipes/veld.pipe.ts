@@ -6,10 +6,10 @@ import { Pipe, PipeTransform } from "@angular/core";
 export class VeldPipe implements PipeTransform {
   transform(value: any, args?: any): any {
     if (typeof value === "string") {
-      // Haal alleen het nummer of letter na 'veld' eruit
-      const match = value.match(/veld\s*([\w\d]+)/i);
+      // Haal alles na 'veld' eruit (inclusief spaties en meerdere delen)
+      const match = value.match(/veld\s*([\w\d ]+)/i);
       if (match) {
-        return match[1];
+        return match[1].trim();
       }
       return value;
     }

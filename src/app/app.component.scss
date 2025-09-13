@@ -1,817 +1,13 @@
-.mobile-cards {
-  // ...bestaande code...
-
-  @media (min-width: 800px) and (max-width: 1199px) {
-    gap: 4px;
-  }
-}
-.match-card {
-  // ...bestaande code...
-
-  @media (min-width: 800px) and (max-width: 1199px) {
-    border-radius: 5px;
-    margin-bottom: 4px;
-    font-size: 13px;
-  }
-}
-.match-header {
-  // ...bestaande code...
-
-  @media (min-width: 800px) and (max-width: 1199px) {
-    font-size: 12px;
-    padding: 6px 8px 4px 8px;
-  }
-}
-.team-info {
-  // ...bestaande code...
-
-  @media (min-width: 800px) and (max-width: 1199px) {
-    font-size: 12px;
-    gap: 5px;
-  }
-}
-.team-logo {
-  // ...bestaande code...
-
-  @media (min-width: 800px) and (max-width: 1199px) {
-    width: 16px;
-    height: 16px;
-  }
-}
-.kleedkamer-badge {
-  // ...bestaande code...
-
-  @media (min-width: 800px) and (max-width: 1199px) {
-    font-size: 9px;
-    padding: 2px 5px;
-    min-width: 20px;
-  }
-}
-// Responsive container for matches
-.matches-container {
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 8px;
-  width: 100%;
-  /* max-width: 1400px; */
-  box-sizing: border-box;
-}
-
-// Mobile/Tablet Cards (show up to 1199px) - Compact version
-.mobile-cards {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  padding: 0;
-  margin: 0;
-  width: 100vw;
-  /* max-width: 100vw; */
-  box-sizing: border-box;
-
-  @media (min-width: 1200px) {
-    display: none;
-    width: auto;
-    max-width: none;
-  }
-}
-
-// Desktop/TV Table (show from 1200px and up)
-.desktop-table {
-  display: none;
-
-  @media (min-width: 1200px) {
-    display: block;
-  }
-}
-
-// Compact table styling for TV/Desktop
-
-// Compact table cell content
-.time-cell {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2px;
-
-  .datum {
-    font-size: 11px;
-    color: #666;
-    font-weight: 500;
-
-    @media (min-width: 1400px) {
-      font-size: 12px;
-    }
-  }
-
-  .tijd {
-    font-weight: 600;
-    font-size: 14px;
-
-    @media (min-width: 1400px) {
-      font-size: 16px;
-    }
-  }
-}
-
-.team-cell {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 2px;
-
-  // Home team: logo right-aligned
-  &.home-team {
-    justify-content: flex-end;
-    flex-direction: row;
-  }
-
-  // Away team: logo left-aligned
-  &.away-team {
-    justify-content: flex-start;
-    flex-direction: row;
-  }
-}
-
-.team-logo-small {
-  width: 24px;
-  height: 24px;
-  object-fit: contain;
-  border-radius: 2px;
-  flex-shrink: 0;
-
-  @media (min-width: 1400px) {
-    width: 28px;
-    height: 28px;
-  }
-}
-
-.team-name-compact {
-  font-weight: 600;
-  text-align: left;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  min-width: 0;
-}
-
-// Compact match cards for mobile - table-like layout
-.match-card {
-  background: #f6f6f6;
-  border-radius: 6px; // Smaller radius
-  box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.15);
-  overflow: hidden;
-
-  &.afgelast {
-    opacity: 0.6;
-    text-decoration: line-through;
-  }
-
-  &.gestart {
-    opacity: 0.7;
-    background: #f0f0f0;
-  }
-}
-
-// Compact header - just time and field
-.match-header {
-  background: #b50102;
-  color: white;
-  padding: 6px 12px; // Much smaller padding
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.match-time {
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.match-field {
-  background: green;
-  color: white;
-  padding: 4px 8px;
-  border-radius: 12px;
-  font-weight: 600;
-  font-size: 12px;
-  min-width: 60px;
-  text-align: center;
-}
-
-// Main content - teams in horizontal layout with flexible team names
-// Links/Rechts team split layout
-.teams-split-layout {
-  display: flex;
-  min-height: 60px; // Compact height
-}
-
-.team-half {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  padding: 8px;
-  position: relative;
-
-  &.home-half {
-    background: linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.95) 0%,
-      rgba(240, 240, 240, 0.9) 100%
-    );
-    border-right: 2px solid #e0e0e0;
-  }
-
-  &.away-half {
-    background: linear-gradient(
-      135deg,
-      rgba(245, 245, 245, 0.9) 0%,
-      rgba(225, 225, 225, 0.95) 100%
-    );
-  }
-}
-
-.team-header {
-  font-size: 9px;
-  font-weight: 700;
-  color: #666;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-bottom: 4px;
-  opacity: 0.8;
-}
-
-.team-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 6px;
-}
-
-.team-info {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-weight: 600;
-  font-size: 13px;
-  min-width: 0; // Allow shrinking
-  max-width: 100%; // Use full available width
-
-  .home-team & {
-    flex-direction: row-reverse; // Logo on right for home
-    justify-content: flex-start; // Align to the right side
-  }
-
-  .away-team & {
-    justify-content: flex-start; // Align to the left side
-  }
-}
-
-// Team logo styling for compact cards
-.team-logo {
-  width: 20px;
-  height: 20px;
-  object-fit: contain;
-  border-radius: 2px;
-  flex-shrink: 0;
-
-  // Hide logos on very small screens for maximum compactness
-  @media (max-width: 360px) {
-    display: none;
-  }
-}
-
-.team-name {
-  color: #3b3b3b;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  min-width: 0; // Allow flexing
-  flex: 1; // Take available space
-}
-
-.kleedkamer-badge {
-  display: inline-block;
-  background: #222222;
-  color: white;
-  padding: 2px 6px; // Very compact
-  border-radius: 3px;
-  font-weight: 600;
-  font-size: 11px;
-  min-width: 30px;
-  text-align: center;
-  flex-shrink: 0; // Don't shrink
-
-  // Even more compact on very small screens
-  @media (max-width: 360px) {
-    padding: 1px 4px;
-    font-size: 10px;
-    min-width: 24px;
-  }
-}
-
-// Optional compact details - only show if referee info exists
-.match-details {
-  padding: 4px 12px;
-  background: #f0f0f0;
-  border-top: 1px solid #e0e0e0;
-  font-size: 11px;
-  color: #666;
-
-  // Hide on very small screens
-  display: none;
-
-  @media (min-width: 400px) {
-    display: block;
-  }
-}
-
-.referee-info {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 8px;
-  font-size: 11px;
-}
-
-.referee {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  flex: 1;
-
-  .referee-icon {
-    font-size: 12px;
-    opacity: 0.8;
-  }
-}
-
-.referee-room {
-  display: flex;
-  align-items: center;
-  padding: 2px 6px;
-  border-radius: 3px;
-  background: #222222;
-  color: white;
-  font-size: 10px;
-  font-weight: 600;
-}
-
-.kleedkamer-value {
-  font-size: 14px;
-}
-
-.vs-divider {
-  background: #b50102;
-  color: white;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 12px;
-  flex-shrink: 0;
-
-  @media (max-width: 767px) {
-    margin: 0 auto;
-  }
-}
-
-.match-details {
-  padding: 15px 20px;
-  background: #f0f0f0;
-  border-top: 1px solid #e0e0e0;
-}
-
-.referee-info {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 15px;
-
-  @media (max-width: 767px) {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 10px;
-  }
-}
-
-.referee {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex: 1;
-
-  @media (max-width: 767px) {
-    justify-content: center;
-  }
-}
-
-.referee-room {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 12px;
-  border-radius: 4px;
-
-  @media (max-width: 767px) {
-    justify-content: center;
-  }
-}
-
-.label {
-  font-weight: 600;
-  font-size: 14px;
-  opacity: 0.8;
-}
-
-// Results layout
-.results-container {
-  margin: 0 20px;
-  padding: 0 10px;
-
-  @media (min-width: 768px) {
-    margin: 0 50px;
-  }
-
-  @media (min-width: 1200px) {
-    margin: 0 20px;
-  }
-
-  .mobile-cards {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-
-    @media (min-width: 768px) {
-      gap: 20px;
-    }
-
-    @media (min-width: 1200px) {
-      display: none;
-    }
-  }
-
-  .desktop-table {
-    display: none;
-
-    @media (min-width: 1200px) {
-      display: block;
-    }
-  }
-}
-
-// Compact results table
-.compact-results-table {
-  width: 100%;
-  border-collapse: collapse;
-  background: #f6f6f6;
-  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.15);
-  border-radius: 8px;
-  overflow: hidden;
-  font-size: 18px;
-
-  @media (min-width: 1400px) {
-    font-size: 20px;
-  }
-
-  @media (min-width: 1600px) {
-    font-size: 22px;
-  }
-
-  thead {
-    background: #b50102;
-    color: white;
-
-    th {
-      padding: 15px 12px;
-      text-align: center;
-      font-weight: 700;
-      text-transform: uppercase;
-      font-size: 16px;
-
-      @media (min-width: 1400px) {
-        padding: 18px 15px;
-        font-size: 18px;
-      }
-
-      &.time-col {
-        width: 20%;
-      }
-
-      &.team-col {
-        width: 35%;
-      }
-
-      &.score-col {
-        width: 10%;
-      }
-    }
-  }
-
-  tbody {
-    tr {
-      background: #f6f6f6;
-      border-bottom: 1px solid #e0e0e0;
-      transition: background-color 0.2s ease;
-
-      &:nth-child(even) {
-        background: #f0f0f0;
-      }
-
-      &:hover {
-        background: #e8e8e8;
-      }
-    }
-
-    td {
-      padding: 12px 12px;
-      text-align: center;
-      vertical-align: middle;
-
-      @media (min-width: 1400px) {
-        padding: 15px 15px;
-      }
-
-      &.veld {
-        background: green;
-        color: white;
-        font-weight: 700;
-        font-size: 20px;
-
-        @media (min-width: 1400px) {
-          font-size: 22px;
-        }
-      }
-
-      .team-name {
-        font-weight: 600;
-      }
-    }
-  }
-}
-
-.result-card {
-  background: #f6f6f6;
-  border-radius: 12px;
-  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.15);
-  overflow: hidden;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 2px 6px 16px rgba(0, 0, 0, 0.2);
-  }
-}
-
-.result-header {
-  background: #b50102;
-  color: white;
-  padding: 15px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  @media (max-width: 767px) {
-    flex-direction: column;
-    gap: 10px;
-  }
-}
-
-.result-score {
-  background: green;
-  color: white;
-  padding: 8px 16px;
-  border-radius: 20px;
-  font-weight: 700;
-  font-size: 16px;
-}
-
-.result-teams {
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 15px;
-
-  @media (max-width: 767px) {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .team {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 5px;
-  }
-
-  .team-name {
-    font-weight: 600;
-    font-size: 16px;
-    color: #3b3b3b;
-  }
-
-  .team-type {
-    font-size: 12px;
-    color: #666;
-    text-transform: uppercase;
-    font-weight: 500;
-  }
-}
-
-.gestart {
-  opacity: 0.5;
-  background: #f8f8f8;
-}
-// Progress bar bovenaan
-.refresh-progress-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 2px;
-  background: rgba(0, 0, 0, 0.05);
-  z-index: 1000;
-}
-.refresh-progress-fill {
-  height: 100%;
-  background: linear-gradient(90deg, #007bff 0%, #00c853 100%);
-  transition: width 0.1s linear;
-}
-
-// Error messages
-.error-message {
-  background: #d32f2f;
-  color: white;
-  margin: 10px 20px;
-  padding: 15px;
-  text-align: center;
-  font-weight: 600;
-  border-radius: 8px;
-  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.6);
-
-  @media (min-width: 768px) {
-    margin: 10px 50px;
-    padding: 20px;
-  }
-}
-.kleedkamer {
-  background: #222222;
-  color: white;
-  text-align: center;
-}
-
-// Old table styles removed - now using modern card layout
-
-.veld {
-  background: green;
-  color: white;
-  text-align: center;
-}
-
-.titel-container {
-  margin: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  @media (min-width: 768px) {
-    margin: 40px 50px;
-  }
-
-  img {
-    width: 60px;
-    height: auto;
-
-    @media (min-width: 768px) {
-      width: auto;
-    }
-  }
-}
-
-.titel {
-  background: #b50102;
-  width: 100%;
-  font-weight: 700;
-  margin: 10px auto;
-  line-height: 60px;
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 24px;
-  color: white;
-  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.6);
-  border-radius: 8px;
-  max-width: 1400px;
-
-  @media (min-width: 800px) and (max-width: 1199px) {
-    margin: 10px auto;
-    font-size: 32px;
-    line-height: 70px;
-    border-radius: 6px;
-    padding: 0 10px;
-  }
-
-  @media (min-width: 1200px) and (max-width: 1599px) {
-    margin: 10px auto;
-    line-height: 100px;
-    font-size: 44px;
-    border-radius: 0;
-    padding: 0 20px;
-  }
-
-  @media (min-width: 1600px) {
-    margin: 10px auto;
-    line-height: 120px;
-    font-size: 70px;
-    border-radius: 0;
-    padding: 0 20px;
-  }
-}
-.desktop-grid {
-  @media (min-width: 1200px) and (max-width: 1599px) {
-    font-size: 18px;
-  }
-  @media (min-width: 1600px) {
-    font-size: 22px;
-  }
-}
-.mobile-cards {
-  @media (min-width: 1200px) and (max-width: 1599px) {
-    font-size: 18px;
-  }
-  @media (min-width: 1600px) {
-    font-size: 22px;
-  }
-}
-
-.logo {
-  margin: 50S0px;
-  padding: -10px;
-}
-
-.afgelast {
-  opacity: 0.6;
-  text-decoration: line-through;
-}
-
-.info-message {
-  background: #b50102;
-  margin: 0px 20px;
-  padding: 15px;
-  color: white;
-  text-align: center;
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 1.4;
-  text-transform: uppercase;
-  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.6);
-  border-radius: 8px;
-
-  @media (min-width: 768px) {
-    margin: 0px 50px;
-    padding: 10px;
-    font-size: 25px;
-    line-height: 50px;
-    border-radius: 0;
-  }
-}
-
-.programma {
-  margin: 10px;
-  border: 3px solid #b50102;
-}
-
+// Globale achtergrond
 .white-background {
   position: fixed;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  opacity: 1; // Volledig opaque - lekker groen gras
   z-index: -1;
   background-image: url("../assets/home_grass.jpg");
   background-repeat: repeat;
-}
-
-// Team logo styling
-.team-logo {
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
-  border-radius: 2px;
-  vertical-align: middle;
-  margin-right: 4px;
-  // Prevent flickering
-  image-rendering: auto;
-  backface-visibility: hidden;
-  transform: translateZ(0);
 }
 
 // Loading indicator styling
@@ -825,7 +21,6 @@
   color: white;
   text-align: center;
 }
-
 .loading-spinner {
   width: 40px;
   height: 40px;
@@ -834,20 +29,76 @@
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
-
 .loading-text {
   font-size: 18px;
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 1px;
-  opacity: 0.9;
 }
-
 @keyframes spin {
   0% {
     transform: rotate(0deg);
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+// Error en info messages
+.error-message {
+  background: #d32f2f;
+  color: white;
+  margin: 10px 20px;
+  padding: 15px;
+  text-align: center;
+  font-weight: 600;
+  border-radius: 8px;
+  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.6);
+}
+.info-message {
+  background: #b50102;
+  margin: 0px 20px;
+  padding: 15px;
+  color: white;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.4;
+  text-transform: uppercase;
+  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+}
+
+// Titel styling
+.titel-container {
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+// Titel styling
+.titel {
+  background: #b50102;
+  width: 100%;
+  font-weight: 700;
+  margin: 20px;
+  line-height: 150px;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 24px;
+  color: white;
+  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  max-width: 1400px;
+}
+
+@media (min-width: 1200px) {
+  .titel {
+    font-size: 72px;
+    line-height: 150px;
+    letter-spacing: 2px;
   }
 }

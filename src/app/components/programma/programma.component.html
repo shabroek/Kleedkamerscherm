@@ -7,38 +7,39 @@
       [sleutelMatch]="sleutelMatch"
       [numberOfDays]="numberOfDays"
     ></app-wedstrijd-card>
+  </div>
 
-    <!-- Desktop/TV Modern Grid Layout -->
-    <div class="desktop-grid">
-      <div class="grid-header">
-        <div class="header-item time">Tijd</div>
-        <div class="header-item team">Thuis</div>
-        <div class="header-item kleedkamer">
-          {{ sleutelMatch ? "Kl+K" : "Kl" }}
-        </div>
-        <div class="header-item team">Uit</div>
-        <div class="header-item kleedkamer">
-          {{ sleutelMatch ? "Kl+K" : "Kl" }}
-        </div>
-        <div class="header-item veld">VELD</div>
-        <div class="header-item scheids">Scheidsrechter</div>
-        <div
-          class="header-item scheids-kl"
-          *ngIf="hasKleedkamerScheidsrechter$ | async"
-        >
-          Kl
-        </div>
+  <!-- Desktop/TV Modern Grid Layout -->
+  <div class="desktop-grid">
+    <div class="grid-header">
+      <div class="header-item time">Tijd</div>
+      <div class="header-item kleedkamer">
+        {{ sleutelMatch ? "Kl+K" : "Kl" }}
       </div>
+      <div class="header-item team thuis">Thuis</div>
+      <div class="header-item team">Uit</div>
+      <div class="header-item kleedkamer">
+        {{ sleutelMatch ? "Kl+K" : "Kl" }}
+      </div>
+      <div class="header-item veld">VELD</div>
+      <div class="header-item scheids">Scheidsrechter</div>
+    </div>
 
-      <app-wedstrijd-row
-        *ngFor="
-          let wedstrijd of programma$ | async;
-          trackBy: trackByWedstrijdId
-        "
-        [wedstrijd]="wedstrijd"
-        [sleutelMatch]="sleutelMatch"
-        [numberOfDays]="numberOfDays"
-      ></app-wedstrijd-row>
+    <app-wedstrijd-row
+      *ngFor="
+        let wedstrijd of programma$ | async;
+        let i = index;
+        trackBy: trackByWedstrijdId
+      "
+      [wedstrijd]="wedstrijd"
+      [sleutelMatch]="sleutelMatch"
+      [numberOfDays]="numberOfDays"
+      [index]="i"
+    ></app-wedstrijd-row>
+
+    <div *ngIf="sleutelMatch" class="grid-message">
+      🔑= Spullen tijdens de wedstrijd opbergen in de kast. Sleutel is tegen een
+      borg verkrijgbaar bij het wedstrijdsecretariaat.
     </div>
   </div>
 </div>

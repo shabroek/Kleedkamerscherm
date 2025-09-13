@@ -1,3 +1,174 @@
+.veld-type {
+  font-size: 6px;
+  letter-spacing: 1px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+@import "./_programma-grid-vars.scss";
+// Alternating row style fix: gebruik :nth-of-type zodat alleen echte rijen geteld worden
 .grid-row {
-  @import "./programma.component.scss";
+  display: grid;
+  grid-template-columns: $programma-grid-columns;
+  transition: background-color 0.2s ease;
+  min-height: 40px;
+  border-bottom: 1.5px solid #e0e0e0;
+  // background intentionally left out; alternating row style via .odd-row/.even-row
+}
+.grid-row:last-child {
+  border-bottom: none;
+}
+.grid-row.afgelast {
+  background: rgba(255, 240, 240, 1);
+}
+.grid-row.gestart {
+  color: #388e3c;
+  font-style: italic;
+}
+.grid-row.odd-row {
+  background: #fff;
+}
+.grid-row.even-row {
+  background: #f3f3f3;
+}
+
+// Veld kolom
+.grid-item.veld {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #228b22;
+  color: #e0ffe0;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  /* margin-bottom verwijderd */
+  padding: 4px 4px 4px 4px;
+  text-align: center;
+  /* min-width en max-width verwijderd voor flexibele kolombreedte */
+  border-radius: 0;
+  box-sizing: border-box;
+}
+
+.grid-item.scheids {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* min-width en max-width verwijderd voor flexibele kolombreedte */
+  padding: 4px 4px;
+  color: #222;
+  font-weight: 500;
+  background: none;
+  box-sizing: border-box;
+}
+@media (min-width: 1400px) {
+}
+
+.grid-item.time {
+  font-weight: 700;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  text-align: center;
+  height: 100%;
+}
+.grid-item.time .date {
+  font-weight: 500;
+  color: #000;
+}
+.grid-item.time .time-only {
+  font-weight: 700;
+  color: #000;
+  letter-spacing: 1px;
+}
+
+.grid-item.kleedkamer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #222;
+  color: #fff;
+  font-weight: 700;
+  padding: 8px 0;
+  text-align: center;
+  border-radius: 0;
+  /* min-width verwijderd voor flexibele kolombreedte */
+}
+.grid-item.kleedkamer .kleedkamer-value {
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 1px;
+  line-height: 1.1;
+  display: block;
+}
+.grid-item.kleedkamer svg,
+.grid-item.kleedkamer .kast-icoon {
+  /* min-width en max-width verwijderd voor flexibele kolombreedte */
+  color: #fff;
+}
+
+.grid-item.team {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 6px;
+}
+
+/* Home team: kleedkamer | naam | logo (rechts) */
+.grid-item.team.home-team {
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.grid-item.team.home-team .team-logo {
+  margin-left: 8px;
+  margin-right: 0;
+  order: 2;
+}
+.grid-item.team.home-team .team-name {
+  text-align: right;
+  order: 1;
+  margin-left: 8px;
+  margin-right: 0;
+}
+
+/* Away team: logo | naam (logo links) */
+.grid-item.team.away-team {
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.grid-item.team.away-team .team-logo {
+  margin-right: 8px;
+  margin-left: 0;
+  order: 1;
+}
+.grid-item.team.away-team .team-name {
+  text-align: left;
+  order: 2;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.grid-item.team .team-logo {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  border-radius: 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+.grid-item.team .team-name {
+  font-weight: 700;
+  color: #000;
+  font-size: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+  vertical-align: middle;
 }

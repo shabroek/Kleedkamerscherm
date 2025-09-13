@@ -10,4 +10,8 @@ export class WedstrijdCardComponent {
   @Input() wedstrijd!: IWedstrijd;
   @Input() sleutelMatch: boolean = false;
   @Input() numberOfDays: number = 0;
+
+  hasKast(waarde: string | null | undefined): boolean {
+    return !!waarde && /[a-zA-Z]/.test(waarde);
+  }
 }

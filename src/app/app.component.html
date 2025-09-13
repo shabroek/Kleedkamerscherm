@@ -51,11 +51,6 @@
   Vandaag zijn er geen wedstrijden bij Jong Brabant
 </div>
 
-<div *ngIf="sleutelMatch" class="info-message">
-  Spullen tijdens de wedstrijd opbergen in de kast. Sleutel is tegen een borg
-  verkrijgbaar bij het wedstrijdsecretariaat.
-</div>
-
 <div class="results-container" *ngIf="hasUitslagen && !hasProgramma">
   <app-uitslagen [uitslagen$]="uitslagen$" [isLoading]="isLoadingUitslagen">
   </app-uitslagen>
