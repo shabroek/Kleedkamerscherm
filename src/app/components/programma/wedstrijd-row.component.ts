@@ -8,7 +8,6 @@ import { VeldTypePipe } from "../../pipes/veldtype.pipe";
   selector: "app-wedstrijd-row",
   templateUrl: "./wedstrijd-row.component.html",
   styleUrls: ["./wedstrijd-row.component.scss"],
-  imports: [VeldTypePipe, VeldPipe, KleedkamerPipe],
 })
 export class WedstrijdRowComponent {
   @Input() wedstrijd!: IWedstrijd;
