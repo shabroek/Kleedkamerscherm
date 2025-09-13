@@ -1,8 +1,5 @@
 import { Component, Input } from "@angular/core";
 import { IWedstrijd } from "../../models/wedstrijd.model";
-import { KleedkamerPipe } from "../../pipes/kleedkamer.pipe";
-import { VeldPipe } from "../../pipes/veld.pipe";
-import { VeldTypePipe } from "../../pipes/veldtype.pipe";
 
 @Component({
   selector: "app-wedstrijd-row",
