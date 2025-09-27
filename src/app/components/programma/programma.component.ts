@@ -25,14 +25,16 @@ export class ProgrammaComponent implements OnInit {
       );
 
       this.bezigeWedstrijden$ = this.programma$.pipe(
-        map((list) => 
+        map((list) =>
           list
             .filter((w) => w.isGestart)
             .sort((a, b) => {
               // Eerst aflopend op tijd (laatst gestarte eerst)
-              const timeComparison = new Date(b.wedstrijddatum).getTime() - new Date(a.wedstrijddatum).getTime();
+              const timeComparison =
+                new Date(b.wedstrijddatum).getTime() -
+                new Date(a.wedstrijddatum).getTime();
               if (timeComparison !== 0) return timeComparison;
-              
+
               // Dan op veld
               return a.veld.localeCompare(b.veld);
             })
@@ -40,14 +42,16 @@ export class ProgrammaComponent implements OnInit {
       );
 
       this.toekomstigeWedstrijden$ = this.programma$.pipe(
-        map((list) => 
+        map((list) =>
           list
             .filter((w) => !w.isGestart)
             .sort((a, b) => {
               // Eerst oplopend op tijd
-              const timeComparison = new Date(a.wedstrijddatum).getTime() - new Date(b.wedstrijddatum).getTime();
+              const timeComparison =
+                new Date(a.wedstrijddatum).getTime() -
+                new Date(b.wedstrijddatum).getTime();
               if (timeComparison !== 0) return timeComparison;
-              
+
               // Dan op veld
               return a.veld.localeCompare(b.veld);
             })

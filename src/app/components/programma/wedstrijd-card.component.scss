@@ -74,6 +74,10 @@
     color: #888;
     margin-left: 2px;
     font-weight: 400;
+
+    @media (max-width: 449px) {
+      display: none;
+    }
   }
 }
 
