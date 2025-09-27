@@ -15,11 +15,21 @@ export class ProgrammaComponent implements OnInit {
   @Input() isLoading: boolean = false;
 
   hasKleedkamerScheidsrechter$!: Observable<boolean>;
+  bezigeWedstrijden$!: Observable<IWedstrijd[]>;
+  toekomstigeWedstrijden$!: Observable<IWedstrijd[]>;
 
   ngOnInit(): void {
     if (this.programma$) {
       this.hasKleedkamerScheidsrechter$ = this.programma$.pipe(
         map((list) => list.some((w) => !!w.kleedkamerscheidsrechter))
+      );
+      
+      this.bezigeWedstrijden$ = this.programma$.pipe(
+        map((list) => list.filter((w) => w.isGestart))
+      );
+      
+      this.toekomstigeWedstrijden$ = this.programma$.pipe(
+        map((list) => list.filter((w) => !w.isGestart))
       );
     }
   }

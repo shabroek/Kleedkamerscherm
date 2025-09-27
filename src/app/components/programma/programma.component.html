@@ -1,8 +1,19 @@
 <div class="programma-container" *ngIf="!isLoading">
   <!-- Mobile/Tablet Compact Card Layout -->
   <div class="mobile-cards">
+    <!-- Toekomstige wedstrijden cards -->
+    <div *ngIf="(toekomstigeWedstrijden$ | async)?.length > 0" class="section-title">Nog Te Spelen</div>
     <app-wedstrijd-card
-      *ngFor="let wedstrijd of programma$ | async; trackBy: trackByWedstrijdId"
+      *ngFor="let wedstrijd of toekomstigeWedstrijden$ | async; trackBy: trackByWedstrijdId"
+      [wedstrijd]="wedstrijd"
+      [sleutelMatch]="sleutelMatch"
+      [numberOfDays]="numberOfDays"
+    ></app-wedstrijd-card>
+    
+    <!-- Bezig zijnde wedstrijden cards -->
+    <div *ngIf="(bezigeWedstrijden$ | async)?.length > 0" class="section-title">Nu Bezig</div>
+    <app-wedstrijd-card
+      *ngFor="let wedstrijd of bezigeWedstrijden$ | async; trackBy: trackByWedstrijdId"
       [wedstrijd]="wedstrijd"
       [sleutelMatch]="sleutelMatch"
       [numberOfDays]="numberOfDays"
@@ -11,35 +22,70 @@
 
   <!-- Desktop/TV Modern Grid Layout -->
   <div class="desktop-grid">
-    <div class="grid-header">
-      <div class="header-item time">Tijd</div>
-      <div class="header-item kleedkamer">
-        {{ sleutelMatch ? "Kl+K" : "Kl" }}
+    <!-- Toekomstige wedstrijden tabel -->
+    <div *ngIf="(toekomstigeWedstrijden$ | async)?.length > 0" class="section-container">
+      <div class="section-title">Nog Te Spelen</div>
+      <div class="grid-header">
+        <div class="header-item time">Tijd</div>
+        <div class="header-item kleedkamer">
+          {{ sleutelMatch ? "Kl+K" : "Kl" }}
+        </div>
+        <div class="header-item team thuis">Thuis</div>
+        <div class="header-item team">Uit</div>
+        <div class="header-item kleedkamer">
+          {{ sleutelMatch ? "Kl+K" : "Kl" }}
+        </div>
+        <div class="header-item veld">VELD</div>
+        <div class="header-item scheids">Scheidsrechter</div>
       </div>
-      <div class="header-item team thuis">Thuis</div>
-      <div class="header-item team">Uit</div>
-      <div class="header-item kleedkamer">
-        {{ sleutelMatch ? "Kl+K" : "Kl" }}
-      </div>
-      <div class="header-item veld">VELD</div>
-      <div class="header-item scheids">Scheidsrechter</div>
+
+      <app-wedstrijd-row
+        *ngFor="
+          let wedstrijd of toekomstigeWedstrijden$ | async;
+          let i = index;
+          trackBy: trackByWedstrijdId
+        "
+        [wedstrijd]="wedstrijd"
+        [sleutelMatch]="sleutelMatch"
+        [numberOfDays]="numberOfDays"
+        [index]="i"
+      ></app-wedstrijd-row>
     </div>
 
-    <app-wedstrijd-row
-      *ngFor="
-        let wedstrijd of programma$ | async;
-        let i = index;
-        trackBy: trackByWedstrijdId
-      "
-      [wedstrijd]="wedstrijd"
-      [sleutelMatch]="sleutelMatch"
-      [numberOfDays]="numberOfDays"
-      [index]="i"
-    ></app-wedstrijd-row>
-
-    <div *ngIf="sleutelMatch" class="grid-message">
+    <!-- Sleutel melding -->
+    <div *ngIf="sleutelMatch && (toekomstigeWedstrijden$ | async)?.length > 0" class="grid-message">
       🔑= Spullen tijdens de wedstrijd opbergen in de kast. Sleutel is tegen een
       borg verkrijgbaar bij het wedstrijdsecretariaat.
+    </div>
+
+    <!-- Bezig zijnde wedstrijden tabel -->
+    <div *ngIf="(bezigeWedstrijden$ | async)?.length > 0" class="section-container">
+      <div class="section-title">Nu Bezig</div>
+      <div class="grid-header">
+        <div class="header-item time">Tijd</div>
+        <div class="header-item kleedkamer">
+          {{ sleutelMatch ? "Kl+K" : "Kl" }}
+        </div>
+        <div class="header-item team thuis">Thuis</div>
+        <div class="header-item team">Uit</div>
+        <div class="header-item kleedkamer">
+          {{ sleutelMatch ? "Kl+K" : "Kl" }}
+        </div>
+        <div class="header-item veld">VELD</div>
+        <div class="header-item scheids">Scheidsrechter</div>
+      </div>
+
+      <app-wedstrijd-row
+        *ngFor="
+          let wedstrijd of bezigeWedstrijden$ | async;
+          let i = index;
+          trackBy: trackByWedstrijdId
+        "
+        [wedstrijd]="wedstrijd"
+        [sleutelMatch]="sleutelMatch"
+        [numberOfDays]="numberOfDays"
+        [index]="i"
+      ></app-wedstrijd-row>
     </div>
   </div>
 </div>
