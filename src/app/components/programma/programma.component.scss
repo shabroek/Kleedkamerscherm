@@ -1,0 +1,184 @@
+@import "./_programma-grid-vars.scss";
+
+// Loading indicator
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.loading-bar {
+  width: 300px;
+  height: 4px;
+  background: #e0e0e0;
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 16px;
+
+  @media (max-width: 1199px) {
+    width: 250px;
+  }
+}
+
+.loading-progress {
+  height: 100%;
+  background: linear-gradient(90deg, #b50102 0%, #d32f2f 50%, #b50102 100%);
+  border-radius: 2px;
+  animation: loading-animation 2s ease-in-out infinite;
+}
+
+.loading-text {
+  color: #b50102;
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@keyframes loading-animation {
+  0% {
+    width: 0%;
+    margin-left: 0%;
+  }
+  50% {
+    width: 75%;
+    margin-left: 12.5%;
+  }
+  100% {
+    width: 0%;
+    margin-left: 100%;
+  }
+}
+
+.section-container {
+  margin-bottom: 6px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.section-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  background: #fff;
+  color: #b50102;
+  text-transform: uppercase;
+  padding: 2px 10px;
+  margin: 0;
+  border-radius: 3px 3px 0 0;
+  text-align: left;
+  display: inline-block;
+  border: 2px solid #b50102;
+  border-bottom: none;
+
+  @media (max-width: 1199px) {
+    font-size: 0.8rem;
+    padding: 2px 10px;
+    margin: 4px 16px 2px 16px;
+    border-radius: 3px;
+    border-bottom: 2px solid #b50102;
+  }
+}
+
+.grid-message {
+  background: #b50102;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 0 0 3px 3px;
+  padding: 6px 12px;
+  margin: 0 0 6px 0;
+  text-transform: uppercase;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-size: 0.85rem;
+
+  @media (max-width: 1199px) {
+    margin: 3px 16px 6px 16px;
+    padding: 6px 12px;
+    font-size: 0.75rem;
+    border-radius: 3px;
+  }
+}
+// Mobile responsive cards (display up to 1199px)
+
+.mobile-cards {
+  display: block;
+  padding: 10px;
+  gap: 8px;
+}
+
+@media (min-width: 1200px) {
+  .mobile-cards {
+    display: none !important;
+  }
+  .desktop-grid {
+    display: block !important;
+  }
+}
+
+@media (max-width: 1199px) {
+  .desktop-grid {
+    display: none !important;
+  }
+  .mobile-cards {
+    display: block !important;
+  }
+}
+
+// Desktop grid layout (from 1200px)
+.desktop-grid {
+  display: none;
+  @media (min-width: 1200px) {
+    display: block;
+    width: 100%;
+    max-width: 100vw;
+    margin: 0 auto;
+    padding: 0 40px;
+    overflow-x: auto;
+    box-sizing: border-box;
+  }
+}
+.grid-header {
+  display: grid;
+  grid-template-columns: $programma-grid-columns;
+  font-weight: 700;
+  background: #b50102;
+  color: #fff;
+  border-radius: 0 8px 0 0;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  text-transform: uppercase;
+  margin-top: 0;
+
+  @media (max-width: 1199px) {
+    border-radius: 8px 8px 0 0;
+  }
+}
+
+.header-item {
+  padding: 6px 4px;
+  text-align: center;
+  text-transform: uppercase;
+  &.team {
+    /* standaard: uit links, thuis rechts */
+    text-align: left;
+    padding-left: 8px;
+  }
+  &.team.thuis {
+    text-align: right;
+    padding-left: 0;
+    padding-right: 8px;
+  }
+  &.veld {
+    text-align: center;
+  }
+  &.scheids,
+  &.scheids-kl {
+    text-align: center;
+  }
+}

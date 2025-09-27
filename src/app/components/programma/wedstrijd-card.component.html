@@ -1,0 +1,99 @@
+<div
+  class="match-card"
+  [class.afgelast]="wedstrijd.afgelast"
+  [class.gestart]="wedstrijd.isGestart"
+>
+  <div class="match-header">
+    <div class="match-time">
+      <ng-container *ngIf="numberOfDays > 0"
+        >{{ wedstrijd.datum }} </ng-container
+      >{{ wedstrijd.aanvangstijd }}
+    </div>
+    <div class="match-field">{{ wedstrijd.veld }}</div>
+  </div>
+  <div class="teams-simple-layout">
+    <div class="team-row home-team-row">
+      <div class="team-info">
+        <img
+          *ngIf="wedstrijd.thuisteamlogo"
+          [src]="wedstrijd.thuisteamlogo"
+          [alt]="wedstrijd.thuisteam + ' logo'"
+          class="team-logo"
+          (error)="$event.target.style.display = 'none'"
+        />
+        <span class="team-name">{{ wedstrijd.thuisteam }}</span>
+        <span class="team-label">Thuis</span>
+      </div>
+      <div class="kleedkamer-badge">
+        {{ wedstrijd.kleedkamerthuisteam }}
+        <ng-container *ngIf="hasKast(wedstrijd.kleedkamerthuisteam)"
+          >🔑</ng-container
+        >
+      </div>
+    </div>
+    <div class="team-row away-team-row">
+      <div class="team-info">
+        <img
+          *ngIf="wedstrijd.uitteamlogo"
+          [src]="wedstrijd.uitteamlogo"
+          [alt]="wedstrijd.uitteam + ' logo'"
+          class="team-logo"
+          (error)="$event.target.style.display = 'none'"
+        />
+        <span class="team-name">{{ wedstrijd.uitteam }}</span>
+        <span class="team-label">Uit</span>
+      </div>
+      <div class="kleedkamer-badge">
+        {{ wedstrijd.kleedkameruitteam }}
+        <ng-container *ngIf="hasKast(wedstrijd.kleedkameruitteam)"
+          >🔑</ng-container
+        >
+      </div>
+    </div>
+  </div>
+  <div
+    class="match-details"
+    *ngIf="
+      !wedstrijd.afgelast &&
+      (wedstrijd.scheidsrechter || wedstrijd.kleedkamerscheidsrechter)
+    "
+  >
+    <div class="referee-info">
+      <div class="referee" *ngIf="wedstrijd.scheidsrechter">
+        <span
+          class="referee-icon"
+          style="
+            display: inline-flex;
+            align-items: center;
+            vertical-align: middle;
+          "
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            style="margin-right: 2px"
+          >
+            <rect x="2" y="10" width="12" height="4" rx="2" fill="#b50102" />
+            <circle
+              cx="17"
+              cy="12"
+              r="3"
+              fill="#b50102"
+              stroke="#fff"
+              stroke-width="1.5"
+            />
+            <rect x="4" y="7" width="3" height="2" rx="1" fill="#b50102" />
+            <rect x="4" y="15" width="3" height="2" rx="1" fill="#b50102" />
+          </svg>
+        </span>
+        <span>{{ wedstrijd.scheidsrechter }}</span>
+      </div>
+      <div class="referee-room" *ngIf="wedstrijd.kleedkamerscheidsrechter">
+        <span>{{ wedstrijd.kleedkamerscheidsrechter }}</span>
+      </div>
+    </div>
+  </div>
+</div>

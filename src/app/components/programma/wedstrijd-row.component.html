@@ -1,0 +1,53 @@
+<div
+  class="grid-row"
+  [class.afgelast]="wedstrijd.afgelast"
+  [class.gestart]="wedstrijd.isGestart"
+  [class.odd-row]="index % 2 === 0"
+  [class.even-row]="index % 2 === 1"
+>
+  <div class="grid-item time">
+    <div class="date" *ngIf="numberOfDays > 0">{{ wedstrijd.datum }}</div>
+    <div class="time-only">{{ wedstrijd.aanvangstijd }}</div>
+  </div>
+  <div class="grid-item kleedkamer">
+    <span class="kleedkamer-value">{{
+      wedstrijd.kleedkamerthuisteam | kleedkamer
+    }}</span>
+    <ng-container *ngIf="hasKast(wedstrijd.kleedkamerthuisteam)"
+      >🔑</ng-container
+    >
+  </div>
+  <div class="grid-item team home-team">
+    <span class="team-name">{{ wedstrijd.thuisteam }}</span>
+    <img
+      *ngIf="wedstrijd.thuisteamlogo"
+      [src]="wedstrijd.thuisteamlogo"
+      [alt]="wedstrijd.thuisteam + ' logo'"
+      class="team-logo"
+      (error)="$event.target.style.display = 'none'"
+    />
+  </div>
+  <div class="grid-item team away-team">
+    <img
+      *ngIf="wedstrijd.uitteamlogo"
+      [src]="wedstrijd.uitteamlogo"
+      [alt]="wedstrijd.uitteam + ' logo'"
+      class="team-logo"
+      (error)="$event.target.style.display = 'none'"
+    />
+    <span class="team-name">{{ wedstrijd.uitteam }}</span>
+  </div>
+  <div class="grid-item kleedkamer">
+    <span class="kleedkamer-value">{{
+      wedstrijd.kleedkameruitteam | kleedkamer
+    }}</span>
+    <ng-container *ngIf="hasKast(wedstrijd.kleedkameruitteam)">🔑</ng-container>
+  </div>
+  <div class="grid-item veld">
+    <div class="veld-type">{{ wedstrijd.veld | veldType }}</div>
+    <div class="veld-nummer">
+      {{ wedstrijd.afgelast ? "AFGELAST" : (wedstrijd.veld | veld) }}
+    </div>
+  </div>
+  <div class="grid-item scheids">{{ wedstrijd.scheidsrechter }}</div>
+</div>

@@ -16,88 +16,44 @@
   <img src="assets/logo.png" alt="image" />
 </div>
 
-<table class="table-container" *ngIf="hasProgramma">
-  <thead>
-    <td></td>
-    <td>{{ sleutelMatch ? "Kl+Kast" : "Kl" }}</td>
-    <td>Thuis</td>
-    <td>Gasten</td>
-    <td>{{ sleutelMatch ? "Kl+Kast" : "Kl" }}</td>
-    <td>Veld</td>
-    <td>Scheidsrechter</td>
-    <td>Kl</td>
-  </thead>
-  <tr
-    *ngFor="let wedstrijd of programma$ | async; trackBy: trackByWedstrijdCode"
-    [class.afgelast]="wedstrijd.afgelast"
-    [class.gestart]="wedstrijd.isGestart"
+<div class="matches-container" *ngIf="hasProgramma">
+  <app-programma
+    [programma$]="programma$"
+    [numberOfDays]="numberOfDays"
+    [sleutelMatch]="sleutelMatch"
+    [isLoading]="isLoadingProgramma"
   >
-    <td>
-      {{ numberOfDays > 0 ? wedstrijd.datum : "" }} {{ wedstrijd.aanvangstijd }}
-    </td>
-    <td class="kleedkamer">{{ wedstrijd.kleedkamerthuisteam | kleedkamer }}</td>
-    <td>
-      <img
-        *ngIf="wedstrijd.thuisteamlogo"
-        [src]="wedstrijd.thuisteamlogo"
-        [alt]="wedstrijd.thuisteam + ' logo'"
-        class="team-logo"
-        (error)="$event.target.style.display = 'none'"
-      />
-      {{ wedstrijd.thuisteam }}
-    </td>
-    <td>
-      <img
-        *ngIf="wedstrijd.uitteamlogo"
-        [src]="wedstrijd.uitteamlogo"
-        [alt]="wedstrijd.uitteam + ' logo'"
-        class="team-logo"
-        (error)="$event.target.style.display = 'none'"
-      />
-      {{ wedstrijd.uitteam }}
-    </td>
-    <td class="kleedkamer">{{ wedstrijd.kleedkameruitteam | kleedkamer }}</td>
-    <td class="veld">
-      {{ wedstrijd.afgelast ? "AFGELAST " : (wedstrijd.veld | veld) }}
-    </td>
-    <td>{{ wedstrijd.afgelast ? "AFGELAST " : wedstrijd.scheidsrechter }}</td>
-    <td>
-      {{
-        wedstrijd.afgelast ? "AFGELAST " : wedstrijd.kleedkamerscheidsrechter
-      }}
-    </td>
-  </tr>
-</table>
+  </app-programma>
+</div>
+
+<!-- Loading indicator -->
+<div
+  *ngIf="
+    (isLoadingProgramma || isLoadingUitslagen) && !hasUitslagen && !hasProgramma
+  "
+  class="loading-container"
+>
+  <div class="loading-spinner"></div>
+  <div class="loading-text">Wedstrijden laden...</div>
+</div>
 
 <div
-  *ngIf="!hasUitslagen && !hasProgramma && !programmaError && !uitslagenError"
-  class="geenProgramma"
+  *ngIf="
+    !hasUitslagen &&
+    !hasProgramma &&
+    !programmaError &&
+    !uitslagenError &&
+    !isLoadingProgramma &&
+    !isLoadingUitslagen
+  "
+  class="info-message"
 >
   Vandaag zijn er geen wedstrijden bij Jong Brabant
 </div>
 
-<div *ngIf="sleutelMatch" class="sleutel">
-  Spullen tijdens de wedstrijd opbergen in de kast. Sleutel is tegen een borg
-  verkrijgbaar bij het wedstrijdsecretariaat.
+<div class="results-container" *ngIf="hasUitslagen && !hasProgramma">
+  <app-uitslagen [uitslagen$]="uitslagen$" [isLoading]="isLoadingUitslagen">
+  </app-uitslagen>
 </div>
-
-<table class="table-container" *ngIf="hasUitslagen && !hasProgramma">
-  <thead>
-    <td>Aanvang</td>
-    <td>Jong Brabant</td>
-    <td>Uitslag</td>
-    <td>Gasten</td>
-  </thead>
-  <tr *ngFor="let uitslag of uitslagen$ | async">
-    <td>{{ uitslag.aanvangstijd }}</td>
-    <td class="team-with-logo">
-      <span class="team-name">{{ uitslag.thuisteam }}</span>
-    </td>
-    <td class="veld">{{ uitslag.uitslag }}</td>
-    <td class="team-with-logo">
-      <span class="team-name">{{ uitslag.uitteam }}</span>
-    </td>
-  </tr>
-</table>
 
 <div class="white-background"></div>

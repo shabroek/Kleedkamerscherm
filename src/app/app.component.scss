@@ -1,122 +1,152 @@
-.gestart {
-  opacity: 0.5;
-  background: #f8f8f8;
-}
-// Progress bar bovenaan
+// Refresh progress bar
 .refresh-progress-bar {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 2px;
-  background: rgba(0, 0, 0, 0.05);
+  width: 100%;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.3);
   z-index: 1000;
 }
+
 .refresh-progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, #007bff 0%, #00c853 100%);
-  transition: width 0.1s linear;
-}
-.kleedkamer {
-  background: #222222;
-  color: white;
-  text-align: center;
+  background: linear-gradient(90deg, #b50102 0%, #d32f2f 50%, #b50102 100%);
+  transition: width 0.1s ease-out;
+  box-shadow: 0 0 5px rgba(181, 1, 2, 0.5);
 }
 
-.table-container {
-  margin: 0px 50px 5px;
-  padding: 10px;
-}
-
-.veld {
-  background: green;
-  color: white;
-  text-align: center;
-}
-
-.titel-container {
-  margin: 40px 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.titel {
-  background: #b50102;
-  width: 100%;
-  font-weight: 700;
-  margin: 20px 50px;
-  line-height: 120px;
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 70px;
-  color: white;
-  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.6);
-}
-
-.logo {
-  margin: 50S0px;
-  padding: -10px;
-}
-
-.geenProgramma {
-  background: #b50102;
-  margin: 50px;
-  padding: 25px;
-  opacity: 0.5;
-  color: white;
-  text-align: center;
-  font-size: 35px;
-  font-weight: 400;
-  text-transform: uppercase;
-  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.6);
-}
-
-.afgelast {
-  opacity: 0.6;
-  text-decoration: line-through;
-}
-
-.sleutel {
-  background: #b50102;
-  margin: 0px 50px;
-  padding: 10px;
-  color: white;
-  text-align: center;
-  font-size: 25px;
-  font-weight: 300;
-  line-height: 50px;
-  text-transform: uppercase;
-  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.6);
-}
-
-.programma {
-  margin: 10px;
-  border: 3px solid #b50102;
-}
-
+// Globale achtergrond
 .white-background {
   position: fixed;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.2;
   z-index: -1;
   background-image: url("../assets/home_grass.jpg");
   background-repeat: repeat;
 }
 
-// Team logo styling
-.team-logo {
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
-  border-radius: 2px;
-  vertical-align: middle;
-  margin-right: 4px;
-  // Prevent flickering
-  image-rendering: auto;
-  backface-visibility: hidden;
-  transform: translateZ(0);
+// Loading indicator styling
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  gap: 16px;
+  color: white;
+  text-align: center;
+}
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top: 3px solid #b50102;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+.loading-text {
+  font-size: 18px;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+// Error en info messages
+.error-message {
+  background: #d32f2f;
+  color: white;
+  margin: 10px 20px;
+  padding: 15px;
+  text-align: center;
+  font-weight: 600;
+  border-radius: 8px;
+  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.6);
+}
+.info-message {
+  background: #b50102;
+  margin: 0px 20px;
+  padding: 15px;
+  color: white;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.4;
+  text-transform: uppercase;
+  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+}
+
+// Titel styling
+.titel-container {
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: 1199px) {
+    margin: 10px 16px;
+    justify-content: flex-start;
+    gap: 12px;
+
+    img:last-child {
+      display: none; // Verberg het tweede logo op mobiel
+    }
+
+    img:first-child {
+      width: 40px;
+      height: 40px;
+      flex-shrink: 0;
+      object-fit: contain;
+    }
+  }
+}
+
+// Titel styling
+.titel {
+  background: #b50102;
+  width: 100%;
+  font-weight: 700;
+  margin: 20px;
+  line-height: 150px;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 24px;
+  color: white;
+
+  @media (max-width: 1199px) {
+    margin: 0;
+    padding: 8px 16px;
+    line-height: 1.2;
+    font-size: 18px;
+    border-radius: 6px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  max-width: 1400px;
+}
+
+@media (min-width: 1200px) {
+  .titel {
+    font-size: 72px;
+    line-height: 150px;
+    letter-spacing: 2px;
+  }
 }
