@@ -12,9 +12,9 @@
   <div class="grid-item kleedkamer">
     <span class="kleedkamer-value">{{
       wedstrijd.kleedkamerthuisteam | kleedkamer
-    }}</span>
-    <ng-container *ngIf="hasKast(wedstrijd.kleedkamerthuisteam)"
-      >🔑</ng-container
+    }}</span
+    ><span *ngIf="hasKast(wedstrijd.kleedkamerthuisteam)" class="kast-icoon"
+      >🔑</span
     >
   </div>
   <div class="grid-item team home-team">
@@ -40,8 +40,10 @@
   <div class="grid-item kleedkamer">
     <span class="kleedkamer-value">{{
       wedstrijd.kleedkameruitteam | kleedkamer
-    }}</span>
-    <ng-container *ngIf="hasKast(wedstrijd.kleedkameruitteam)">🔑</ng-container>
+    }}</span
+    ><span *ngIf="hasKast(wedstrijd.kleedkameruitteam)" class="kast-icoon"
+      >🔑</span
+    >
   </div>
   <div class="grid-item veld">
     <div class="veld-type">{{ wedstrijd.veld | veldType }}</div>

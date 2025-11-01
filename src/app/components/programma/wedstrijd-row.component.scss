@@ -1,8 +1,9 @@
 .veld-type {
-  font-size: 6px;
+  font-size: 10px;
   letter-spacing: 1px;
-  font-weight: 400;
+  font-weight: 500;
   text-transform: uppercase;
+  line-height: 1.05;
 }
 @import "./_programma-grid-vars.scss";
 // Alternating row style fix: gebruik :nth-of-type zodat alleen echte rijen geteld worden
@@ -10,7 +11,7 @@
   display: grid;
   grid-template-columns: $programma-grid-columns;
   transition: background-color 0.2s ease;
-  min-height: 40px;
+  min-height: 46px;
   border-bottom: 1.5px solid #e0e0e0;
   // background intentionally left out; alternating row style via .odd-row/.even-row
 }
@@ -48,6 +49,8 @@
   /* min-width en max-width verwijderd voor flexibele kolombreedte */
   border-radius: 0;
   box-sizing: border-box;
+  font-size: 20px;
+  line-height: 1.05;
 }
 
 .grid-item.scheids {
@@ -61,6 +64,8 @@
   font-weight: 500;
   background: none;
   box-sizing: border-box;
+  font-size: 18px;
+  line-height: 1.1;
 }
 @media (min-width: 1400px) {
 }
@@ -75,6 +80,8 @@
   gap: 2px;
   text-align: center;
   height: 100%;
+  font-size: 20px;
+  line-height: 1.05;
 }
 .grid-item.time .date {
   font-weight: 500;
@@ -88,7 +95,7 @@
 
 .grid-item.kleedkamer {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   background: #222;
@@ -97,6 +104,7 @@
   padding: 8px 0;
   text-align: center;
   border-radius: 0;
+  gap: 6px;
   /* min-width verwijderd voor flexibele kolombreedte */
 }
 .grid-item.kleedkamer .kleedkamer-value {
@@ -104,12 +112,13 @@
   color: #fff;
   letter-spacing: 1px;
   line-height: 1.1;
-  display: block;
+  font-size: 20px;
 }
 .grid-item.kleedkamer svg,
 .grid-item.kleedkamer .kast-icoon {
   /* min-width en max-width verwijderd voor flexibele kolombreedte */
   color: #fff;
+  font-size: 20px;
 }
 
 .grid-item.team {
@@ -118,6 +127,7 @@
   justify-content: center;
   gap: 8px;
   padding: 0 6px;
+  min-width: 0;
 }
 
 /* Home team: kleedkamer | naam | logo (rechts) */
@@ -165,10 +175,12 @@
 .grid-item.team .team-name {
   font-weight: 700;
   color: #000;
-  font-size: 20px;
+  font-size: 24px;
+  line-height: 1.1;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   display: inline-block;
   vertical-align: middle;
+  max-width: 100%;
 }
