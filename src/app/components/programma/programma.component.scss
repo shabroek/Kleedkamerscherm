@@ -103,6 +103,27 @@
     border-radius: 3px;
   }
 }
+
+// Sleutel footer - vast onderaan het scherm
+.sleutel-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #b50102;
+  color: #fff;
+  font-weight: 600;
+  padding: 12px 40px;
+  text-transform: uppercase;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  font-size: 0.9rem;
+  z-index: 100;
+
+  @media (max-width: 1199px) {
+    display: none; // Verberg op mobiel
+  }
+}
 // Mobile responsive cards (display up to 1199px)
 
 .mobile-cards {
@@ -137,7 +158,7 @@
     width: 100%;
     max-width: 100vw;
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 40px 80px 40px; // Extra padding onderaan voor de sleutel footer
     overflow-x: auto;
     box-sizing: border-box;
   }

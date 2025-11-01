@@ -66,12 +66,6 @@
         [numberOfDays]="numberOfDays"
         [index]="i"
       ></app-wedstrijd-row>
-
-      <!-- Sleutel melding -->
-      <div *ngIf="sleutelMatch" class="grid-message">
-        🔑= Spullen tijdens de wedstrijd opbergen in de kast. Sleutel is tegen
-        een borg verkrijgbaar bij het wedstrijdsecretariaat.
-      </div>
     </div>
 
     <!-- Bezig zijnde wedstrijden tabel -->
@@ -106,5 +100,11 @@
         [index]="i"
       ></app-wedstrijd-row>
     </div>
+  </div>
+
+  <!-- Sleutel melding - vast onderaan -->
+  <div *ngIf="sleutelMatch" class="sleutel-footer">
+    🔑= Spullen tijdens de wedstrijd opbergen in de kast. Sleutel is tegen een
+    borg verkrijgbaar bij het wedstrijdsecretariaat.
   </div>
 </div>
