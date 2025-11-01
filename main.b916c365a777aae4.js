@@ -2674,7 +2674,7 @@
         null !== i && Xh(e, t, i, 1, n), e.firstCreatePass && (e.firstCreatePass = !1), e.staticContentQueries && Qh(e, t), e.staticViewQueries && nc(2, e.viewQuery, n);
         const o = e.components;
         null !== o && function Kb(e, t) {
-          for (let n = 0; n < t.length; n++) mE(e, t[n]);
+          for (let n = 0; n < t.length; n++) y0(e, t[n]);
         }(t, o);
       } catch (r) {
         throw e.firstCreatePass && (e.incompleteFirstPass = !0, e.firstCreatePass = !1), r;
@@ -2698,7 +2698,7 @@
             const c = e.preOrderHooks;
             null !== c && $o(t, c, 0, null), qa(t, 0);
           }
-          if (function pE(e) {
+          if (function g0(e) {
             for (let t = pu(e); null !== t; t = gu(t)) {
               if (!t[Fd]) continue;
               const n = t[or];
@@ -2707,7 +2707,7 @@
                 512 & i[z] || $a(i[he], 1), i[z] |= 512;
               }
             }
-          }(t), function hE(e) {
+          }(t), function p0(e) {
             for (let t = pu(e); null !== t; t = gu(t)) for (let n = Ve; n < t.length; n++) {
               const r = t[n],
                 i = r[E];
@@ -2738,7 +2738,7 @@
           }(e, t);
           const a = e.components;
           null !== a && function qb(e, t) {
-            for (let n = 0; n < t.length; n++) gE(e, t[n]);
+            for (let n = 0; n < t.length; n++) m0(e, t[n]);
           }(t, a);
           const u = e.viewQuery;
           if (null !== u && nc(2, u, r), s) {
@@ -2773,10 +2773,10 @@
       }
     }
     function Ku(e, t, n) {
-      Wd() && (function rE(e, t, n, r) {
+      Wd() && (function r0(e, t, n, r) {
         const i = n.directiveStart,
           o = n.directiveEnd;
-        ui(n) && function lE(e, t, n) {
+        ui(n) && function d0(e, t, n) {
           const r = st(t, e),
             i = Jh(n),
             o = e[Ro],
@@ -2787,7 +2787,7 @@
         for (let a = i; a < o; a++) {
           const u = e.data[a],
             c = Fn(t, e, a, n);
-          Ue(c, t), null !== s && dE(0, a - i, c, u, 0, s), St(u) && (at(n.index, t)[me] = Fn(t, e, a, n));
+          Ue(c, t), null !== s && f0(0, a - i, c, u, 0, s), St(u) && (at(n.index, t)[me] = Fn(t, e, a, n));
         }
       }(e, t, n, st(n, t)), 64 == (64 & n.flags) && op(e, t, n));
     }
@@ -2868,7 +2868,7 @@
         const i = null === r ? null : {
             "": -1
           },
-          o = function oE(e, t) {
+          o = function s0(e, t) {
             const n = e.directiveRegistry;
             let r = null,
               i = null;
@@ -2884,7 +2884,7 @@
             return null === r ? null : [r, i];
           }(e, n);
         let s, a;
-        null === o ? s = a = null : [s, a] = o, null !== s && ip(e, t, n, s, i, a), i && function sE(e, t, n) {
+        null === o ? s = a = null : [s, a] = o, null !== s && ip(e, t, n, s, i, a), i && function a0(e, t, n) {
           if (t) {
             const r = e.localNames = [];
             for (let i = 0; i < t.length; i += 2) {
@@ -2899,7 +2899,7 @@
     }
     function ip(e, t, n, r, i, o) {
       for (let c = 0; c < r.length; c++) Ja(Vo(n, t), e, r[c].type);
-      !function uE(e, t, n) {
+      !function c0(e, t, n) {
         e.flags |= 1, e.directiveStart = t, e.directiveEnd = t + n, e.providerIndexes = t;
       }(n, e.data.length, r.length);
       for (let c = 0; c < r.length; c++) {
@@ -2911,7 +2911,7 @@
         u = Si(e, t, r.length, null);
       for (let c = 0; c < r.length; c++) {
         const l = r[c];
-        n.mergedAttrs = di(n.mergedAttrs, l.hostAttrs), cE(e, n, t, u, l), aE(u, l, i), null !== l.contentQueries && (n.flags |= 4), (null !== l.hostBindings || null !== l.hostAttrs || 0 !== l.hostVars) && (n.flags |= 64);
+        n.mergedAttrs = di(n.mergedAttrs, l.hostAttrs), l0(e, n, t, u, l), u0(u, l, i), null !== l.contentQueries && (n.flags |= 4), (null !== l.hostBindings || null !== l.hostAttrs || 0 !== l.hostVars) && (n.flags |= 64);
         const d = l.type.prototype;
         !s && (d.ngOnChanges || d.ngOnInit || d.ngDoCheck) && ((e.preOrderHooks || (e.preOrderHooks = [])).push(n.index), s = !0), !a && (d.ngOnChanges || d.ngDoCheck) && ((e.preOrderCheckHooks || (e.preOrderCheckHooks = [])).push(n.index), a = !0), u++;
       }
@@ -2927,7 +2927,7 @@
             f = n ? n.get(d) : null,
             p = f ? f.outputs : null;
           u = tp(d.inputs, l, u, f ? f.inputs : null), c = tp(d.outputs, l, c, p);
-          const g = null === u || null === s || Fh(t) ? null : fE(u, l, s);
+          const g = null === u || null === s || Fh(t) ? null : h0(u, l, s);
           a.push(g);
         }
         null !== u && (u.hasOwnProperty("class") && (t.flags |= 8), u.hasOwnProperty("style") && (t.flags |= 16)), t.initialInputs = a, t.inputs = u, t.outputs = c;
@@ -2945,35 +2945,35 @@
         for (let a = r; a < i; a++) {
           const u = e.data[a],
             c = t[a];
-          Ba(a), (null !== u.hostBindings || 0 !== u.hostVars || null !== u.hostAttrs) && iE(u, c);
+          Ba(a), (null !== u.hostBindings || 0 !== u.hostVars || null !== u.hostAttrs) && o0(u, c);
         }
       } finally {
         Nn(-1), Ba(s);
       }
     }
-    function iE(e, t) {
+    function o0(e, t) {
       null !== e.hostBindings && e.hostBindings(1, t);
     }
     function Xu(e, t, n) {
       t.componentOffset = n, (e.components || (e.components = [])).push(t.index);
     }
-    function aE(e, t, n) {
+    function u0(e, t, n) {
       if (n) {
         if (t.exportAs) for (let r = 0; r < t.exportAs.length; r++) n[t.exportAs[r]] = e;
         St(t) && (n[""] = e);
       }
     }
-    function cE(e, t, n, r, i) {
+    function l0(e, t, n, r, i) {
       e.data[r] = i;
       const o = i.factory || (i.factory = Pn(i.type)),
         s = new li(o, St(i), P);
-      e.blueprint[r] = s, n[r] = s, function tE(e, t, n, r, i) {
+      e.blueprint[r] = s, n[r] = s, function t0(e, t, n, r, i) {
         const o = i.hostBindings;
         if (o) {
           let s = e.hostBindingOpCodes;
           null === s && (s = e.hostBindingOpCodes = []);
           const a = ~t.index;
-          (function nE(e) {
+          (function n0(e) {
             let t = e.length;
             for (; t > 0;) {
               const n = e[--t];
@@ -2984,7 +2984,7 @@
         }
       }(e, t, r, Si(e, n, i.hostVars, H), i);
     }
-    function dE(e, t, n, r, i, o) {
+    function f0(e, t, n, r, i, o) {
       const s = o[t];
       if (null !== s) {
         const a = r.setInput;
@@ -2996,7 +2996,7 @@
         }
       }
     }
-    function fE(e, t, n) {
+    function h0(e, t, n) {
       let r = null,
         i = 0;
       for (; i < n.length;) {
@@ -3021,7 +3021,7 @@
     function sp(e, t, n, r) {
       return [e, !0, !1, t, null, 0, r, n, null, null];
     }
-    function gE(e, t) {
+    function m0(e, t) {
       const n = at(t, e);
       if (ko(n)) {
         const r = n[E];
@@ -3042,10 +3042,10 @@
         ko(i) && i[Rn] > 0 && ec(i);
       }
     }
-    function mE(e, t) {
+    function y0(e, t) {
       const n = at(t, e),
         r = n[E];
-      (function yE(e, t) {
+      (function v0(e, t) {
         for (let n = t.length; n < e.blueprint.length; n++) t.push(e.blueprint[n]);
       })(r, n), Wu(r, n, n[me]);
     }
@@ -3192,7 +3192,7 @@
         this._appRef = t;
       }
     }
-    class vE extends Mi {
+    class D0 extends Mi {
       constructor(t) {
         super(t), this._view = t;
       }
@@ -3222,7 +3222,7 @@
       });
       return t;
     }
-    class wE {
+    class C0 {
       constructor(t, n) {
         this.injector = t, this.parentInjector = n;
       }
@@ -3247,7 +3247,7 @@
       create(t, n, r, i) {
         let o = (i = i || this.ngModule) instanceof Ut ? i : i?.injector;
         o && null !== this.componentDef.getStandaloneInjector && (o = this.componentDef.getStandaloneInjector(o) || o);
-        const s = o ? new wE(t, o) : t,
+        const s = o ? new C0(t, o) : t,
           a = s.get(Rh, null);
         if (null === a) throw new _(407, !1);
         const u = s.get(ob, null),
@@ -3255,7 +3255,7 @@
           l = this.componentDef.selectors[0][0] || "div",
           d = r ? function Zb(e, t, n) {
             return e.selectRootElement(t, n === kt.ShadowDom);
-          }(c, r, this.componentDef.encapsulation) : yu(c, l, function DE(e) {
+          }(c, r, this.componentDef.encapsulation) : yu(c, l, function w0(e) {
             const t = e.toLowerCase();
             return "svg" === t ? Hd : "math" === t ? "math" : null;
           }(l)),
@@ -3269,14 +3269,14 @@
           let I,
             m = null;
           D.findHostDirectiveDefs ? (I = [], m = new Map(), D.findHostDirectiveDefs(D, I, m), I.push(D)) : I = [D];
-          const N = function _E(e, t) {
+          const N = function b0(e, t) {
               const n = e[E],
                 r = ae;
               return e[r] = t, Er(n, r, 2, "#host", null);
             }(p, d),
-            re = function bE(e, t, n, r, i, o, s, a) {
+            re = function E0(e, t, n, r, i, o, s, a) {
               const u = i[E];
-              !function EE(e, t, n, r) {
+              !function I0(e, t, n, r) {
                 for (const i of e) t.mergedAttrs = di(t.mergedAttrs, i.hostAttrs);
                 null !== t.mergedAttrs && (fs(t, t.mergedAttrs, !0), null !== n && sh(r, n, t));
               }(r, e, t, s);
@@ -3284,7 +3284,7 @@
                 l = us(i, Jh(n), null, n.onPush ? 32 : 16, i[e.index], e, o, c, a || null, null, null);
               return u.firstCreatePass && Xu(u, e, r.length - 1), ls(i, l), i[e.index] = l;
             }(N, d, D, I, p, a, c);
-          v = Vd(h, ae), d && function SE(e, t, n, r) {
+          v = Vd(h, ae), d && function M0(e, t, n, r) {
             if (r) Ya(e, n, ["ng-version", sb.full]);else {
               const {
                 attrs: i,
@@ -3309,13 +3309,13 @@
               }(t.selectors[0]);
               i && Ya(e, n, i), o && o.length > 0 && oh(e, n, o.join(" "));
             }
-          }(c, D, d, r), void 0 !== n && function ME(e, t, n) {
+          }(c, D, d, r), void 0 !== n && function x0(e, t, n) {
             const r = e.projection = [];
             for (let i = 0; i < t.length; i++) {
               const o = n[i];
               r.push(null != o ? Array.from(o) : null);
             }
-          }(v, this.ngContentSelectors, n), g = function IE(e, t, n, r, i, o) {
+          }(v, this.ngContentSelectors, n), g = function S0(e, t, n, r, i, o) {
             const s = Ne(),
               a = i[E],
               u = st(s, i);
@@ -3325,16 +3325,16 @@
             const c = Fn(i, a, s.directiveStart + s.componentOffset, s);
             if (e[me] = i[me] = c, null !== o) for (const l of o) l(c, t);
             return qu(a, s, e), c;
-          }(re, D, I, m, p, [xE]), Wu(h, p, null);
+          }(re, D, I, m, p, [T0]), Wu(h, p, null);
         } finally {
           Wa();
         }
-        return new CE(this.componentType, g, wr(v, p), p, v);
+        return new _0(this.componentType, g, wr(v, p), p, v);
       }
     }
-    class CE extends J_ {
+    class _0 extends J_ {
       constructor(t, n, r, i, o) {
-        super(), this.location = r, this._rootLView = i, this._tNode = o, this.instance = n, this.hostView = this.changeDetectorRef = new vE(i), this.componentType = t;
+        super(), this.location = r, this._rootLView = i, this._tNode = o, this.instance = n, this.hostView = this.changeDetectorRef = new D0(i), this.componentType = t;
       }
       setInput(t, n) {
         const r = this._tNode.inputs;
@@ -3354,7 +3354,7 @@
         this.hostView.onDestroy(t);
       }
     }
-    function xE() {
+    function T0() {
       const e = Ne();
       Lo(y()[E], e);
     }
@@ -3370,7 +3370,7 @@
       const u = y(),
         c = Z(),
         l = e + ae,
-        d = c.firstCreatePass ? function BE(e, t, n, r, i, o, s, a, u) {
+        d = c.firstCreatePass ? function V0(e, t, n, r, i, o, s, a, u) {
           const c = t.consts,
             l = Er(t, e, 4, s || null, gn(c, a));
           Qu(t, n, l, gn(c, u)), Lo(t, l);
@@ -3399,12 +3399,12 @@
       const s = i ? "class" : "style";
       rc(e, n, t.inputs[s], s, r);
     }
-    function w(e, t, n, r) {
+    function C(e, t, n, r) {
       const i = y(),
         o = Z(),
         s = ae + e,
         a = i[W],
-        u = o.firstCreatePass ? function GE(e, t, n, r, i, o) {
+        u = o.firstCreatePass ? function W0(e, t, n, r, i, o) {
           const s = t.consts,
             u = Er(t, e, 2, r, gn(s, i));
           return Qu(t, n, u, gn(s, o)), null !== u.attrs && fs(u, u.attrs, !1), null !== u.mergedAttrs && fs(u, u.mergedAttrs, !0), null !== t.queries && t.queries.elementStart(t, u), u;
@@ -3417,9 +3417,9 @@
         return U.lFrame.elementDepthCount;
       }() && Ue(c, i), function Vw() {
         U.lFrame.elementDepthCount++;
-      }(), l && (Ku(o, i, u), qu(o, u, i)), null !== r && Yu(i, u), w;
+      }(), l && (Ku(o, i, u), qu(o, u, i)), null !== r && Yu(i, u), C;
     }
-    function C() {
+    function w() {
       let e = Ne();
       Ua() ? Ha() : (e = e.parent, jt(e, !1));
       const t = e;
@@ -3431,16 +3431,16 @@
         return 0 != (8 & e.flags);
       }(t) && ac(n, t, y(), t.classesWithoutHost, !0), null != t.stylesWithoutHost && function cC(e) {
         return 0 != (16 & e.flags);
-      }(t) && ac(n, t, y(), t.stylesWithoutHost, !1), C;
+      }(t) && ac(n, t, y(), t.stylesWithoutHost, !1), w;
     }
     function We(e, t, n, r) {
-      return w(e, t, n, r), C(), We;
+      return C(e, t, n, r), w(), We;
     }
     function Nr(e, t, n) {
       const r = y(),
         i = Z(),
         o = e + ae,
-        s = i.firstCreatePass ? function WE(e, t, n, r, i) {
+        s = i.firstCreatePass ? function q0(e, t, n, r, i) {
           const o = t.consts,
             s = gn(o, r),
             a = Er(t, e, 8, "ng-container", s);
@@ -3478,7 +3478,7 @@
             D = d.length,
             I = s ? N => s(Oe(N[r.index])) : r.index;
           let m = null;
-          if (!s && a && (m = function KE(e, t, n, r) {
+          if (!s && a && (m = function Y0(e, t, n, r) {
             const i = e.cleanup;
             if (null != i) for (let o = 0; o < i.length - 1; o += 2) {
               const s = i[o];
@@ -3560,11 +3560,11 @@
         u = !1;
       for (; 0 !== a && (!1 === u || s);) {
         const l = e[a + 1];
-        r0(e[a], t) && (u = !0, e[a + 1] = r ? dc(l) : cc(l)), a = r ? vn(l) : Hn(l);
+        iE(e[a], t) && (u = !0, e[a + 1] = r ? dc(l) : cc(l)), a = r ? vn(l) : Hn(l);
       }
       u && (e[n + 1] = r ? cc(o) : dc(o));
     }
-    function r0(e, t) {
+    function iE(e, t) {
       return null === e || null == t || (Array.isArray(e) ? e[1] : e) === t || !(!Array.isArray(e) || "string" != typeof t) && pr(e, t) >= 0;
     }
     function fc(e, t, n) {
@@ -3590,7 +3590,7 @@
             }(e, n);
           (function tg(e, t) {
             return 0 != (e.flags & (t ? 8 : 16));
-          })(o, r) && null === t && !s && (t = !1), t = function h0(e, t, n, r) {
+          })(o, r) && null === t && !s && (t = !1), t = function hE(e, t, n, r) {
             const i = function Va(e) {
               const t = U.lFrame.currentDirectiveIndex;
               return -1 === t ? null : e[t];
@@ -3599,14 +3599,14 @@
             if (null === i) 0 === (r ? t.classBindings : t.styleBindings) && (n = Ai(n = hc(null, e, t, n, r), t.attrs, r), o = null);else {
               const s = t.directiveStylingLast;
               if (-1 === s || e[s] !== i) if (n = hc(i, e, t, n, r), null === o) {
-                let u = function p0(e, t, n) {
+                let u = function pE(e, t, n) {
                   const r = n ? t.classBindings : t.styleBindings;
                   if (0 !== Hn(r)) return e[vn(r)];
                 }(e, t, r);
-                void 0 !== u && Array.isArray(u) && (u = hc(null, e, t, u[1], r), u = Ai(u, t.attrs, r), function g0(e, t, n, r) {
+                void 0 !== u && Array.isArray(u) && (u = hc(null, e, t, u[1], r), u = Ai(u, t.attrs, r), function gE(e, t, n, r) {
                   e[vn(n ? t.classBindings : t.styleBindings)] = r;
                 }(e, t, r, u));
-              } else o = function m0(e, t, n) {
+              } else o = function mE(e, t, n) {
                 let r;
                 const i = t.directiveEnd;
                 for (let o = 1 + t.directiveStylingLast; o < i; o++) r = Ai(r, e[o].hostAttrs, n);
@@ -3614,7 +3614,7 @@
               }(e, t, r);
             }
             return void 0 !== o && (r ? t.residualClasses = o : t.residualStyles = o), n;
-          }(i, o, t, r), function t0(e, t, n, r, i, o) {
+          }(i, o, t, r), function nE(e, t, n, r, i, o) {
             let s = o ? t.classBindings : t.styleBindings,
               a = vn(s),
               u = Hn(s);
@@ -3624,12 +3624,12 @@
             if (Array.isArray(n) ? (l = n[1], (null === l || pr(n, l) > 0) && (c = !0)) : l = n, i) {
               if (0 !== u) {
                 const f = vn(e[a + 1]);
-                e[r + 1] = ys(f, a), 0 !== f && (e[f + 1] = lc(e[f + 1], r)), e[a + 1] = function JE(e, t) {
+                e[r + 1] = ys(f, a), 0 !== f && (e[f + 1] = lc(e[f + 1], r)), e[a + 1] = function eE(e, t) {
                   return 131071 & e | t << 17;
                 }(e[a + 1], r);
               } else e[r + 1] = ys(a, 0), 0 !== a && (e[a + 1] = lc(e[a + 1], r)), a = r;
             } else e[r + 1] = ys(u, 0), 0 === a ? a = r : e[u + 1] = lc(e[u + 1], r), u = r;
-            c && (e[r + 1] = cc(e[r + 1])), Vp(e, l, r, !0), Vp(e, l, r, !1), function n0(e, t, n, r, i) {
+            c && (e[r + 1] = cc(e[r + 1])), Vp(e, l, r, !0), Vp(e, l, r, !1), function rE(e, t, n, r, i) {
               const o = i ? e.residualClasses : e.residualStyles;
               null != o && "string" == typeof t && pr(o, t) >= 0 && (n[r + 1] = dc(n[r + 1]));
             }(t, l, e, r, o), s = ys(a, u), o ? t.classBindings = s : t.styleBindings = s;
@@ -3639,10 +3639,10 @@
         if (!(3 & t.type)) return;
         const u = e.data,
           c = u[a + 1],
-          l = function e0(e) {
+          l = function tE(e) {
             return 1 == (1 & e);
           }(c) ? eg(u, t, n, i, Hn(c), s) : void 0;
-        Ds(l) || (Ds(o) || function XE(e) {
+        Ds(l) || (Ds(o) || function J0(e) {
           return 2 == (2 & e);
         }(c) && (o = eg(u, null, n, i, a, s)), function g_(e, t, n, r, i) {
           if (t) i ? e.addClass(n, r) : e.removeClass(n, r);else {
@@ -3650,7 +3650,7 @@
             null == i ? e.removeStyle(n, r, o) : ("string" == typeof i && i.endsWith("!important") && (i = i.slice(0, -10), o |= et.Important), e.setStyle(n, r, i, o));
           }
         }(r, s, Fo(Ge(), n), i, o));
-      }(o, o.data[Ge()], i, i[W], e, i[s + 1] = function D0(e, t) {
+      }(o, o.data[Ge()], i, i[W], e, i[s + 1] = function DE(e, t) {
         return null == e || "" === e || ("string" == typeof t ? e += t : "object" == typeof e && (e = ie(mn(e)))), e;
       }(t, n), r, s);
     }
@@ -3831,7 +3831,7 @@
       try {
         const a = Bo(!1),
           u = o();
-        return Bo(a), function VE(e, t, n, r) {
+        return Bo(a), function z0(e, t, n, r) {
           n >= e.data.length && (e.data[n] = null, e.blueprint[n] = null), t[n] = r;
         }(n, y(), i, u), u;
       } finally {
@@ -4782,7 +4782,7 @@
         if (Array.isArray(t)) {
           this.length = t.length;
           for (let a = 0; a < this.length; a++) o = t[a], s = this._trackByFn(a, o), null !== n && Object.is(n.trackById, s) ? (r && (n = this._verifyReinsertion(n, o, s, a)), Object.is(n.item, o) || this._addIdentityChange(n, o)) : (n = this._mismatch(n, o, s, a), r = !0), n = n._next;
-        } else i = 0, function $E(e, t) {
+        } else i = 0, function U0(e, t) {
           if (Array.isArray(e)) for (let n = 0; n < e.length; n++) t(e[n]);else {
             const n = e[Symbol.iterator]();
             let r;
@@ -10271,32 +10271,32 @@
         }), e;
       })();
     function AP(e, t) {
-      if (1 & e && (w(0, "div", 15), M(1), C()), 2 & e) {
+      if (1 & e && (C(0, "div", 15), M(1), w()), 2 & e) {
         const n = be();
         S(1), le(n.wedstrijd.datum);
       }
     }
     function RP(e, t) {
-      1 & e && (w(0, "span", 16), M(1, "\u{1f511}"), C());
+      1 & e && (C(0, "span", 16), M(1, "\u{1f511}"), w());
     }
     function PP(e, t) {
-      if (1 & e && (w(0, "img", 17), Un("error", function (r) {
+      if (1 & e && (C(0, "img", 17), Un("error", function (r) {
         return r.target.style.display = "none";
-      }), C()), 2 & e) {
+      }), w()), 2 & e) {
         const n = be();
         B("src", n.wedstrijd.thuisteamlogo, vr)("alt", n.wedstrijd.thuisteam + " logo");
       }
     }
     function OP(e, t) {
-      if (1 & e && (w(0, "img", 17), Un("error", function (r) {
+      if (1 & e && (C(0, "img", 17), Un("error", function (r) {
         return r.target.style.display = "none";
-      }), C()), 2 & e) {
+      }), w()), 2 & e) {
         const n = be();
         B("src", n.wedstrijd.uitteamlogo, vr)("alt", n.wedstrijd.uitteam + " logo");
       }
     }
     function NP(e, t) {
-      1 & e && (w(0, "span", 16), M(1, "\u{1f511}"), C());
+      1 & e && (C(0, "span", 16), M(1, "\u{1f511}"), w());
     }
     let FP = (() => {
       const t = class {
@@ -10323,7 +10323,7 @@
         vars: 29,
         consts: [[1, "grid-row"], [1, "grid-item", "time"], ["class", "date", 4, "ngIf"], [1, "time-only"], [1, "grid-item", "kleedkamer"], [1, "kleedkamer-value"], ["class", "kast-icoon", 4, "ngIf"], [1, "grid-item", "team", "home-team"], [1, "team-name"], ["class", "team-logo", 3, "src", "alt", "error", 4, "ngIf"], [1, "grid-item", "team", "away-team"], [1, "grid-item", "veld"], [1, "veld-type"], [1, "veld-nummer"], [1, "grid-item", "scheids"], [1, "date"], [1, "kast-icoon"], [1, "team-logo", 3, "src", "alt", "error"]],
         template: function (i, o) {
-          1 & i && (w(0, "div", 0)(1, "div", 1), Q(2, AP, 2, 1, "div", 2), w(3, "div", 3), M(4), C()(), w(5, "div", 4)(6, "span", 5), M(7), Ke(8, "kleedkamer"), C(), Q(9, RP, 2, 0, "span", 6), C(), w(10, "div", 7)(11, "span", 8), M(12), C(), Q(13, PP, 1, 2, "img", 9), C(), w(14, "div", 10), Q(15, OP, 1, 2, "img", 9), w(16, "span", 8), M(17), C()(), w(18, "div", 4)(19, "span", 5), M(20), Ke(21, "kleedkamer"), C(), Q(22, NP, 2, 0, "span", 6), C(), w(23, "div", 11)(24, "div", 12), M(25), Ke(26, "veldType"), C(), w(27, "div", 13), M(28), Ke(29, "veld"), C()(), w(30, "div", 14), M(31), C()()), 2 & i && (vs("afgelast", o.wedstrijd.afgelast)("gestart", o.wedstrijd.isGestart)("odd-row", o.index % 2 == 0)("even-row", o.index % 2 == 1), S(2), B("ngIf", o.numberOfDays > 0), S(2), le(o.wedstrijd.aanvangstijd), S(3), le(Ye(8, 21, o.wedstrijd.kleedkamerthuisteam)), S(2), B("ngIf", o.hasKast(o.wedstrijd.kleedkamerthuisteam)), S(3), le(o.wedstrijd.thuisteam), S(1), B("ngIf", o.wedstrijd.thuisteamlogo), S(2), B("ngIf", o.wedstrijd.uitteamlogo), S(2), le(o.wedstrijd.uitteam), S(3), le(Ye(21, 23, o.wedstrijd.kleedkameruitteam)), S(2), B("ngIf", o.hasKast(o.wedstrijd.kleedkameruitteam)), S(3), le(Ye(26, 25, o.wedstrijd.veld)), S(3), lt(" ", o.wedstrijd.afgelast ? "AFGELAST" : Ye(29, 27, o.wedstrijd.veld), " "), S(3), le(o.wedstrijd.scheidsrechter));
+          1 & i && (C(0, "div", 0)(1, "div", 1), Q(2, AP, 2, 1, "div", 2), C(3, "div", 3), M(4), w()(), C(5, "div", 4)(6, "span", 5), M(7), Ke(8, "kleedkamer"), w(), Q(9, RP, 2, 0, "span", 6), w(), C(10, "div", 7)(11, "span", 8), M(12), w(), Q(13, PP, 1, 2, "img", 9), w(), C(14, "div", 10), Q(15, OP, 1, 2, "img", 9), C(16, "span", 8), M(17), w()(), C(18, "div", 4)(19, "span", 5), M(20), Ke(21, "kleedkamer"), w(), Q(22, NP, 2, 0, "span", 6), w(), C(23, "div", 11)(24, "div", 12), M(25), Ke(26, "veldType"), w(), C(27, "div", 13), M(28), Ke(29, "veld"), w()(), C(30, "div", 14), M(31), w()()), 2 & i && (vs("afgelast", o.wedstrijd.afgelast)("gestart", o.wedstrijd.isGestart)("odd-row", o.index % 2 == 0)("even-row", o.index % 2 == 1), S(2), B("ngIf", o.numberOfDays > 0), S(2), le(o.wedstrijd.aanvangstijd), S(3), le(Ye(8, 21, o.wedstrijd.kleedkamerthuisteam)), S(2), B("ngIf", o.hasKast(o.wedstrijd.kleedkamerthuisteam)), S(3), le(o.wedstrijd.thuisteam), S(1), B("ngIf", o.wedstrijd.thuisteamlogo), S(2), B("ngIf", o.wedstrijd.uitteamlogo), S(2), le(o.wedstrijd.uitteam), S(3), le(Ye(21, 23, o.wedstrijd.kleedkameruitteam)), S(2), B("ngIf", o.hasKast(o.wedstrijd.kleedkameruitteam)), S(3), le(Ye(26, 25, o.wedstrijd.veld)), S(3), lt(" ", o.wedstrijd.afgelast ? "AFGELAST" : Ye(29, 27, o.wedstrijd.veld), " "), S(3), le(o.wedstrijd.scheidsrechter));
         },
         dependencies: [Br, MP, xP, TP],
         styles: [".veld-type[_ngcontent-%COMP%]{font-size:10px;letter-spacing:1px;font-weight:500;text-transform:uppercase;line-height:1.05}.grid-row[_ngcontent-%COMP%]{display:grid;grid-template-columns:75px 110px 2fr 2fr 110px 80px 1fr;transition:background-color .2s ease;min-height:46px;border-bottom:1.5px solid #e0e0e0}.grid-row[_ngcontent-%COMP%]:last-child{border-bottom:none}.grid-row.afgelast[_ngcontent-%COMP%]{background:rgb(255,240,240)}.grid-row.gestart[_ngcontent-%COMP%]{color:#388e3c;font-style:italic}.grid-row.odd-row[_ngcontent-%COMP%]{background:#fff}.grid-row.even-row[_ngcontent-%COMP%]{background:#f3f3f3}.grid-item.veld[_ngcontent-%COMP%]{display:flex;flex-direction:column;align-items:center;justify-content:center;background:#228b22;color:#e0ffe0;font-weight:600;text-transform:uppercase;letter-spacing:1px;padding:4px;text-align:center;border-radius:0;box-sizing:border-box;font-size:20px;line-height:1.05}.grid-item.scheids[_ngcontent-%COMP%]{display:flex;align-items:center;justify-content:center;text-align:center;padding:4px;color:#222;font-weight:500;background:none;box-sizing:border-box;font-size:18px;line-height:1.1}.grid-item.time[_ngcontent-%COMP%]{font-weight:700;color:#000;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2px;text-align:center;height:100%;font-size:20px;line-height:1.05}.grid-item.time[_ngcontent-%COMP%]   .date[_ngcontent-%COMP%]{font-weight:500;color:#000}.grid-item.time[_ngcontent-%COMP%]   .time-only[_ngcontent-%COMP%]{font-weight:700;color:#000;letter-spacing:1px}.grid-item.kleedkamer[_ngcontent-%COMP%]{display:flex;flex-direction:row;align-items:center;justify-content:center;background:#222;color:#fff;font-weight:700;padding:8px 0;text-align:center;border-radius:0;gap:6px}.grid-item.kleedkamer[_ngcontent-%COMP%]   .kleedkamer-value[_ngcontent-%COMP%]{font-weight:700;color:#fff;letter-spacing:1px;line-height:1.1;font-size:20px}.grid-item.kleedkamer[_ngcontent-%COMP%]   svg[_ngcontent-%COMP%], .grid-item.kleedkamer[_ngcontent-%COMP%]   .kast-icoon[_ngcontent-%COMP%]{color:#fff;font-size:20px}.grid-item.team[_ngcontent-%COMP%]{display:flex;align-items:center;justify-content:center;gap:8px;padding:0 6px;min-width:0}.grid-item.team.home-team[_ngcontent-%COMP%]{flex-direction:row;justify-content:flex-end}.grid-item.team.home-team[_ngcontent-%COMP%]   .team-logo[_ngcontent-%COMP%]{margin-left:8px;margin-right:0;order:2}.grid-item.team.home-team[_ngcontent-%COMP%]   .team-name[_ngcontent-%COMP%]{text-align:right;order:1;margin-left:8px;margin-right:0}.grid-item.team.away-team[_ngcontent-%COMP%]{flex-direction:row;justify-content:flex-start}.grid-item.team.away-team[_ngcontent-%COMP%]   .team-logo[_ngcontent-%COMP%]{margin-right:8px;margin-left:0;order:1}.grid-item.team.away-team[_ngcontent-%COMP%]   .team-name[_ngcontent-%COMP%]{text-align:left;order:2;margin-left:0;margin-right:0}.grid-item.team[_ngcontent-%COMP%]   .team-logo[_ngcontent-%COMP%]{width:24px;height:24px;object-fit:contain;border-radius:0;display:inline-block;vertical-align:middle}.grid-item.team[_ngcontent-%COMP%]   .team-name[_ngcontent-%COMP%]{font-weight:700;color:#000;font-size:24px;line-height:1.1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:inline-block;vertical-align:middle;max-width:100%}"]
@@ -10336,9 +10336,9 @@
       }
     }
     function LP(e, t) {
-      if (1 & e && (w(0, "img", 14), Un("error", function (r) {
+      if (1 & e && (C(0, "img", 14), Un("error", function (r) {
         return r.target.style.display = "none";
-      }), C()), 2 & e) {
+      }), w()), 2 & e) {
         const n = be();
         B("src", n.wedstrijd.thuisteamlogo, vr)("alt", n.wedstrijd.thuisteam + " logo");
       }
@@ -10347,9 +10347,9 @@
       1 & e && (Nr(0), M(1, "\u{1f511}"), Fr());
     }
     function $P(e, t) {
-      if (1 & e && (w(0, "img", 14), Un("error", function (r) {
+      if (1 & e && (C(0, "img", 14), Un("error", function (r) {
         return r.target.style.display = "none";
-      }), C()), 2 & e) {
+      }), w()), 2 & e) {
         const n = be();
         B("src", n.wedstrijd.uitteamlogo, vr)("alt", n.wedstrijd.uitteam + " logo");
       }
@@ -10358,25 +10358,25 @@
       1 & e && (Nr(0), M(1, "\u{1f511}"), Fr());
     }
     function HP(e, t) {
-      if (1 & e && (w(0, "div", 19)(1, "span", 20), function rf() {
+      if (1 & e && (C(0, "div", 19)(1, "span", 20), function rf() {
         U.lFrame.currentNamespace = Hd;
-      }(), w(2, "svg", 21), We(3, "rect", 22)(4, "circle", 23)(5, "rect", 24)(6, "rect", 25), C()(), function sf() {
+      }(), C(2, "svg", 21), We(3, "rect", 22)(4, "circle", 23)(5, "rect", 24)(6, "rect", 25), w()(), function sf() {
         !function rC() {
           U.lFrame.currentNamespace = null;
         }();
-      }(), w(7, "span"), M(8), C()()), 2 & e) {
+      }(), C(7, "span"), M(8), w()()), 2 & e) {
         const n = be(2);
         S(8), le(n.wedstrijd.scheidsrechter);
       }
     }
     function BP(e, t) {
-      if (1 & e && (w(0, "div", 26)(1, "span"), M(2), C()()), 2 & e) {
+      if (1 & e && (C(0, "div", 26)(1, "span"), M(2), w()()), 2 & e) {
         const n = be(2);
         S(2), le(n.wedstrijd.kleedkamerscheidsrechter);
       }
     }
     function VP(e, t) {
-      if (1 & e && (w(0, "div", 15)(1, "div", 16), Q(2, HP, 9, 1, "div", 17), Q(3, BP, 3, 1, "div", 18), C()()), 2 & e) {
+      if (1 & e && (C(0, "div", 15)(1, "div", 16), Q(2, HP, 9, 1, "div", 17), Q(3, BP, 3, 1, "div", 18), w()()), 2 & e) {
         const n = be();
         S(2), B("ngIf", n.wedstrijd.scheidsrechter), S(1), B("ngIf", n.wedstrijd.kleedkamerscheidsrechter);
       }
@@ -10405,27 +10405,27 @@
         vars: 16,
         consts: [[1, "match-card"], [1, "match-header"], [1, "match-time"], [4, "ngIf"], [1, "match-field"], [1, "teams-simple-layout"], [1, "team-row", "home-team-row"], [1, "team-info"], ["class", "team-logo", 3, "src", "alt", "error", 4, "ngIf"], [1, "team-name"], [1, "team-label"], [1, "kleedkamer-badge"], [1, "team-row", "away-team-row"], ["class", "match-details", 4, "ngIf"], [1, "team-logo", 3, "src", "alt", "error"], [1, "match-details"], [1, "referee-info"], ["class", "referee", 4, "ngIf"], ["class", "referee-room", 4, "ngIf"], [1, "referee"], [1, "referee-icon", 2, "display", "inline-flex", "align-items", "center", "vertical-align", "middle"], ["width", "20", "height", "20", "viewBox", "0 0 24 24", "fill", "none", "xmlns", "http://www.w3.org/2000/svg", 2, "margin-right", "2px"], ["x", "2", "y", "10", "width", "12", "height", "4", "rx", "2", "fill", "#b50102"], ["cx", "17", "cy", "12", "r", "3", "fill", "#b50102", "stroke", "#fff", "stroke-width", "1.5"], ["x", "4", "y", "7", "width", "3", "height", "2", "rx", "1", "fill", "#b50102"], ["x", "4", "y", "15", "width", "3", "height", "2", "rx", "1", "fill", "#b50102"], [1, "referee-room"]],
         template: function (i, o) {
-          1 & i && (w(0, "div", 0)(1, "div", 1)(2, "div", 2), Q(3, kP, 2, 1, "ng-container", 3), M(4), C(), w(5, "div", 4), M(6), C()(), w(7, "div", 5)(8, "div", 6)(9, "div", 7), Q(10, LP, 1, 2, "img", 8), w(11, "span", 9), M(12), C(), w(13, "span", 10), M(14, "Thuis"), C()(), w(15, "div", 11), M(16), Q(17, jP, 2, 0, "ng-container", 3), C()(), w(18, "div", 12)(19, "div", 7), Q(20, $P, 1, 2, "img", 8), w(21, "span", 9), M(22), C(), w(23, "span", 10), M(24, "Uit"), C()(), w(25, "div", 11), M(26), Q(27, UP, 2, 0, "ng-container", 3), C()()(), Q(28, VP, 4, 2, "div", 13), C()), 2 & i && (vs("afgelast", o.wedstrijd.afgelast)("gestart", o.wedstrijd.isGestart), S(3), B("ngIf", o.numberOfDays > 0), S(1), lt("", o.wedstrijd.aanvangstijd, " "), S(2), le(o.wedstrijd.veld), S(4), B("ngIf", o.wedstrijd.thuisteamlogo), S(2), le(o.wedstrijd.thuisteam), S(4), lt(" ", o.wedstrijd.kleedkamerthuisteam, " "), S(1), B("ngIf", o.hasKast(o.wedstrijd.kleedkamerthuisteam)), S(3), B("ngIf", o.wedstrijd.uitteamlogo), S(2), le(o.wedstrijd.uitteam), S(4), lt(" ", o.wedstrijd.kleedkameruitteam, " "), S(1), B("ngIf", o.hasKast(o.wedstrijd.kleedkameruitteam)), S(1), B("ngIf", !o.wedstrijd.afgelast && (o.wedstrijd.scheidsrechter || o.wedstrijd.kleedkamerscheidsrechter)));
+          1 & i && (C(0, "div", 0)(1, "div", 1)(2, "div", 2), Q(3, kP, 2, 1, "ng-container", 3), M(4), w(), C(5, "div", 4), M(6), w()(), C(7, "div", 5)(8, "div", 6)(9, "div", 7), Q(10, LP, 1, 2, "img", 8), C(11, "span", 9), M(12), w(), C(13, "span", 10), M(14, "Thuis"), w()(), C(15, "div", 11), M(16), Q(17, jP, 2, 0, "ng-container", 3), w()(), C(18, "div", 12)(19, "div", 7), Q(20, $P, 1, 2, "img", 8), C(21, "span", 9), M(22), w(), C(23, "span", 10), M(24, "Uit"), w()(), C(25, "div", 11), M(26), Q(27, UP, 2, 0, "ng-container", 3), w()()(), Q(28, VP, 4, 2, "div", 13), w()), 2 & i && (vs("afgelast", o.wedstrijd.afgelast)("gestart", o.wedstrijd.isGestart), S(3), B("ngIf", o.numberOfDays > 0), S(1), lt("", o.wedstrijd.aanvangstijd, " "), S(2), le(o.wedstrijd.veld), S(4), B("ngIf", o.wedstrijd.thuisteamlogo), S(2), le(o.wedstrijd.thuisteam), S(4), lt(" ", o.wedstrijd.kleedkamerthuisteam, " "), S(1), B("ngIf", o.hasKast(o.wedstrijd.kleedkamerthuisteam)), S(3), B("ngIf", o.wedstrijd.uitteamlogo), S(2), le(o.wedstrijd.uitteam), S(4), lt(" ", o.wedstrijd.kleedkameruitteam, " "), S(1), B("ngIf", o.hasKast(o.wedstrijd.kleedkameruitteam)), S(1), B("ngIf", !o.wedstrijd.afgelast && (o.wedstrijd.scheidsrechter || o.wedstrijd.kleedkamerscheidsrechter)));
         },
         dependencies: [Br],
         styles: [".match-card[_ngcontent-%COMP%]{background:#fff;border-radius:12px;box-shadow:0 2px 8px #00000012;margin-bottom:16px;padding:14px 16px 10px;display:flex;flex-direction:column;gap:10px;border:1.5px solid #ececec;position:relative;transition:box-shadow .2s}.match-card.afgelast[_ngcontent-%COMP%]{background:#fff0f0}.match-card.gestart[_ngcontent-%COMP%]{background:#f0fff0}.match-header[_ngcontent-%COMP%]{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}.match-header[_ngcontent-%COMP%]   .match-time[_ngcontent-%COMP%]{font-size:1.3em;font-weight:700;color:#b50102;letter-spacing:1px}.match-header[_ngcontent-%COMP%]   .match-field[_ngcontent-%COMP%]{background:#228b22;color:#fff;font-size:1.1em;font-weight:700;border-radius:6px;padding:2px 12px;min-width:40px;text-align:center}.teams-simple-layout[_ngcontent-%COMP%]{display:flex;flex-direction:column;gap:8px}.team-row[_ngcontent-%COMP%]{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:0 0 0 2px}.team-info[_ngcontent-%COMP%]{display:flex;align-items:center;gap:6px}.team-info[_ngcontent-%COMP%]   .team-name[_ngcontent-%COMP%]{font-weight:600;font-size:1.08em;color:#222;margin-right:2px;max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.team-info[_ngcontent-%COMP%]   .team-label[_ngcontent-%COMP%]{font-size:.85em;color:#888;margin-left:2px;font-weight:400}@media (max-width: 449px){.team-info[_ngcontent-%COMP%]   .team-label[_ngcontent-%COMP%]{display:none}}.kleedkamer-badge[_ngcontent-%COMP%]{background:#222;color:#fff;font-size:1.1em;font-weight:700;border-radius:7px;padding:3px 12px;min-width:32px;text-align:center;letter-spacing:1px}.match-details[_ngcontent-%COMP%]{margin-top:6px;padding-top:6px;border-top:1px solid #eee;display:flex;flex-direction:row;gap:12px}.match-details[_ngcontent-%COMP%]   .referee-info[_ngcontent-%COMP%]{display:flex;flex-direction:row;gap:10px;align-items:center}.match-details[_ngcontent-%COMP%]   .referee-info[_ngcontent-%COMP%]   .referee[_ngcontent-%COMP%]{color:#b50102;font-weight:600;font-size:1em;display:flex;align-items:center;gap:4px}.match-details[_ngcontent-%COMP%]   .referee-info[_ngcontent-%COMP%]   .referee-icon[_ngcontent-%COMP%]{font-size:1.1em;margin-right:2px}.match-details[_ngcontent-%COMP%]   .referee-info[_ngcontent-%COMP%]   .referee-room[_ngcontent-%COMP%]{background:#228b22;color:#fff;border-radius:6px;padding:2px 10px;font-size:.98em;font-weight:600}.team-logo[_ngcontent-%COMP%]{width:28px;height:28px;object-fit:contain;border-radius:4px;display:inline-block;vertical-align:middle;background:#fff;box-shadow:0 1px 4px #00000014;margin-right:8px}"]
       }), e;
     })();
     function GP(e, t) {
-      1 & e && (w(0, "div", 7), M(1, " Nog Te Spelen "), C());
+      1 & e && (C(0, "div", 8), M(1, " Nog Te Spelen "), w());
     }
     function WP(e, t) {
-      if (1 & e && We(0, "app-wedstrijd-card", 8), 2 & e) {
+      if (1 & e && We(0, "app-wedstrijd-card", 9), 2 & e) {
         const n = t.$implicit,
           r = be(2);
         B("wedstrijd", n)("sleutelMatch", r.sleutelMatch)("numberOfDays", r.numberOfDays);
       }
     }
     function qP(e, t) {
-      1 & e && (w(0, "div", 7), M(1, " Nu Bezig "), C());
+      1 & e && (C(0, "div", 8), M(1, " Nu Bezig "), w());
     }
     function KP(e, t) {
-      if (1 & e && We(0, "app-wedstrijd-card", 8), 2 & e) {
+      if (1 & e && We(0, "app-wedstrijd-card", 9), 2 & e) {
         const n = t.$implicit,
           r = be(2);
         B("wedstrijd", n)("sleutelMatch", r.sleutelMatch)("numberOfDays", r.numberOfDays);
@@ -10440,15 +10440,12 @@
       }
     }
     function ZP(e, t) {
-      1 & e && (w(0, "div", 20), M(1, " \u{1f511}= Spullen tijdens de wedstrijd opbergen in de kast. Sleutel is tegen een borg verkrijgbaar bij het wedstrijdsecretariaat. "), C());
-    }
-    function QP(e, t) {
-      if (1 & e && (w(0, "div", 9)(1, "div", 7), M(2, "Nog Te Spelen"), C(), w(3, "div", 10)(4, "div", 11), M(5, "Tijd"), C(), w(6, "div", 12), M(7), C(), w(8, "div", 13), M(9, "Thuis"), C(), w(10, "div", 14), M(11, "Uit"), C(), w(12, "div", 12), M(13), C(), w(14, "div", 15), M(15, "VELD"), C(), w(16, "div", 16), M(17, "Scheidsrechter"), C()(), Q(18, YP, 1, 4, "app-wedstrijd-row", 17), Ke(19, "async"), Q(20, ZP, 2, 0, "div", 18), C()), 2 & e) {
+      if (1 & e && (C(0, "div", 10)(1, "div", 8), M(2, "Nog Te Spelen"), w(), C(3, "div", 11)(4, "div", 12), M(5, "Tijd"), w(), C(6, "div", 13), M(7), w(), C(8, "div", 14), M(9, "Thuis"), w(), C(10, "div", 15), M(11, "Uit"), w(), C(12, "div", 13), M(13), w(), C(14, "div", 16), M(15, "VELD"), w(), C(16, "div", 17), M(17, "Scheidsrechter"), w()(), Q(18, YP, 1, 4, "app-wedstrijd-row", 18), Ke(19, "async"), w()), 2 & e) {
         const n = be(2);
-        S(7), lt(" ", n.sleutelMatch ? "Kl+K" : "Kl", " "), S(6), lt(" ", n.sleutelMatch ? "Kl+K" : "Kl", " "), S(5), B("ngForOf", Ye(19, 5, n.toekomstigeWedstrijden$))("ngForTrackBy", n.trackByWedstrijdId), S(2), B("ngIf", n.sleutelMatch);
+        S(7), lt(" ", n.sleutelMatch ? "Kl+K" : "Kl", " "), S(6), lt(" ", n.sleutelMatch ? "Kl+K" : "Kl", " "), S(5), B("ngForOf", Ye(19, 4, n.toekomstigeWedstrijden$))("ngForTrackBy", n.trackByWedstrijdId);
       }
     }
-    function XP(e, t) {
+    function QP(e, t) {
       if (1 & e && We(0, "app-wedstrijd-row", 19), 2 & e) {
         const n = t.$implicit,
           r = t.index,
@@ -10456,17 +10453,20 @@
         B("wedstrijd", n)("sleutelMatch", i.sleutelMatch)("numberOfDays", i.numberOfDays)("index", r);
       }
     }
-    function JP(e, t) {
-      if (1 & e && (w(0, "div", 9)(1, "div", 7), M(2, "Nu Bezig"), C(), w(3, "div", 10)(4, "div", 11), M(5, "Tijd"), C(), w(6, "div", 12), M(7), C(), w(8, "div", 13), M(9, "Thuis"), C(), w(10, "div", 14), M(11, "Uit"), C(), w(12, "div", 12), M(13), C(), w(14, "div", 15), M(15, "VELD"), C(), w(16, "div", 16), M(17, "Scheidsrechter"), C()(), Q(18, XP, 1, 4, "app-wedstrijd-row", 17), Ke(19, "async"), C()), 2 & e) {
+    function XP(e, t) {
+      if (1 & e && (C(0, "div", 10)(1, "div", 8), M(2, "Nu Bezig"), w(), C(3, "div", 11)(4, "div", 12), M(5, "Tijd"), w(), C(6, "div", 13), M(7), w(), C(8, "div", 14), M(9, "Thuis"), w(), C(10, "div", 15), M(11, "Uit"), w(), C(12, "div", 13), M(13), w(), C(14, "div", 16), M(15, "VELD"), w(), C(16, "div", 17), M(17, "Scheidsrechter"), w()(), Q(18, QP, 1, 4, "app-wedstrijd-row", 18), Ke(19, "async"), w()), 2 & e) {
         const n = be(2);
         S(7), lt(" ", n.sleutelMatch ? "Kl+K" : "Kl", " "), S(6), lt(" ", n.sleutelMatch ? "Kl+K" : "Kl", " "), S(5), B("ngForOf", Ye(19, 4, n.bezigeWedstrijden$))("ngForTrackBy", n.trackByWedstrijdId);
       }
     }
+    function JP(e, t) {
+      1 & e && (C(0, "div", 20), M(1, " \u{1f511}= Spullen tijdens de wedstrijd opbergen in de kast. Sleutel is tegen een borg verkrijgbaar bij het wedstrijdsecretariaat. "), w());
+    }
     function eO(e, t) {
-      if (1 & e && (w(0, "div", 1)(1, "div", 2), Q(2, GP, 2, 0, "div", 3), Ke(3, "async"), Q(4, WP, 1, 3, "app-wedstrijd-card", 4), Ke(5, "async"), Q(6, qP, 2, 0, "div", 3), Ke(7, "async"), Q(8, KP, 1, 3, "app-wedstrijd-card", 4), Ke(9, "async"), C(), w(10, "div", 5), Q(11, QP, 21, 7, "div", 6), Ke(12, "async"), Q(13, JP, 20, 6, "div", 6), Ke(14, "async"), C()()), 2 & e) {
+      if (1 & e && (C(0, "div", 1)(1, "div", 2), Q(2, GP, 2, 0, "div", 3), Ke(3, "async"), Q(4, WP, 1, 3, "app-wedstrijd-card", 4), Ke(5, "async"), Q(6, qP, 2, 0, "div", 3), Ke(7, "async"), Q(8, KP, 1, 3, "app-wedstrijd-card", 4), Ke(9, "async"), w(), C(10, "div", 5), Q(11, ZP, 20, 6, "div", 6), Ke(12, "async"), Q(13, XP, 20, 6, "div", 6), Ke(14, "async"), w(), Q(15, JP, 2, 0, "div", 7), w()), 2 & e) {
         const n = be();
         let r, i, o, s;
-        S(2), B("ngIf", (null == (r = Ye(3, 8, n.toekomstigeWedstrijden$)) ? null : r.length) > 0), S(2), B("ngForOf", Ye(5, 10, n.toekomstigeWedstrijden$))("ngForTrackBy", n.trackByWedstrijdId), S(2), B("ngIf", (null == (i = Ye(7, 12, n.bezigeWedstrijden$)) ? null : i.length) > 0), S(2), B("ngForOf", Ye(9, 14, n.bezigeWedstrijden$))("ngForTrackBy", n.trackByWedstrijdId), S(3), B("ngIf", (null == (o = Ye(12, 16, n.toekomstigeWedstrijden$)) ? null : o.length) > 0), S(2), B("ngIf", (null == (s = Ye(14, 18, n.bezigeWedstrijden$)) ? null : s.length) > 0);
+        S(2), B("ngIf", (null == (r = Ye(3, 9, n.toekomstigeWedstrijden$)) ? null : r.length) > 0), S(2), B("ngForOf", Ye(5, 11, n.toekomstigeWedstrijden$))("ngForTrackBy", n.trackByWedstrijdId), S(2), B("ngIf", (null == (i = Ye(7, 13, n.bezigeWedstrijden$)) ? null : i.length) > 0), S(2), B("ngForOf", Ye(9, 15, n.bezigeWedstrijden$))("ngForTrackBy", n.trackByWedstrijdId), S(3), B("ngIf", (null == (o = Ye(12, 17, n.toekomstigeWedstrijden$)) ? null : o.length) > 0), S(2), B("ngIf", (null == (s = Ye(14, 19, n.bezigeWedstrijden$)) ? null : s.length) > 0), S(2), B("ngIf", n.sleutelMatch);
       }
     }
     let tO = (() => {
@@ -10501,28 +10501,28 @@
         },
         decls: 1,
         vars: 1,
-        consts: [["class", "programma-container", 4, "ngIf"], [1, "programma-container"], [1, "mobile-cards"], ["class", "section-title", 4, "ngIf"], [3, "wedstrijd", "sleutelMatch", "numberOfDays", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "desktop-grid"], ["class", "section-container", 4, "ngIf"], [1, "section-title"], [3, "wedstrijd", "sleutelMatch", "numberOfDays"], [1, "section-container"], [1, "grid-header"], [1, "header-item", "time"], [1, "header-item", "kleedkamer"], [1, "header-item", "team", "thuis"], [1, "header-item", "team"], [1, "header-item", "veld"], [1, "header-item", "scheids"], [3, "wedstrijd", "sleutelMatch", "numberOfDays", "index", 4, "ngFor", "ngForOf", "ngForTrackBy"], ["class", "grid-message", 4, "ngIf"], [3, "wedstrijd", "sleutelMatch", "numberOfDays", "index"], [1, "grid-message"]],
+        consts: [["class", "programma-container", 4, "ngIf"], [1, "programma-container"], [1, "mobile-cards"], ["class", "section-title", 4, "ngIf"], [3, "wedstrijd", "sleutelMatch", "numberOfDays", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "desktop-grid"], ["class", "section-container", 4, "ngIf"], ["class", "sleutel-footer", 4, "ngIf"], [1, "section-title"], [3, "wedstrijd", "sleutelMatch", "numberOfDays"], [1, "section-container"], [1, "grid-header"], [1, "header-item", "time"], [1, "header-item", "kleedkamer"], [1, "header-item", "team", "thuis"], [1, "header-item", "team"], [1, "header-item", "veld"], [1, "header-item", "scheids"], [3, "wedstrijd", "sleutelMatch", "numberOfDays", "index", 4, "ngFor", "ngForOf", "ngForTrackBy"], [3, "wedstrijd", "sleutelMatch", "numberOfDays", "index"], [1, "sleutel-footer"]],
         template: function (i, o) {
-          1 & i && Q(0, eO, 15, 20, "div", 0), 2 & i && B("ngIf", !o.isLoading);
+          1 & i && Q(0, eO, 16, 21, "div", 0), 2 & i && B("ngIf", !o.isLoading);
         },
         dependencies: [dl, Br, FP, zP, pl],
-        styles: [".loading-container[_ngcontent-%COMP%]{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 20px;text-align:center}.loading-bar[_ngcontent-%COMP%]{width:300px;height:4px;background:#e0e0e0;border-radius:2px;overflow:hidden;margin-bottom:16px}@media (max-width: 1199px){.loading-bar[_ngcontent-%COMP%]{width:250px}}.loading-progress[_ngcontent-%COMP%]{height:100%;background:linear-gradient(90deg,#b50102 0%,#d32f2f 50%,#b50102 100%);border-radius:2px;animation:_ngcontent-%COMP%_loading-animation 2s ease-in-out infinite}.loading-text[_ngcontent-%COMP%]{color:#b50102;font-weight:600;font-size:1rem;text-transform:uppercase;letter-spacing:1px}@keyframes _ngcontent-%COMP%_loading-animation{0%{width:0%;margin-left:0%}50%{width:75%;margin-left:12.5%}to{width:0%;margin-left:100%}}.section-container[_ngcontent-%COMP%]{margin-bottom:6px}.section-container[_ngcontent-%COMP%]:last-child{margin-bottom:0}.section-title[_ngcontent-%COMP%]{font-size:.9rem;font-weight:700;background:#fff;color:#b50102;text-transform:uppercase;padding:2px 10px;margin:0;border-radius:3px 3px 0 0;text-align:left;display:inline-block;border:2px solid #b50102;border-bottom:none}@media (max-width: 1199px){.section-title[_ngcontent-%COMP%]{font-size:.8rem;padding:2px 10px;margin:4px 16px 2px;border-radius:3px;border-bottom:2px solid #b50102}}.grid-message[_ngcontent-%COMP%]{background:#b50102;color:#fff;font-weight:600;border-radius:0 0 3px 3px;padding:6px 12px;margin:0 0 6px;text-transform:uppercase;box-shadow:0 1px 3px #0000001a;text-align:center;font-size:.85rem}@media (max-width: 1199px){.grid-message[_ngcontent-%COMP%]{margin:3px 16px 6px;padding:6px 12px;font-size:.75rem;border-radius:3px}}.mobile-cards[_ngcontent-%COMP%]{display:block;padding:10px;gap:8px}@media (min-width: 1200px){.mobile-cards[_ngcontent-%COMP%]{display:none!important}.desktop-grid[_ngcontent-%COMP%]{display:block!important}}@media (max-width: 1199px){.desktop-grid[_ngcontent-%COMP%]{display:none!important}.mobile-cards[_ngcontent-%COMP%]{display:block!important}}.desktop-grid[_ngcontent-%COMP%]{display:none}@media (min-width: 1200px){.desktop-grid[_ngcontent-%COMP%]{display:block;width:100%;max-width:100vw;margin:0 auto;padding:0 40px;overflow-x:auto;box-sizing:border-box}}.grid-header[_ngcontent-%COMP%]{display:grid;grid-template-columns:75px 110px 2fr 2fr 110px 80px 1fr;font-weight:700;background:#b50102;color:#fff;border-radius:0 8px 0 0;align-items:center;box-sizing:border-box;width:100%;text-transform:uppercase;margin-top:0}@media (max-width: 1199px){.grid-header[_ngcontent-%COMP%]{border-radius:8px 8px 0 0}}.header-item[_ngcontent-%COMP%]{padding:6px 4px;text-align:center;text-transform:uppercase}.header-item.team[_ngcontent-%COMP%]{text-align:left;padding-left:8px}.header-item.team.thuis[_ngcontent-%COMP%]{text-align:right;padding-left:0;padding-right:8px}.header-item.veld[_ngcontent-%COMP%], .header-item.scheids[_ngcontent-%COMP%], .header-item.scheids-kl[_ngcontent-%COMP%]{text-align:center}"]
+        styles: [".loading-container[_ngcontent-%COMP%]{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 20px;text-align:center}.loading-bar[_ngcontent-%COMP%]{width:300px;height:4px;background:#e0e0e0;border-radius:2px;overflow:hidden;margin-bottom:16px}@media (max-width: 1199px){.loading-bar[_ngcontent-%COMP%]{width:250px}}.loading-progress[_ngcontent-%COMP%]{height:100%;background:linear-gradient(90deg,#b50102 0%,#d32f2f 50%,#b50102 100%);border-radius:2px;animation:_ngcontent-%COMP%_loading-animation 2s ease-in-out infinite}.loading-text[_ngcontent-%COMP%]{color:#b50102;font-weight:600;font-size:1rem;text-transform:uppercase;letter-spacing:1px}@keyframes _ngcontent-%COMP%_loading-animation{0%{width:0%;margin-left:0%}50%{width:75%;margin-left:12.5%}to{width:0%;margin-left:100%}}.section-container[_ngcontent-%COMP%]{margin-bottom:6px}.section-container[_ngcontent-%COMP%]:last-child{margin-bottom:0}.section-title[_ngcontent-%COMP%]{font-size:.9rem;font-weight:700;background:#fff;color:#b50102;text-transform:uppercase;padding:2px 10px;margin:0;border-radius:3px 3px 0 0;text-align:left;display:inline-block;border:2px solid #b50102;border-bottom:none}@media (max-width: 1199px){.section-title[_ngcontent-%COMP%]{font-size:.8rem;padding:2px 10px;margin:4px 16px 2px;border-radius:3px;border-bottom:2px solid #b50102}}.grid-message[_ngcontent-%COMP%]{background:#b50102;color:#fff;font-weight:600;border-radius:0 0 3px 3px;padding:6px 12px;margin:0 0 6px;text-transform:uppercase;box-shadow:0 1px 3px #0000001a;text-align:center;font-size:.85rem}@media (max-width: 1199px){.grid-message[_ngcontent-%COMP%]{margin:3px 16px 6px;padding:6px 12px;font-size:.75rem;border-radius:3px}}.sleutel-footer[_ngcontent-%COMP%]{position:fixed;bottom:0;left:0;right:0;background:#b50102;color:#fff;font-weight:600;padding:12px 40px;text-transform:uppercase;box-shadow:0 -2px 8px #0003;text-align:center;font-size:.9rem;z-index:100}@media (max-width: 1199px){.sleutel-footer[_ngcontent-%COMP%]{display:none}}.mobile-cards[_ngcontent-%COMP%]{display:block;padding:10px;gap:8px}@media (min-width: 1200px){.mobile-cards[_ngcontent-%COMP%]{display:none!important}.desktop-grid[_ngcontent-%COMP%]{display:block!important}}@media (max-width: 1199px){.desktop-grid[_ngcontent-%COMP%]{display:none!important}.mobile-cards[_ngcontent-%COMP%]{display:block!important}}.desktop-grid[_ngcontent-%COMP%]{display:none}@media (min-width: 1200px){.desktop-grid[_ngcontent-%COMP%]{display:block;width:100%;max-width:100vw;margin:0 auto;padding:0 40px 80px;overflow-x:auto;box-sizing:border-box}}.grid-header[_ngcontent-%COMP%]{display:grid;grid-template-columns:75px 110px 2fr 2fr 110px 80px 1fr;font-weight:700;background:#b50102;color:#fff;border-radius:0 8px 0 0;align-items:center;box-sizing:border-box;width:100%;text-transform:uppercase;margin-top:0}@media (max-width: 1199px){.grid-header[_ngcontent-%COMP%]{border-radius:8px 8px 0 0}}.header-item[_ngcontent-%COMP%]{padding:6px 4px;text-align:center;text-transform:uppercase}.header-item.team[_ngcontent-%COMP%]{text-align:left;padding-left:8px}.header-item.team.thuis[_ngcontent-%COMP%]{text-align:right;padding-left:0;padding-right:8px}.header-item.veld[_ngcontent-%COMP%], .header-item.scheids[_ngcontent-%COMP%], .header-item.scheids-kl[_ngcontent-%COMP%]{text-align:center}"]
       }), e;
     })();
     function nO(e, t) {
-      if (1 & e && (w(0, "div", 10)(1, "div", 11)(2, "div", 12), M(3), C(), w(4, "div", 13), M(5), C()(), w(6, "div", 14)(7, "div", 15)(8, "div", 16), M(9, "THUIS"), C(), w(10, "div", 17)(11, "div", 18)(12, "span", 19), M(13), C()()()(), w(14, "div", 20)(15, "div", 16), M(16, "UIT"), C(), w(17, "div", 17)(18, "div", 18)(19, "span", 19), M(20), C()()()()()()), 2 & e) {
+      if (1 & e && (C(0, "div", 10)(1, "div", 11)(2, "div", 12), M(3), w(), C(4, "div", 13), M(5), w()(), C(6, "div", 14)(7, "div", 15)(8, "div", 16), M(9, "THUIS"), w(), C(10, "div", 17)(11, "div", 18)(12, "span", 19), M(13), w()()()(), C(14, "div", 20)(15, "div", 16), M(16, "UIT"), w(), C(17, "div", 17)(18, "div", 18)(19, "span", 19), M(20), w()()()()()()), 2 & e) {
         const n = t.$implicit;
         S(3), le(n.aanvangstijd), S(2), le(n.uitslag), S(8), le(n.thuisteam), S(7), le(n.uitteam);
       }
     }
     function rO(e, t) {
-      if (1 & e && (w(0, "tr")(1, "td", 6), M(2), C(), w(3, "td", 7)(4, "span", 19), M(5), C()(), w(6, "td", 8), M(7), C(), w(8, "td", 7)(9, "span", 19), M(10), C()()()), 2 & e) {
+      if (1 & e && (C(0, "tr")(1, "td", 6), M(2), w(), C(3, "td", 7)(4, "span", 19), M(5), w()(), C(6, "td", 8), M(7), w(), C(8, "td", 7)(9, "span", 19), M(10), w()()()), 2 & e) {
         const n = t.$implicit;
         S(2), le(n.aanvangstijd), S(3), le(n.thuisteam), S(2), le(n.uitslag), S(3), le(n.uitteam);
       }
     }
     function iO(e, t) {
-      if (1 & e && (w(0, "div", 1)(1, "div", 2), Q(2, nO, 21, 4, "div", 3), Ke(3, "async"), C(), w(4, "div", 4)(5, "table", 5)(6, "thead")(7, "tr")(8, "th", 6), M(9, "Aanvang"), C(), w(10, "th", 7), M(11, "Jong Brabant"), C(), w(12, "th", 8), M(13, "Uitslag"), C(), w(14, "th", 7), M(15, "Gasten"), C()()(), w(16, "tbody"), Q(17, rO, 11, 4, "tr", 9), Ke(18, "async"), C()()()()), 2 & e) {
+      if (1 & e && (C(0, "div", 1)(1, "div", 2), Q(2, nO, 21, 4, "div", 3), Ke(3, "async"), w(), C(4, "div", 4)(5, "table", 5)(6, "thead")(7, "tr")(8, "th", 6), M(9, "Aanvang"), w(), C(10, "th", 7), M(11, "Jong Brabant"), w(), C(12, "th", 8), M(13, "Uitslag"), w(), C(14, "th", 7), M(15, "Gasten"), w()()(), C(16, "tbody"), Q(17, rO, 11, 4, "tr", 9), Ke(18, "async"), w()()()()), 2 & e) {
         const n = be();
         S(2), B("ngForOf", Ye(3, 4, n.uitslagen$))("ngForTrackBy", n.trackByUitslagId), S(15), B("ngForOf", Ye(18, 6, n.uitslagen$))("ngForTrackBy", n.trackByUitslagId);
       }
@@ -10558,25 +10558,25 @@
       }), e;
     })();
     function sO(e, t) {
-      1 & e && (w(0, "div", 11), M(1, " Kan programma niet ophalen. Controleer je internetverbinding.\n"), C());
+      1 & e && (C(0, "div", 11), M(1, " Kan programma niet ophalen. Controleer je internetverbinding.\n"), w());
     }
     function aO(e, t) {
-      1 & e && (w(0, "div", 11), M(1, " Kan uitslagen niet ophalen. Controleer je internetverbinding.\n"), C());
+      1 & e && (C(0, "div", 11), M(1, " Kan uitslagen niet ophalen. Controleer je internetverbinding.\n"), w());
     }
     function uO(e, t) {
-      if (1 & e && (w(0, "div", 12), We(1, "app-programma", 13), C()), 2 & e) {
+      if (1 & e && (C(0, "div", 12), We(1, "app-programma", 13), w()), 2 & e) {
         const n = be();
         S(1), B("programma$", n.programma$)("numberOfDays", n.numberOfDays)("sleutelMatch", n.sleutelMatch)("isLoading", n.isLoadingProgramma);
       }
     }
     function cO(e, t) {
-      1 & e && (w(0, "div", 14), We(1, "div", 15), w(2, "div", 16), M(3, "Wedstrijden laden..."), C()());
+      1 & e && (C(0, "div", 14), We(1, "div", 15), C(2, "div", 16), M(3, "Wedstrijden laden..."), w()());
     }
     function lO(e, t) {
-      1 & e && (w(0, "div", 17), M(1, " Vandaag zijn er geen wedstrijden bij Jong Brabant\n"), C());
+      1 & e && (C(0, "div", 17), M(1, " Vandaag zijn er geen wedstrijden bij Jong Brabant\n"), w());
     }
     function dO(e, t) {
-      if (1 & e && (w(0, "div", 18), We(1, "app-uitslagen", 19), C()), 2 & e) {
+      if (1 & e && (C(0, "div", 18), We(1, "app-uitslagen", 19), w()), 2 & e) {
         const n = be();
         S(1), B("uitslagen$", n.uitslagen$)("isLoading", n.isLoadingUitslagen);
       }
@@ -10654,7 +10654,7 @@
           vars: 9,
           consts: [[1, "refresh-progress-bar"], [1, "refresh-progress-fill"], ["class", "error-message", 4, "ngIf"], [1, "titel-container"], ["src", "assets/logo.png", "alt", "image"], [1, "titel"], ["class", "matches-container", 4, "ngIf"], ["class", "loading-container", 4, "ngIf"], ["class", "info-message", 4, "ngIf"], ["class", "results-container", 4, "ngIf"], [1, "white-background"], [1, "error-message"], [1, "matches-container"], [3, "programma$", "numberOfDays", "sleutelMatch", "isLoading"], [1, "loading-container"], [1, "loading-spinner"], [1, "loading-text"], [1, "info-message"], [1, "results-container"], [3, "uitslagen$", "isLoading"]],
           template: function (i, o) {
-            1 & i && (w(0, "div", 0), We(1, "div", 1), C(), Q(2, sO, 2, 0, "div", 2), Q(3, aO, 2, 0, "div", 2), w(4, "div", 3), We(5, "img", 4), w(6, "div", 5), M(7), C(), We(8, "img", 4), C(), Q(9, uO, 2, 4, "div", 6), Q(10, cO, 4, 0, "div", 7), Q(11, lO, 2, 0, "div", 8), Q(12, dO, 2, 2, "div", 9), We(13, "div", 10)), 2 & i && (S(1), fc("width", o.progress + "%"), S(1), B("ngIf", o.programmaError), S(1), B("ngIf", o.uitslagenError), S(4), lt(" ", o.hasProgramma || !o.hasUitslagen ? "Kleedkamerindeling" : "Uitslagen", " "), S(2), B("ngIf", o.hasProgramma), S(1), B("ngIf", (o.isLoadingProgramma || o.isLoadingUitslagen) && !o.hasUitslagen && !o.hasProgramma), S(1), B("ngIf", !(o.hasUitslagen || o.hasProgramma || o.programmaError || o.uitslagenError || o.isLoadingProgramma || o.isLoadingUitslagen)), S(1), B("ngIf", o.hasUitslagen && !o.hasProgramma));
+            1 & i && (C(0, "div", 0), We(1, "div", 1), w(), Q(2, sO, 2, 0, "div", 2), Q(3, aO, 2, 0, "div", 2), C(4, "div", 3), We(5, "img", 4), C(6, "div", 5), M(7), w(), We(8, "img", 4), w(), Q(9, uO, 2, 4, "div", 6), Q(10, cO, 4, 0, "div", 7), Q(11, lO, 2, 0, "div", 8), Q(12, dO, 2, 2, "div", 9), We(13, "div", 10)), 2 & i && (S(1), fc("width", o.progress + "%"), S(1), B("ngIf", o.programmaError), S(1), B("ngIf", o.uitslagenError), S(4), lt(" ", o.hasProgramma || !o.hasUitslagen ? "Kleedkamerindeling" : "Uitslagen", " "), S(2), B("ngIf", o.hasProgramma), S(1), B("ngIf", (o.isLoadingProgramma || o.isLoadingUitslagen) && !o.hasUitslagen && !o.hasProgramma), S(1), B("ngIf", !(o.hasUitslagen || o.hasProgramma || o.programmaError || o.uitslagenError || o.isLoadingProgramma || o.isLoadingUitslagen)), S(1), B("ngIf", o.hasUitslagen && !o.hasProgramma));
           },
           dependencies: [Br, tO, oO],
           styles: [".refresh-progress-bar[_ngcontent-%COMP%]{position:fixed;top:0;left:0;width:100%;height:3px;background:rgba(255,255,255,.3);z-index:1000}.refresh-progress-fill[_ngcontent-%COMP%]{height:100%;background:linear-gradient(90deg,#b50102 0%,#d32f2f 50%,#b50102 100%);transition:width .1s ease-out;box-shadow:0 0 5px #b5010280}.white-background[_ngcontent-%COMP%]{position:fixed;left:0;top:0;width:100%;height:100%;z-index:-1;background-image:url(home_grass.171cec7ac0b8cbd1.jpg);background-repeat:repeat}.loading-container[_ngcontent-%COMP%]{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 20px;gap:16px;color:#fff;text-align:center}.loading-spinner[_ngcontent-%COMP%]{width:40px;height:40px;border:3px solid rgba(255,255,255,.3);border-top:3px solid #b50102;border-radius:50%;animation:_ngcontent-%COMP%_spin 1s linear infinite}.loading-text[_ngcontent-%COMP%]{font-size:18px;font-weight:300;text-transform:uppercase;letter-spacing:1px}@keyframes _ngcontent-%COMP%_spin{0%{transform:rotate(0)}to{transform:rotate(360deg)}}.error-message[_ngcontent-%COMP%]{background:#d32f2f;color:#fff;margin:10px 20px;padding:15px;text-align:center;font-weight:600;border-radius:8px;box-shadow:2px 0 5px #0009}.info-message[_ngcontent-%COMP%]{background:#b50102;margin:0 20px;padding:15px;color:#fff;text-align:center;font-size:14px;font-weight:300;line-height:1.4;text-transform:uppercase;box-shadow:2px 0 5px #0009;border-radius:8px}.titel-container[_ngcontent-%COMP%]{margin:20px 40px;display:flex;justify-content:space-between;align-items:center}@media (max-width: 1199px){.titel-container[_ngcontent-%COMP%]{margin:10px 16px;justify-content:flex-start;gap:12px}.titel-container[_ngcontent-%COMP%]   img[_ngcontent-%COMP%]:last-child{display:none}.titel-container[_ngcontent-%COMP%]   img[_ngcontent-%COMP%]:first-child{width:40px;height:40px;flex-shrink:0;object-fit:contain}}.titel[_ngcontent-%COMP%]{background:#b50102;width:100%;font-weight:700;margin:20px;line-height:150px;text-transform:uppercase;text-align:center;font-size:24px;color:#fff;box-shadow:2px 0 5px #0009;border-radius:8px;max-width:1400px}@media (max-width: 1199px){.titel[_ngcontent-%COMP%]{margin:0;padding:8px 16px;line-height:1.2;font-size:18px;border-radius:6px;flex:1;display:flex;align-items:center;justify-content:center}}@media (min-width: 1200px){.titel[_ngcontent-%COMP%]{font-size:72px;line-height:150px;letter-spacing:2px}}"]
