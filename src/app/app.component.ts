@@ -26,6 +26,7 @@ export class AppComponent implements OnInit {
   hasProgramma: boolean;
   uitslagen$: Observable<IUitslag[]>;
   numberOfDays = 0;
+  veldFilter: string | null = null;
   programmaError = false;
   uitslagenError = false;
   isLoadingProgramma = false;
@@ -47,17 +48,26 @@ export class AppComponent implements OnInit {
     // STANDAARD Angular pattern: merge route params met refresh triggers
     merge(
       this.route.queryParams.pipe(
-        map((params) => (params.days ? parseInt(params.days, 10) : 0))
+        map((params) => ({
+          days: params.days ? parseInt(params.days, 10) : 0,
+          veld: params.veld || null,
+        }))
       ),
-      this.refresh$.pipe(map(() => this.numberOfDays))
+      this.refresh$.pipe(
+        map(() => ({ days: this.numberOfDays, veld: this.veldFilter }))
+      )
     )
       .pipe(
-        distinctUntilChanged(),
-        switchMap((numberOfDays) => {
-          this.numberOfDays = numberOfDays;
+        distinctUntilChanged(
+          (prev, curr) => prev.days === curr.days && prev.veld === curr.veld
+        ),
+        switchMap((params) => {
+          this.numberOfDays = params.days;
+          this.veldFilter = params.veld;
           this.isLoadingProgramma = true;
-          return this.programmaService.getProgramma(numberOfDays);
-        })
+          return this.programmaService.getProgramma(params.days);
+        }),
+        map((wedstrijden) => this.filterByVeld(wedstrijden))
       )
       .subscribe({
         next: (newData: IWedstrijd[]) => {
@@ -202,6 +212,28 @@ export class AppComponent implements OnInit {
       }
     }, 100);
   }
+
+  private filterByVeld(wedstrijden: IWedstrijd[]): IWedstrijd[] {
+    if (!this.veldFilter) {
+      return wedstrijden;
+    }
+
+    return wedstrijden.filter((wedstrijd) => {
+      if (!wedstrijd.veld) {
+        return false;
+      }
+
+      // Extract the field number from the veld string (e.g., "Veld 1A" -> "1")
+      const veldMatch = wedstrijd.veld.match(/veld\s*(\d+)/i);
+      if (veldMatch) {
+        const veldNumber = veldMatch[1];
+        return veldNumber === this.veldFilter;
+      }
+
+      return false;
+    });
+  }
+
   // Prevent flickering: trackBy wedstrijdcode
   trackByWedstrijdCode(index: number, wedstrijd: IWedstrijd) {
     return wedstrijd.wedstrijdcode;
