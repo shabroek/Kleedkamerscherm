@@ -10584,18 +10584,12 @@
     let fO = (() => {
         const t = class {
           constructor(r, i) {
-            this.programmaService = r, this.route = i, this.now = new Date(), this.progress = 0, this.refreshInterval = 6e4, this.programma$ = new Ct([]), this.numberOfDays = 0, this.veldFilter = null, this.programmaError = !1, this.uitslagenError = !1, this.isLoadingProgramma = !1, this.isLoadingUitslagen = !1, this.refresh$ = new Nt();
+            this.programmaService = r, this.route = i, this.now = new Date(), this.progress = 0, this.refreshInterval = 6e4, this.programma$ = new Ct([]), this.numberOfDays = 0, this.programmaError = !1, this.uitslagenError = !1, this.isLoadingProgramma = !1, this.isLoadingUitslagen = !1, this.refresh$ = new Nt();
           }
           ngOnInit() {
-            this.hasProgramma = !1, this.hasUitslagen = !1, this.startProgressBar(), Cd(this.route.queryParams.pipe(j(r => ({
-              days: r.days ? parseInt(r.days, 10) : 0,
-              veld: r.veld || null
-            }))), this.refresh$.pipe(j(() => ({
-              days: this.numberOfDays,
-              veld: this.veldFilter
-            })))).pipe(function bP(e, t) {
+            this.hasProgramma = !1, this.hasUitslagen = !1, this.startProgressBar(), Cd(this.route.queryParams.pipe(j(r => r.days ? parseInt(r.days, 10) : 0)), this.refresh$.pipe(j(() => this.numberOfDays))).pipe(function bP(e, t) {
               return n => n.lift(new EP(e, t));
-            }((r, i) => r.days === i.days && r.veld === i.veld), _t(r => (this.numberOfDays = r.days, this.veldFilter = r.veld, this.isLoadingProgramma = !0, this.programmaService.getProgramma(r.days))), j(r => this.filterByVeld(r))).subscribe({
+            }(), _t(r => (this.numberOfDays = r, this.isLoadingProgramma = !0, this.programmaService.getProgramma(r)))).subscribe({
               next: r => {
                 this.isLoadingProgramma = !1, this.programmaError = !1, r && r.length > 0 ? (this.hasProgramma = !0, this.programma$.next(r), this.sleutelMatch = r.some(i => i.kast)) : (this.hasProgramma = !1, this.loadUitslagenData());
               },
@@ -10645,13 +10639,6 @@
             this.progressInterval = setInterval(() => {
               this.progress += r, this.progress >= 100 && (this.progress = 0, (this.hasProgramma || this.hasUitslagen) && this.refresh$.next());
             }, 100);
-          }
-          filterByVeld(r) {
-            return this.veldFilter ? r.filter(i => {
-              if (!i.veld) return !1;
-              const o = i.veld.match(/veld\s*(\d+)/i);
-              return !!o && o[1] === this.veldFilter;
-            }) : r;
           }
           trackByWedstrijdCode(r, i) {
             return i.wedstrijdcode;
