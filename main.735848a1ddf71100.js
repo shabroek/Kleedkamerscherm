@@ -1,7 +1,7 @@
 "use strict";
 
 (self.webpackChunkKleedkamerscherm = self.webpackChunkKleedkamerscherm || []).push([[179], {
-  925: () => {
+  370: () => {
     function xn(e) {
       return "function" == typeof e;
     }
@@ -10139,44 +10139,7 @@
       }]).ɵproviders : []];
     }
     const OD = new T(lo ? "Router Initializer" : "");
-    class EP {
-      constructor(t, n) {
-        this.compare = t, this.keySelector = n;
-      }
-      call(t, n) {
-        return n.subscribe(new IP(t, this.compare, this.keySelector));
-      }
-    }
-    class IP extends ue {
-      constructor(t, n, r) {
-        super(t), this.keySelector = r, this.hasKey = !1, "function" == typeof n && (this.compare = n);
-      }
-      compare(t, n) {
-        return t === n;
-      }
-      _next(t) {
-        let n;
-        try {
-          const {
-            keySelector: i
-          } = this;
-          n = i ? i(t) : t;
-        } catch (i) {
-          return this.destination.error(i);
-        }
-        let r = !1;
-        if (this.hasKey) try {
-          const {
-            compare: i
-          } = this;
-          r = i(this.key, n);
-        } catch (i) {
-          return this.destination.error(i);
-        } else this.hasKey = !0;
-        r || (this.key = n, this.destination.next(t));
-      }
-    }
-    let SP = (() => {
+    let bP = (() => {
         const t = class {
           constructor(r) {
             this.http = r, this.verwijderdeWedstrijden = [], this.programmaUrl = "https://data.sportlink.com/programma?uit=NEE", this.uitslagenUrl = "https://data.sportlink.com/uitslagen?uit=NEE";
@@ -10219,7 +10182,7 @@
           providedIn: "root"
         }), e;
       })(),
-      MP = (() => {
+      EP = (() => {
         const t = class {
           transform(r, i) {
             return "string" == typeof r ? r.replace("Kleedkamer ", "") : r;
@@ -10234,7 +10197,7 @@
           pure: !0
         }), e;
       })(),
-      xP = (() => {
+      IP = (() => {
         const t = class {
           transform(r, i) {
             if ("string" == typeof r) {
@@ -10253,7 +10216,7 @@
           pure: !0
         }), e;
       })(),
-      TP = (() => {
+      SP = (() => {
         const t = class {
           transform(r) {
             if (!r) return "";
@@ -10270,16 +10233,16 @@
           pure: !0
         }), e;
       })();
-    function AP(e, t) {
+    function MP(e, t) {
       if (1 & e && (C(0, "div", 15), M(1), w()), 2 & e) {
         const n = be();
         S(1), le(n.wedstrijd.datum);
       }
     }
-    function RP(e, t) {
+    function xP(e, t) {
       1 & e && (C(0, "span", 16), M(1, "\u{1f511}"), w());
     }
-    function PP(e, t) {
+    function TP(e, t) {
       if (1 & e && (C(0, "img", 17), Un("error", function (r) {
         return r.target.style.display = "none";
       }), w()), 2 & e) {
@@ -10287,7 +10250,7 @@
         B("src", n.wedstrijd.thuisteamlogo, vr)("alt", n.wedstrijd.thuisteam + " logo");
       }
     }
-    function OP(e, t) {
+    function AP(e, t) {
       if (1 & e && (C(0, "img", 17), Un("error", function (r) {
         return r.target.style.display = "none";
       }), w()), 2 & e) {
@@ -10295,10 +10258,10 @@
         B("src", n.wedstrijd.uitteamlogo, vr)("alt", n.wedstrijd.uitteam + " logo");
       }
     }
-    function NP(e, t) {
+    function RP(e, t) {
       1 & e && (C(0, "span", 16), M(1, "\u{1f511}"), w());
     }
-    let FP = (() => {
+    let PP = (() => {
       const t = class {
         constructor() {
           this.sleutelMatch = !1, this.numberOfDays = 0;
@@ -10323,19 +10286,19 @@
         vars: 29,
         consts: [[1, "grid-row"], [1, "grid-item", "time"], ["class", "date", 4, "ngIf"], [1, "time-only"], [1, "grid-item", "kleedkamer"], [1, "kleedkamer-value"], ["class", "kast-icoon", 4, "ngIf"], [1, "grid-item", "team", "home-team"], [1, "team-name"], ["class", "team-logo", 3, "src", "alt", "error", 4, "ngIf"], [1, "grid-item", "team", "away-team"], [1, "grid-item", "veld"], [1, "veld-type"], [1, "veld-nummer"], [1, "grid-item", "scheids"], [1, "date"], [1, "kast-icoon"], [1, "team-logo", 3, "src", "alt", "error"]],
         template: function (i, o) {
-          1 & i && (C(0, "div", 0)(1, "div", 1), Q(2, AP, 2, 1, "div", 2), C(3, "div", 3), M(4), w()(), C(5, "div", 4)(6, "span", 5), M(7), Ke(8, "kleedkamer"), w(), Q(9, RP, 2, 0, "span", 6), w(), C(10, "div", 7)(11, "span", 8), M(12), w(), Q(13, PP, 1, 2, "img", 9), w(), C(14, "div", 10), Q(15, OP, 1, 2, "img", 9), C(16, "span", 8), M(17), w()(), C(18, "div", 4)(19, "span", 5), M(20), Ke(21, "kleedkamer"), w(), Q(22, NP, 2, 0, "span", 6), w(), C(23, "div", 11)(24, "div", 12), M(25), Ke(26, "veldType"), w(), C(27, "div", 13), M(28), Ke(29, "veld"), w()(), C(30, "div", 14), M(31), w()()), 2 & i && (vs("afgelast", o.wedstrijd.afgelast)("gestart", o.wedstrijd.isGestart)("odd-row", o.index % 2 == 0)("even-row", o.index % 2 == 1), S(2), B("ngIf", o.numberOfDays > 0), S(2), le(o.wedstrijd.aanvangstijd), S(3), le(Ye(8, 21, o.wedstrijd.kleedkamerthuisteam)), S(2), B("ngIf", o.hasKast(o.wedstrijd.kleedkamerthuisteam)), S(3), le(o.wedstrijd.thuisteam), S(1), B("ngIf", o.wedstrijd.thuisteamlogo), S(2), B("ngIf", o.wedstrijd.uitteamlogo), S(2), le(o.wedstrijd.uitteam), S(3), le(Ye(21, 23, o.wedstrijd.kleedkameruitteam)), S(2), B("ngIf", o.hasKast(o.wedstrijd.kleedkameruitteam)), S(3), le(Ye(26, 25, o.wedstrijd.veld)), S(3), lt(" ", o.wedstrijd.afgelast ? "AFGELAST" : Ye(29, 27, o.wedstrijd.veld), " "), S(3), le(o.wedstrijd.scheidsrechter));
+          1 & i && (C(0, "div", 0)(1, "div", 1), Q(2, MP, 2, 1, "div", 2), C(3, "div", 3), M(4), w()(), C(5, "div", 4)(6, "span", 5), M(7), Ke(8, "kleedkamer"), w(), Q(9, xP, 2, 0, "span", 6), w(), C(10, "div", 7)(11, "span", 8), M(12), w(), Q(13, TP, 1, 2, "img", 9), w(), C(14, "div", 10), Q(15, AP, 1, 2, "img", 9), C(16, "span", 8), M(17), w()(), C(18, "div", 4)(19, "span", 5), M(20), Ke(21, "kleedkamer"), w(), Q(22, RP, 2, 0, "span", 6), w(), C(23, "div", 11)(24, "div", 12), M(25), Ke(26, "veldType"), w(), C(27, "div", 13), M(28), Ke(29, "veld"), w()(), C(30, "div", 14), M(31), w()()), 2 & i && (vs("afgelast", o.wedstrijd.afgelast)("gestart", o.wedstrijd.isGestart)("odd-row", o.index % 2 == 0)("even-row", o.index % 2 == 1), S(2), B("ngIf", o.numberOfDays > 0), S(2), le(o.wedstrijd.aanvangstijd), S(3), le(Ye(8, 21, o.wedstrijd.kleedkamerthuisteam)), S(2), B("ngIf", o.hasKast(o.wedstrijd.kleedkamerthuisteam)), S(3), le(o.wedstrijd.thuisteam), S(1), B("ngIf", o.wedstrijd.thuisteamlogo), S(2), B("ngIf", o.wedstrijd.uitteamlogo), S(2), le(o.wedstrijd.uitteam), S(3), le(Ye(21, 23, o.wedstrijd.kleedkameruitteam)), S(2), B("ngIf", o.hasKast(o.wedstrijd.kleedkameruitteam)), S(3), le(Ye(26, 25, o.wedstrijd.veld)), S(3), lt(" ", o.wedstrijd.afgelast ? "AFGELAST" : Ye(29, 27, o.wedstrijd.veld), " "), S(3), le(o.wedstrijd.scheidsrechter));
         },
-        dependencies: [Br, MP, xP, TP],
+        dependencies: [Br, EP, IP, SP],
         styles: [".veld-type[_ngcontent-%COMP%]{font-size:10px;letter-spacing:1px;font-weight:500;text-transform:uppercase;line-height:1.05}.grid-row[_ngcontent-%COMP%]{display:grid;grid-template-columns:75px 110px 2fr 2fr 110px 80px 1fr;transition:background-color .2s ease;min-height:46px;border-bottom:1.5px solid #e0e0e0}.grid-row[_ngcontent-%COMP%]:last-child{border-bottom:none}.grid-row.afgelast[_ngcontent-%COMP%]{background:rgb(255,240,240)}.grid-row.gestart[_ngcontent-%COMP%]{color:#388e3c;font-style:italic}.grid-row.odd-row[_ngcontent-%COMP%]{background:#fff}.grid-row.even-row[_ngcontent-%COMP%]{background:#f3f3f3}.grid-item.veld[_ngcontent-%COMP%]{display:flex;flex-direction:column;align-items:center;justify-content:center;background:#228b22;color:#e0ffe0;font-weight:600;text-transform:uppercase;letter-spacing:1px;padding:4px;text-align:center;border-radius:0;box-sizing:border-box;font-size:20px;line-height:1.05}.grid-item.scheids[_ngcontent-%COMP%]{display:flex;align-items:center;justify-content:center;text-align:center;padding:4px;color:#222;font-weight:500;background:none;box-sizing:border-box;font-size:18px;line-height:1.1}.grid-item.time[_ngcontent-%COMP%]{font-weight:700;color:#000;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2px;text-align:center;height:100%;font-size:20px;line-height:1.05}.grid-item.time[_ngcontent-%COMP%]   .date[_ngcontent-%COMP%]{font-weight:500;color:#000}.grid-item.time[_ngcontent-%COMP%]   .time-only[_ngcontent-%COMP%]{font-weight:700;color:#000;letter-spacing:1px}.grid-item.kleedkamer[_ngcontent-%COMP%]{display:flex;flex-direction:row;align-items:center;justify-content:center;background:#222;color:#fff;font-weight:700;padding:8px 0;text-align:center;border-radius:0;gap:6px}.grid-item.kleedkamer[_ngcontent-%COMP%]   .kleedkamer-value[_ngcontent-%COMP%]{font-weight:700;color:#fff;letter-spacing:1px;line-height:1.1;font-size:20px}.grid-item.kleedkamer[_ngcontent-%COMP%]   svg[_ngcontent-%COMP%], .grid-item.kleedkamer[_ngcontent-%COMP%]   .kast-icoon[_ngcontent-%COMP%]{color:#fff;font-size:20px}.grid-item.team[_ngcontent-%COMP%]{display:flex;align-items:center;justify-content:center;gap:8px;padding:0 6px;min-width:0}.grid-item.team.home-team[_ngcontent-%COMP%]{flex-direction:row;justify-content:flex-end}.grid-item.team.home-team[_ngcontent-%COMP%]   .team-logo[_ngcontent-%COMP%]{margin-left:8px;margin-right:0;order:2}.grid-item.team.home-team[_ngcontent-%COMP%]   .team-name[_ngcontent-%COMP%]{text-align:right;order:1;margin-left:8px;margin-right:0}.grid-item.team.away-team[_ngcontent-%COMP%]{flex-direction:row;justify-content:flex-start}.grid-item.team.away-team[_ngcontent-%COMP%]   .team-logo[_ngcontent-%COMP%]{margin-right:8px;margin-left:0;order:1}.grid-item.team.away-team[_ngcontent-%COMP%]   .team-name[_ngcontent-%COMP%]{text-align:left;order:2;margin-left:0;margin-right:0}.grid-item.team[_ngcontent-%COMP%]   .team-logo[_ngcontent-%COMP%]{width:24px;height:24px;object-fit:contain;border-radius:0;display:inline-block;vertical-align:middle}.grid-item.team[_ngcontent-%COMP%]   .team-name[_ngcontent-%COMP%]{font-weight:700;color:#000;font-size:24px;line-height:1.1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:inline-block;vertical-align:middle;max-width:100%}"]
       }), e;
     })();
-    function kP(e, t) {
+    function OP(e, t) {
       if (1 & e && (Nr(0), M(1), Fr()), 2 & e) {
         const n = be();
         S(1), lt("", n.wedstrijd.datum, " ");
       }
     }
-    function LP(e, t) {
+    function NP(e, t) {
       if (1 & e && (C(0, "img", 14), Un("error", function (r) {
         return r.target.style.display = "none";
       }), w()), 2 & e) {
@@ -10343,10 +10306,10 @@
         B("src", n.wedstrijd.thuisteamlogo, vr)("alt", n.wedstrijd.thuisteam + " logo");
       }
     }
-    function jP(e, t) {
+    function FP(e, t) {
       1 & e && (Nr(0), M(1, "\u{1f511}"), Fr());
     }
-    function $P(e, t) {
+    function kP(e, t) {
       if (1 & e && (C(0, "img", 14), Un("error", function (r) {
         return r.target.style.display = "none";
       }), w()), 2 & e) {
@@ -10354,10 +10317,10 @@
         B("src", n.wedstrijd.uitteamlogo, vr)("alt", n.wedstrijd.uitteam + " logo");
       }
     }
-    function UP(e, t) {
+    function LP(e, t) {
       1 & e && (Nr(0), M(1, "\u{1f511}"), Fr());
     }
-    function HP(e, t) {
+    function jP(e, t) {
       if (1 & e && (C(0, "div", 19)(1, "span", 20), function rf() {
         U.lFrame.currentNamespace = Hd;
       }(), C(2, "svg", 21), We(3, "rect", 22)(4, "circle", 23)(5, "rect", 24)(6, "rect", 25), w()(), function sf() {
@@ -10369,19 +10332,19 @@
         S(8), le(n.wedstrijd.scheidsrechter);
       }
     }
-    function BP(e, t) {
+    function $P(e, t) {
       if (1 & e && (C(0, "div", 26)(1, "span"), M(2), w()()), 2 & e) {
         const n = be(2);
         S(2), le(n.wedstrijd.kleedkamerscheidsrechter);
       }
     }
-    function VP(e, t) {
-      if (1 & e && (C(0, "div", 15)(1, "div", 16), Q(2, HP, 9, 1, "div", 17), Q(3, BP, 3, 1, "div", 18), w()()), 2 & e) {
+    function UP(e, t) {
+      if (1 & e && (C(0, "div", 15)(1, "div", 16), Q(2, jP, 9, 1, "div", 17), Q(3, $P, 3, 1, "div", 18), w()()), 2 & e) {
         const n = be();
         S(2), B("ngIf", n.wedstrijd.scheidsrechter), S(1), B("ngIf", n.wedstrijd.kleedkamerscheidsrechter);
       }
     }
-    let zP = (() => {
+    let HP = (() => {
       const t = class {
         constructor() {
           this.sleutelMatch = !1, this.numberOfDays = 0;
@@ -10405,33 +10368,33 @@
         vars: 16,
         consts: [[1, "match-card"], [1, "match-header"], [1, "match-time"], [4, "ngIf"], [1, "match-field"], [1, "teams-simple-layout"], [1, "team-row", "home-team-row"], [1, "team-info"], ["class", "team-logo", 3, "src", "alt", "error", 4, "ngIf"], [1, "team-name"], [1, "team-label"], [1, "kleedkamer-badge"], [1, "team-row", "away-team-row"], ["class", "match-details", 4, "ngIf"], [1, "team-logo", 3, "src", "alt", "error"], [1, "match-details"], [1, "referee-info"], ["class", "referee", 4, "ngIf"], ["class", "referee-room", 4, "ngIf"], [1, "referee"], [1, "referee-icon", 2, "display", "inline-flex", "align-items", "center", "vertical-align", "middle"], ["width", "20", "height", "20", "viewBox", "0 0 24 24", "fill", "none", "xmlns", "http://www.w3.org/2000/svg", 2, "margin-right", "2px"], ["x", "2", "y", "10", "width", "12", "height", "4", "rx", "2", "fill", "#b50102"], ["cx", "17", "cy", "12", "r", "3", "fill", "#b50102", "stroke", "#fff", "stroke-width", "1.5"], ["x", "4", "y", "7", "width", "3", "height", "2", "rx", "1", "fill", "#b50102"], ["x", "4", "y", "15", "width", "3", "height", "2", "rx", "1", "fill", "#b50102"], [1, "referee-room"]],
         template: function (i, o) {
-          1 & i && (C(0, "div", 0)(1, "div", 1)(2, "div", 2), Q(3, kP, 2, 1, "ng-container", 3), M(4), w(), C(5, "div", 4), M(6), w()(), C(7, "div", 5)(8, "div", 6)(9, "div", 7), Q(10, LP, 1, 2, "img", 8), C(11, "span", 9), M(12), w(), C(13, "span", 10), M(14, "Thuis"), w()(), C(15, "div", 11), M(16), Q(17, jP, 2, 0, "ng-container", 3), w()(), C(18, "div", 12)(19, "div", 7), Q(20, $P, 1, 2, "img", 8), C(21, "span", 9), M(22), w(), C(23, "span", 10), M(24, "Uit"), w()(), C(25, "div", 11), M(26), Q(27, UP, 2, 0, "ng-container", 3), w()()(), Q(28, VP, 4, 2, "div", 13), w()), 2 & i && (vs("afgelast", o.wedstrijd.afgelast)("gestart", o.wedstrijd.isGestart), S(3), B("ngIf", o.numberOfDays > 0), S(1), lt("", o.wedstrijd.aanvangstijd, " "), S(2), le(o.wedstrijd.veld), S(4), B("ngIf", o.wedstrijd.thuisteamlogo), S(2), le(o.wedstrijd.thuisteam), S(4), lt(" ", o.wedstrijd.kleedkamerthuisteam, " "), S(1), B("ngIf", o.hasKast(o.wedstrijd.kleedkamerthuisteam)), S(3), B("ngIf", o.wedstrijd.uitteamlogo), S(2), le(o.wedstrijd.uitteam), S(4), lt(" ", o.wedstrijd.kleedkameruitteam, " "), S(1), B("ngIf", o.hasKast(o.wedstrijd.kleedkameruitteam)), S(1), B("ngIf", !o.wedstrijd.afgelast && (o.wedstrijd.scheidsrechter || o.wedstrijd.kleedkamerscheidsrechter)));
+          1 & i && (C(0, "div", 0)(1, "div", 1)(2, "div", 2), Q(3, OP, 2, 1, "ng-container", 3), M(4), w(), C(5, "div", 4), M(6), w()(), C(7, "div", 5)(8, "div", 6)(9, "div", 7), Q(10, NP, 1, 2, "img", 8), C(11, "span", 9), M(12), w(), C(13, "span", 10), M(14, "Thuis"), w()(), C(15, "div", 11), M(16), Q(17, FP, 2, 0, "ng-container", 3), w()(), C(18, "div", 12)(19, "div", 7), Q(20, kP, 1, 2, "img", 8), C(21, "span", 9), M(22), w(), C(23, "span", 10), M(24, "Uit"), w()(), C(25, "div", 11), M(26), Q(27, LP, 2, 0, "ng-container", 3), w()()(), Q(28, UP, 4, 2, "div", 13), w()), 2 & i && (vs("afgelast", o.wedstrijd.afgelast)("gestart", o.wedstrijd.isGestart), S(3), B("ngIf", o.numberOfDays > 0), S(1), lt("", o.wedstrijd.aanvangstijd, " "), S(2), le(o.wedstrijd.veld), S(4), B("ngIf", o.wedstrijd.thuisteamlogo), S(2), le(o.wedstrijd.thuisteam), S(4), lt(" ", o.wedstrijd.kleedkamerthuisteam, " "), S(1), B("ngIf", o.hasKast(o.wedstrijd.kleedkamerthuisteam)), S(3), B("ngIf", o.wedstrijd.uitteamlogo), S(2), le(o.wedstrijd.uitteam), S(4), lt(" ", o.wedstrijd.kleedkameruitteam, " "), S(1), B("ngIf", o.hasKast(o.wedstrijd.kleedkameruitteam)), S(1), B("ngIf", !o.wedstrijd.afgelast && (o.wedstrijd.scheidsrechter || o.wedstrijd.kleedkamerscheidsrechter)));
         },
         dependencies: [Br],
         styles: [".match-card[_ngcontent-%COMP%]{background:#fff;border-radius:12px;box-shadow:0 2px 8px #00000012;margin-bottom:16px;padding:14px 16px 10px;display:flex;flex-direction:column;gap:10px;border:1.5px solid #ececec;position:relative;transition:box-shadow .2s}.match-card.afgelast[_ngcontent-%COMP%]{background:#fff0f0}.match-card.gestart[_ngcontent-%COMP%]{background:#f0fff0}.match-header[_ngcontent-%COMP%]{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}.match-header[_ngcontent-%COMP%]   .match-time[_ngcontent-%COMP%]{font-size:1.3em;font-weight:700;color:#b50102;letter-spacing:1px}.match-header[_ngcontent-%COMP%]   .match-field[_ngcontent-%COMP%]{background:#228b22;color:#fff;font-size:1.1em;font-weight:700;border-radius:6px;padding:2px 12px;min-width:40px;text-align:center}.teams-simple-layout[_ngcontent-%COMP%]{display:flex;flex-direction:column;gap:8px}.team-row[_ngcontent-%COMP%]{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:0 0 0 2px}.team-info[_ngcontent-%COMP%]{display:flex;align-items:center;gap:6px}.team-info[_ngcontent-%COMP%]   .team-name[_ngcontent-%COMP%]{font-weight:600;font-size:1.08em;color:#222;margin-right:2px;max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.team-info[_ngcontent-%COMP%]   .team-label[_ngcontent-%COMP%]{font-size:.85em;color:#888;margin-left:2px;font-weight:400}@media (max-width: 449px){.team-info[_ngcontent-%COMP%]   .team-label[_ngcontent-%COMP%]{display:none}}.kleedkamer-badge[_ngcontent-%COMP%]{background:#222;color:#fff;font-size:1.1em;font-weight:700;border-radius:7px;padding:3px 12px;min-width:32px;text-align:center;letter-spacing:1px}.match-details[_ngcontent-%COMP%]{margin-top:6px;padding-top:6px;border-top:1px solid #eee;display:flex;flex-direction:row;gap:12px}.match-details[_ngcontent-%COMP%]   .referee-info[_ngcontent-%COMP%]{display:flex;flex-direction:row;gap:10px;align-items:center}.match-details[_ngcontent-%COMP%]   .referee-info[_ngcontent-%COMP%]   .referee[_ngcontent-%COMP%]{color:#b50102;font-weight:600;font-size:1em;display:flex;align-items:center;gap:4px}.match-details[_ngcontent-%COMP%]   .referee-info[_ngcontent-%COMP%]   .referee-icon[_ngcontent-%COMP%]{font-size:1.1em;margin-right:2px}.match-details[_ngcontent-%COMP%]   .referee-info[_ngcontent-%COMP%]   .referee-room[_ngcontent-%COMP%]{background:#228b22;color:#fff;border-radius:6px;padding:2px 10px;font-size:.98em;font-weight:600}.team-logo[_ngcontent-%COMP%]{width:28px;height:28px;object-fit:contain;border-radius:4px;display:inline-block;vertical-align:middle;background:#fff;box-shadow:0 1px 4px #00000014;margin-right:8px}"]
       }), e;
     })();
-    function GP(e, t) {
+    function BP(e, t) {
       1 & e && (C(0, "div", 8), M(1, " Nog Te Spelen "), w());
     }
-    function WP(e, t) {
+    function VP(e, t) {
       if (1 & e && We(0, "app-wedstrijd-card", 9), 2 & e) {
         const n = t.$implicit,
           r = be(2);
         B("wedstrijd", n)("sleutelMatch", r.sleutelMatch)("numberOfDays", r.numberOfDays);
       }
     }
-    function qP(e, t) {
+    function zP(e, t) {
       1 & e && (C(0, "div", 8), M(1, " Nu Bezig "), w());
     }
-    function KP(e, t) {
+    function GP(e, t) {
       if (1 & e && We(0, "app-wedstrijd-card", 9), 2 & e) {
         const n = t.$implicit,
           r = be(2);
         B("wedstrijd", n)("sleutelMatch", r.sleutelMatch)("numberOfDays", r.numberOfDays);
       }
     }
-    function YP(e, t) {
+    function WP(e, t) {
       if (1 & e && We(0, "app-wedstrijd-row", 19), 2 & e) {
         const n = t.$implicit,
           r = t.index,
@@ -10439,13 +10402,13 @@
         B("wedstrijd", n)("sleutelMatch", i.sleutelMatch)("numberOfDays", i.numberOfDays)("index", r);
       }
     }
-    function ZP(e, t) {
-      if (1 & e && (C(0, "div", 10)(1, "div", 8), M(2, "Nog Te Spelen"), w(), C(3, "div", 11)(4, "div", 12), M(5, "Tijd"), w(), C(6, "div", 13), M(7), w(), C(8, "div", 14), M(9, "Thuis"), w(), C(10, "div", 15), M(11, "Uit"), w(), C(12, "div", 13), M(13), w(), C(14, "div", 16), M(15, "VELD"), w(), C(16, "div", 17), M(17, "Scheidsrechter"), w()(), Q(18, YP, 1, 4, "app-wedstrijd-row", 18), Ke(19, "async"), w()), 2 & e) {
+    function qP(e, t) {
+      if (1 & e && (C(0, "div", 10)(1, "div", 8), M(2, "Nog Te Spelen"), w(), C(3, "div", 11)(4, "div", 12), M(5, "Tijd"), w(), C(6, "div", 13), M(7), w(), C(8, "div", 14), M(9, "Thuis"), w(), C(10, "div", 15), M(11, "Uit"), w(), C(12, "div", 13), M(13), w(), C(14, "div", 16), M(15, "VELD"), w(), C(16, "div", 17), M(17, "Scheidsrechter"), w()(), Q(18, WP, 1, 4, "app-wedstrijd-row", 18), Ke(19, "async"), w()), 2 & e) {
         const n = be(2);
         S(7), lt(" ", n.sleutelMatch ? "Kl+K" : "Kl", " "), S(6), lt(" ", n.sleutelMatch ? "Kl+K" : "Kl", " "), S(5), B("ngForOf", Ye(19, 4, n.toekomstigeWedstrijden$))("ngForTrackBy", n.trackByWedstrijdId);
       }
     }
-    function QP(e, t) {
+    function KP(e, t) {
       if (1 & e && We(0, "app-wedstrijd-row", 19), 2 & e) {
         const n = t.$implicit,
           r = t.index,
@@ -10453,23 +10416,23 @@
         B("wedstrijd", n)("sleutelMatch", i.sleutelMatch)("numberOfDays", i.numberOfDays)("index", r);
       }
     }
-    function XP(e, t) {
-      if (1 & e && (C(0, "div", 10)(1, "div", 8), M(2, "Nu Bezig"), w(), C(3, "div", 11)(4, "div", 12), M(5, "Tijd"), w(), C(6, "div", 13), M(7), w(), C(8, "div", 14), M(9, "Thuis"), w(), C(10, "div", 15), M(11, "Uit"), w(), C(12, "div", 13), M(13), w(), C(14, "div", 16), M(15, "VELD"), w(), C(16, "div", 17), M(17, "Scheidsrechter"), w()(), Q(18, QP, 1, 4, "app-wedstrijd-row", 18), Ke(19, "async"), w()), 2 & e) {
+    function YP(e, t) {
+      if (1 & e && (C(0, "div", 10)(1, "div", 8), M(2, "Nu Bezig"), w(), C(3, "div", 11)(4, "div", 12), M(5, "Tijd"), w(), C(6, "div", 13), M(7), w(), C(8, "div", 14), M(9, "Thuis"), w(), C(10, "div", 15), M(11, "Uit"), w(), C(12, "div", 13), M(13), w(), C(14, "div", 16), M(15, "VELD"), w(), C(16, "div", 17), M(17, "Scheidsrechter"), w()(), Q(18, KP, 1, 4, "app-wedstrijd-row", 18), Ke(19, "async"), w()), 2 & e) {
         const n = be(2);
         S(7), lt(" ", n.sleutelMatch ? "Kl+K" : "Kl", " "), S(6), lt(" ", n.sleutelMatch ? "Kl+K" : "Kl", " "), S(5), B("ngForOf", Ye(19, 4, n.bezigeWedstrijden$))("ngForTrackBy", n.trackByWedstrijdId);
       }
     }
-    function JP(e, t) {
+    function ZP(e, t) {
       1 & e && (C(0, "div", 20), M(1, " \u{1f511}= Spullen tijdens de wedstrijd opbergen in de kast. Sleutel is tegen een borg verkrijgbaar bij het wedstrijdsecretariaat. "), w());
     }
-    function eO(e, t) {
-      if (1 & e && (C(0, "div", 1)(1, "div", 2), Q(2, GP, 2, 0, "div", 3), Ke(3, "async"), Q(4, WP, 1, 3, "app-wedstrijd-card", 4), Ke(5, "async"), Q(6, qP, 2, 0, "div", 3), Ke(7, "async"), Q(8, KP, 1, 3, "app-wedstrijd-card", 4), Ke(9, "async"), w(), C(10, "div", 5), Q(11, ZP, 20, 6, "div", 6), Ke(12, "async"), Q(13, XP, 20, 6, "div", 6), Ke(14, "async"), w(), Q(15, JP, 2, 0, "div", 7), w()), 2 & e) {
+    function QP(e, t) {
+      if (1 & e && (C(0, "div", 1)(1, "div", 2), Q(2, BP, 2, 0, "div", 3), Ke(3, "async"), Q(4, VP, 1, 3, "app-wedstrijd-card", 4), Ke(5, "async"), Q(6, zP, 2, 0, "div", 3), Ke(7, "async"), Q(8, GP, 1, 3, "app-wedstrijd-card", 4), Ke(9, "async"), w(), C(10, "div", 5), Q(11, qP, 20, 6, "div", 6), Ke(12, "async"), Q(13, YP, 20, 6, "div", 6), Ke(14, "async"), w(), Q(15, ZP, 2, 0, "div", 7), w()), 2 & e) {
         const n = be();
         let r, i, o, s;
         S(2), B("ngIf", (null == (r = Ye(3, 9, n.toekomstigeWedstrijden$)) ? null : r.length) > 0), S(2), B("ngForOf", Ye(5, 11, n.toekomstigeWedstrijden$))("ngForTrackBy", n.trackByWedstrijdId), S(2), B("ngIf", (null == (i = Ye(7, 13, n.bezigeWedstrijden$)) ? null : i.length) > 0), S(2), B("ngForOf", Ye(9, 15, n.bezigeWedstrijden$))("ngForTrackBy", n.trackByWedstrijdId), S(3), B("ngIf", (null == (o = Ye(12, 17, n.toekomstigeWedstrijden$)) ? null : o.length) > 0), S(2), B("ngIf", (null == (s = Ye(14, 19, n.bezigeWedstrijden$)) ? null : s.length) > 0), S(2), B("ngIf", n.sleutelMatch);
       }
     }
-    let tO = (() => {
+    let XP = (() => {
       const t = class {
         constructor() {
           this.numberOfDays = 0, this.sleutelMatch = !1, this.isLoading = !1;
@@ -10503,31 +10466,31 @@
         vars: 1,
         consts: [["class", "programma-container", 4, "ngIf"], [1, "programma-container"], [1, "mobile-cards"], ["class", "section-title", 4, "ngIf"], [3, "wedstrijd", "sleutelMatch", "numberOfDays", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "desktop-grid"], ["class", "section-container", 4, "ngIf"], ["class", "sleutel-footer", 4, "ngIf"], [1, "section-title"], [3, "wedstrijd", "sleutelMatch", "numberOfDays"], [1, "section-container"], [1, "grid-header"], [1, "header-item", "time"], [1, "header-item", "kleedkamer"], [1, "header-item", "team", "thuis"], [1, "header-item", "team"], [1, "header-item", "veld"], [1, "header-item", "scheids"], [3, "wedstrijd", "sleutelMatch", "numberOfDays", "index", 4, "ngFor", "ngForOf", "ngForTrackBy"], [3, "wedstrijd", "sleutelMatch", "numberOfDays", "index"], [1, "sleutel-footer"]],
         template: function (i, o) {
-          1 & i && Q(0, eO, 16, 21, "div", 0), 2 & i && B("ngIf", !o.isLoading);
+          1 & i && Q(0, QP, 16, 21, "div", 0), 2 & i && B("ngIf", !o.isLoading);
         },
-        dependencies: [dl, Br, FP, zP, pl],
+        dependencies: [dl, Br, PP, HP, pl],
         styles: [".loading-container[_ngcontent-%COMP%]{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 20px;text-align:center}.loading-bar[_ngcontent-%COMP%]{width:300px;height:4px;background:#e0e0e0;border-radius:2px;overflow:hidden;margin-bottom:16px}@media (max-width: 1199px){.loading-bar[_ngcontent-%COMP%]{width:250px}}.loading-progress[_ngcontent-%COMP%]{height:100%;background:linear-gradient(90deg,#b50102 0%,#d32f2f 50%,#b50102 100%);border-radius:2px;animation:_ngcontent-%COMP%_loading-animation 2s ease-in-out infinite}.loading-text[_ngcontent-%COMP%]{color:#b50102;font-weight:600;font-size:1rem;text-transform:uppercase;letter-spacing:1px}@keyframes _ngcontent-%COMP%_loading-animation{0%{width:0%;margin-left:0%}50%{width:75%;margin-left:12.5%}to{width:0%;margin-left:100%}}.section-container[_ngcontent-%COMP%]{margin-bottom:6px}.section-container[_ngcontent-%COMP%]:last-child{margin-bottom:0}.section-title[_ngcontent-%COMP%]{font-size:.9rem;font-weight:700;background:#fff;color:#b50102;text-transform:uppercase;padding:2px 10px;margin:0;border-radius:3px 3px 0 0;text-align:left;display:inline-block;border:2px solid #b50102;border-bottom:none}@media (max-width: 1199px){.section-title[_ngcontent-%COMP%]{font-size:.8rem;padding:2px 10px;margin:4px 16px 2px;border-radius:3px;border-bottom:2px solid #b50102}}.grid-message[_ngcontent-%COMP%]{background:#b50102;color:#fff;font-weight:600;border-radius:0 0 3px 3px;padding:6px 12px;margin:0 0 6px;text-transform:uppercase;box-shadow:0 1px 3px #0000001a;text-align:center;font-size:.85rem}@media (max-width: 1199px){.grid-message[_ngcontent-%COMP%]{margin:3px 16px 6px;padding:6px 12px;font-size:.75rem;border-radius:3px}}.sleutel-footer[_ngcontent-%COMP%]{position:fixed;bottom:0;left:0;right:0;background:#b50102;color:#fff;font-weight:600;padding:12px 40px;text-transform:uppercase;box-shadow:0 -2px 8px #0003;text-align:center;font-size:.9rem;z-index:100}@media (max-width: 1199px){.sleutel-footer[_ngcontent-%COMP%]{display:none}}.mobile-cards[_ngcontent-%COMP%]{display:block;padding:10px;gap:8px}@media (min-width: 1200px){.mobile-cards[_ngcontent-%COMP%]{display:none!important}.desktop-grid[_ngcontent-%COMP%]{display:block!important}}@media (max-width: 1199px){.desktop-grid[_ngcontent-%COMP%]{display:none!important}.mobile-cards[_ngcontent-%COMP%]{display:block!important}}.desktop-grid[_ngcontent-%COMP%]{display:none}@media (min-width: 1200px){.desktop-grid[_ngcontent-%COMP%]{display:block;width:100%;max-width:100vw;margin:0 auto;padding:0 40px 80px;overflow-x:auto;box-sizing:border-box}}.grid-header[_ngcontent-%COMP%]{display:grid;grid-template-columns:75px 110px 2fr 2fr 110px 80px 1fr;font-weight:700;background:#b50102;color:#fff;border-radius:0 8px 0 0;align-items:center;box-sizing:border-box;width:100%;text-transform:uppercase;margin-top:0}@media (max-width: 1199px){.grid-header[_ngcontent-%COMP%]{border-radius:8px 8px 0 0}}.header-item[_ngcontent-%COMP%]{padding:6px 4px;text-align:center;text-transform:uppercase}.header-item.team[_ngcontent-%COMP%]{text-align:left;padding-left:8px}.header-item.team.thuis[_ngcontent-%COMP%]{text-align:right;padding-left:0;padding-right:8px}.header-item.veld[_ngcontent-%COMP%], .header-item.scheids[_ngcontent-%COMP%], .header-item.scheids-kl[_ngcontent-%COMP%]{text-align:center}"]
       }), e;
     })();
-    function nO(e, t) {
+    function JP(e, t) {
       if (1 & e && (C(0, "div", 10)(1, "div", 11)(2, "div", 12), M(3), w(), C(4, "div", 13), M(5), w()(), C(6, "div", 14)(7, "div", 15)(8, "div", 16), M(9, "THUIS"), w(), C(10, "div", 17)(11, "div", 18)(12, "span", 19), M(13), w()()()(), C(14, "div", 20)(15, "div", 16), M(16, "UIT"), w(), C(17, "div", 17)(18, "div", 18)(19, "span", 19), M(20), w()()()()()()), 2 & e) {
         const n = t.$implicit;
         S(3), le(n.aanvangstijd), S(2), le(n.uitslag), S(8), le(n.thuisteam), S(7), le(n.uitteam);
       }
     }
-    function rO(e, t) {
+    function eO(e, t) {
       if (1 & e && (C(0, "tr")(1, "td", 6), M(2), w(), C(3, "td", 7)(4, "span", 19), M(5), w()(), C(6, "td", 8), M(7), w(), C(8, "td", 7)(9, "span", 19), M(10), w()()()), 2 & e) {
         const n = t.$implicit;
         S(2), le(n.aanvangstijd), S(3), le(n.thuisteam), S(2), le(n.uitslag), S(3), le(n.uitteam);
       }
     }
-    function iO(e, t) {
-      if (1 & e && (C(0, "div", 1)(1, "div", 2), Q(2, nO, 21, 4, "div", 3), Ke(3, "async"), w(), C(4, "div", 4)(5, "table", 5)(6, "thead")(7, "tr")(8, "th", 6), M(9, "Aanvang"), w(), C(10, "th", 7), M(11, "Jong Brabant"), w(), C(12, "th", 8), M(13, "Uitslag"), w(), C(14, "th", 7), M(15, "Gasten"), w()()(), C(16, "tbody"), Q(17, rO, 11, 4, "tr", 9), Ke(18, "async"), w()()()()), 2 & e) {
+    function tO(e, t) {
+      if (1 & e && (C(0, "div", 1)(1, "div", 2), Q(2, JP, 21, 4, "div", 3), Ke(3, "async"), w(), C(4, "div", 4)(5, "table", 5)(6, "thead")(7, "tr")(8, "th", 6), M(9, "Aanvang"), w(), C(10, "th", 7), M(11, "Jong Brabant"), w(), C(12, "th", 8), M(13, "Uitslag"), w(), C(14, "th", 7), M(15, "Gasten"), w()()(), C(16, "tbody"), Q(17, eO, 11, 4, "tr", 9), Ke(18, "async"), w()()()()), 2 & e) {
         const n = be();
         S(2), B("ngForOf", Ye(3, 4, n.uitslagen$))("ngForTrackBy", n.trackByUitslagId), S(15), B("ngForOf", Ye(18, 6, n.uitslagen$))("ngForTrackBy", n.trackByUitslagId);
       }
     }
-    let oO = (() => {
+    let nO = (() => {
       const t = class {
         constructor() {
           this.isLoading = !1;
@@ -10551,47 +10514,45 @@
         vars: 1,
         consts: [["class", "results-container", 4, "ngIf"], [1, "results-container"], [1, "mobile-cards"], ["class", "result-card", 4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "desktop-table"], [1, "compact-results-table"], [1, "time-col"], [1, "team-col"], [1, "score-col"], [4, "ngFor", "ngForOf", "ngForTrackBy"], [1, "result-card"], [1, "result-header"], [1, "match-time"], [1, "result-score"], [1, "teams-split-layout"], [1, "team-half", "home-half"], [1, "team-header"], [1, "team-content"], [1, "team-info"], [1, "team-name"], [1, "team-half", "away-half"]],
         template: function (i, o) {
-          1 & i && Q(0, iO, 19, 8, "div", 0), 2 & i && B("ngIf", !o.isLoading);
+          1 & i && Q(0, tO, 19, 8, "div", 0), 2 & i && B("ngIf", !o.isLoading);
         },
         dependencies: [dl, Br, pl],
         styles: [".mobile-cards[_ngcontent-%COMP%]{display:block;padding:10px;gap:8px}@media (min-width: 1200px){.mobile-cards[_ngcontent-%COMP%]{display:none}}.result-card[_ngcontent-%COMP%]{background:rgba(255,255,255,.95);border-radius:8px;margin-bottom:8px;box-shadow:0 2px 8px #00000026;overflow:hidden;border-left:4px solid #22c55e}.result-header[_ngcontent-%COMP%]{display:flex;justify-content:space-between;align-items:center;padding:8px 12px 6px;border-bottom:1px solid #f0f0f0;font-size:12px}.match-time[_ngcontent-%COMP%]{font-weight:600;color:#22c55e;font-size:13px}.result-score[_ngcontent-%COMP%]{background:#22c55e;color:#fff;padding:4px 8px;border-radius:4px;font-weight:700;font-size:12px;text-align:center;min-width:50px}.teams-split-layout[_ngcontent-%COMP%]{display:flex;min-height:50px}.team-half[_ngcontent-%COMP%]{flex:1;display:flex;flex-direction:column;padding:8px;position:relative}.team-half.home-half[_ngcontent-%COMP%]{background:linear-gradient(135deg,rgba(255,255,255,.95) 0%,rgba(240,240,240,.9) 100%);border-right:2px solid #e0e0e0}.team-half.away-half[_ngcontent-%COMP%]{background:linear-gradient(135deg,rgba(245,245,245,.9) 0%,rgba(225,225,225,.95) 100%)}.team-header[_ngcontent-%COMP%]{font-size:9px;font-weight:700;color:#666;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}.team-content[_ngcontent-%COMP%]{flex:1;display:flex;flex-direction:column;justify-content:center;gap:4px}.team-info[_ngcontent-%COMP%]{display:flex;align-items:center;gap:6px;font-weight:600;font-size:13px;min-width:0;max-width:100%}.team-name[_ngcontent-%COMP%]{color:#3b3b3b;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0;flex:1}.desktop-table[_ngcontent-%COMP%]{display:none}@media (min-width: 1200px){.desktop-table[_ngcontent-%COMP%]{display:block;overflow-x:auto;margin:0 20px}}.compact-results-table[_ngcontent-%COMP%]{width:100%;border-collapse:collapse;background:rgba(255,255,255,.95);border-radius:8px;box-shadow:0 4px 12px #00000026;font-size:14px}@media (min-width: 1400px){.compact-results-table[_ngcontent-%COMP%]{font-size:16px}}.compact-results-table[_ngcontent-%COMP%]   th[_ngcontent-%COMP%]{background:#22c55e;color:#fff;padding:8px 6px;text-align:left;font-weight:600;font-size:13px}@media (min-width: 1400px){.compact-results-table[_ngcontent-%COMP%]   th[_ngcontent-%COMP%]{padding:10px 8px;font-size:14px}}.compact-results-table[_ngcontent-%COMP%]   th[_ngcontent-%COMP%]:first-child{border-top-left-radius:8px}.compact-results-table[_ngcontent-%COMP%]   th[_ngcontent-%COMP%]:last-child{border-top-right-radius:8px}.compact-results-table[_ngcontent-%COMP%]   td[_ngcontent-%COMP%]{padding:6px;border-bottom:1px solid #f0f0f0;vertical-align:middle}@media (min-width: 1400px){.compact-results-table[_ngcontent-%COMP%]   td[_ngcontent-%COMP%]{padding:8px}}.compact-results-table[_ngcontent-%COMP%]   tr[_ngcontent-%COMP%]:last-child   td[_ngcontent-%COMP%]{border-bottom:none}.compact-results-table[_ngcontent-%COMP%]   .time-col[_ngcontent-%COMP%]{width:80px;font-weight:600;color:#22c55e;white-space:nowrap}@media (min-width: 1400px){.compact-results-table[_ngcontent-%COMP%]   .time-col[_ngcontent-%COMP%]{width:100px}}.compact-results-table[_ngcontent-%COMP%]   .team-col[_ngcontent-%COMP%]{min-width:150px;max-width:250px}@media (min-width: 1400px){.compact-results-table[_ngcontent-%COMP%]   .team-col[_ngcontent-%COMP%]{min-width:180px;max-width:280px}}.compact-results-table[_ngcontent-%COMP%]   .team-col[_ngcontent-%COMP%]   .team-name[_ngcontent-%COMP%]{font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.compact-results-table[_ngcontent-%COMP%]   .score-col[_ngcontent-%COMP%]{width:80px;text-align:center;font-weight:700;font-size:14px;background:#22c55e;color:#fff}@media (min-width: 1400px){.compact-results-table[_ngcontent-%COMP%]   .score-col[_ngcontent-%COMP%]{width:100px;font-size:16px}}"]
       }), e;
     })();
-    function sO(e, t) {
+    function rO(e, t) {
       1 & e && (C(0, "div", 11), M(1, " Kan programma niet ophalen. Controleer je internetverbinding.\n"), w());
     }
-    function aO(e, t) {
+    function iO(e, t) {
       1 & e && (C(0, "div", 11), M(1, " Kan uitslagen niet ophalen. Controleer je internetverbinding.\n"), w());
     }
-    function uO(e, t) {
+    function oO(e, t) {
       if (1 & e && (C(0, "div", 12), We(1, "app-programma", 13), w()), 2 & e) {
         const n = be();
         S(1), B("programma$", n.programma$)("numberOfDays", n.numberOfDays)("sleutelMatch", n.sleutelMatch)("isLoading", n.isLoadingProgramma);
       }
     }
-    function cO(e, t) {
+    function sO(e, t) {
       1 & e && (C(0, "div", 14), We(1, "div", 15), C(2, "div", 16), M(3, "Wedstrijden laden..."), w()());
     }
-    function lO(e, t) {
+    function aO(e, t) {
       1 & e && (C(0, "div", 17), M(1, " Vandaag zijn er geen wedstrijden bij Jong Brabant\n"), w());
     }
-    function dO(e, t) {
+    function uO(e, t) {
       if (1 & e && (C(0, "div", 18), We(1, "app-uitslagen", 19), w()), 2 & e) {
         const n = be();
         S(1), B("uitslagen$", n.uitslagen$)("isLoading", n.isLoadingUitslagen);
       }
     }
-    let fO = (() => {
+    let cO = (() => {
         const t = class {
           constructor(r, i) {
-            this.programmaService = r, this.route = i, this.now = new Date(), this.progress = 0, this.refreshInterval = 6e4, this.programma$ = new Ct([]), this.numberOfDays = 0, this.programmaError = !1, this.uitslagenError = !1, this.isLoadingProgramma = !1, this.isLoadingUitslagen = !1, this.refresh$ = new Nt();
+            this.programmaService = r, this.route = i, this.now = new Date(), this.progress = 0, this.refreshInterval = 6e4, this.programma$ = new Ct([]), this.numberOfDays = 0, this.programmaError = !1, this.uitslagenError = !1, this.isLoadingProgramma = !1, this.isLoadingUitslagen = !1, this.refresh$ = new Nt(), this.isInitialLoad = !0;
           }
           ngOnInit() {
-            this.hasProgramma = !1, this.hasUitslagen = !1, this.startProgressBar(), Cd(this.route.queryParams.pipe(j(r => r.days ? parseInt(r.days, 10) : 0)), this.refresh$.pipe(j(() => this.numberOfDays))).pipe(function bP(e, t) {
-              return n => n.lift(new EP(e, t));
-            }(), _t(r => (this.numberOfDays = r, this.isLoadingProgramma = !0, this.programmaService.getProgramma(r)))).subscribe({
+            this.hasProgramma = !1, this.hasUitslagen = !1, this.startProgressBar(), Cd(this.route.queryParams.pipe(j(r => r.days ? parseInt(r.days, 10) : 0)), this.refresh$.pipe(j(() => this.numberOfDays))).pipe(_t(r => (this.numberOfDays = r, this.isInitialLoad && (this.isLoadingProgramma = !0), this.programmaService.getProgramma(r)))).subscribe({
               next: r => {
-                this.isLoadingProgramma = !1, this.programmaError = !1, r && r.length > 0 ? (this.hasProgramma = !0, this.programma$.next(r), this.sleutelMatch = r.some(i => i.kast)) : (this.hasProgramma = !1, this.loadUitslagenData());
+                this.isLoadingProgramma = !1, this.isInitialLoad = !1, this.programmaError = !1, r && r.length > 0 ? (this.hasProgramma = !0, this.updateProgrammaData(r), this.sleutelMatch = r.some(i => i.kast)) : (this.hasProgramma = !1, this.loadUitslagenData());
               },
               error: r => {
                 this.isLoadingProgramma = !1, this.programmaError = !0, console.error("Error loading programma:", r);
@@ -10637,8 +10598,24 @@
             console.log("startProgressBar called"), this.progressInterval && clearInterval(this.progressInterval), this.progress = 0;
             const r = 100 / (this.refreshInterval / 100);
             this.progressInterval = setInterval(() => {
-              this.progress += r, this.progress >= 100 && (this.progress = 0, (this.hasProgramma || this.hasUitslagen) && this.refresh$.next());
+              this.progress += r, this.progress >= 100 && (this.progress = 0, this.refresh$.next());
             }, 100);
+          }
+          updateProgrammaData(r) {
+            const i = this.programma$.value;
+            if (!i || 0 === i.length) return void this.programma$.next(r);
+            const o = new Map(i.map(a => [a.wedstrijdcode, a])),
+              s = [];
+            for (const a of r) {
+              const u = o.get(a.wedstrijdcode);
+              if (u) {
+                const c = {
+                  ...u
+                };
+                a.status !== u.status && (c.status = a.status), a.isGestart !== u.isGestart && (c.isGestart = a.isGestart), a.afgelast !== u.afgelast && (c.afgelast = a.afgelast), a.scheidsrechter !== u.scheidsrechter && (c.scheidsrechter = a.scheidsrechter), a.veld !== u.veld && (c.veld = a.veld), a.aanvangstijd !== u.aanvangstijd && (c.aanvangstijd = a.aanvangstijd), a.kleedkamerthuisteam !== u.kleedkamerthuisteam && (c.kleedkamerthuisteam = a.kleedkamerthuisteam), a.kleedkameruitteam !== u.kleedkameruitteam && (c.kleedkameruitteam = a.kleedkameruitteam), a.kleedkamerscheidsrechter !== u.kleedkamerscheidsrechter && (c.kleedkamerscheidsrechter = a.kleedkamerscheidsrechter), s.push(c);
+              } else s.push(a);
+            }
+            this.programma$.next(s);
           }
           trackByWedstrijdCode(r, i) {
             return i.wedstrijdcode;
@@ -10646,7 +10623,7 @@
         };
         let e = t;
         return t.ɵfac = function (i) {
-          return new (i || t)(P(SP), P(Qn));
+          return new (i || t)(P(bP), P(Qn));
         }, t.ɵcmp = Tn({
           type: t,
           selectors: [["app-root"]],
@@ -10654,13 +10631,13 @@
           vars: 9,
           consts: [[1, "refresh-progress-bar"], [1, "refresh-progress-fill"], ["class", "error-message", 4, "ngIf"], [1, "titel-container"], ["src", "assets/logo.png", "alt", "image"], [1, "titel"], ["class", "matches-container", 4, "ngIf"], ["class", "loading-container", 4, "ngIf"], ["class", "info-message", 4, "ngIf"], ["class", "results-container", 4, "ngIf"], [1, "white-background"], [1, "error-message"], [1, "matches-container"], [3, "programma$", "numberOfDays", "sleutelMatch", "isLoading"], [1, "loading-container"], [1, "loading-spinner"], [1, "loading-text"], [1, "info-message"], [1, "results-container"], [3, "uitslagen$", "isLoading"]],
           template: function (i, o) {
-            1 & i && (C(0, "div", 0), We(1, "div", 1), w(), Q(2, sO, 2, 0, "div", 2), Q(3, aO, 2, 0, "div", 2), C(4, "div", 3), We(5, "img", 4), C(6, "div", 5), M(7), w(), We(8, "img", 4), w(), Q(9, uO, 2, 4, "div", 6), Q(10, cO, 4, 0, "div", 7), Q(11, lO, 2, 0, "div", 8), Q(12, dO, 2, 2, "div", 9), We(13, "div", 10)), 2 & i && (S(1), fc("width", o.progress + "%"), S(1), B("ngIf", o.programmaError), S(1), B("ngIf", o.uitslagenError), S(4), lt(" ", o.hasProgramma || !o.hasUitslagen ? "Kleedkamerindeling" : "Uitslagen", " "), S(2), B("ngIf", o.hasProgramma), S(1), B("ngIf", (o.isLoadingProgramma || o.isLoadingUitslagen) && !o.hasUitslagen && !o.hasProgramma), S(1), B("ngIf", !(o.hasUitslagen || o.hasProgramma || o.programmaError || o.uitslagenError || o.isLoadingProgramma || o.isLoadingUitslagen)), S(1), B("ngIf", o.hasUitslagen && !o.hasProgramma));
+            1 & i && (C(0, "div", 0), We(1, "div", 1), w(), Q(2, rO, 2, 0, "div", 2), Q(3, iO, 2, 0, "div", 2), C(4, "div", 3), We(5, "img", 4), C(6, "div", 5), M(7), w(), We(8, "img", 4), w(), Q(9, oO, 2, 4, "div", 6), Q(10, sO, 4, 0, "div", 7), Q(11, aO, 2, 0, "div", 8), Q(12, uO, 2, 2, "div", 9), We(13, "div", 10)), 2 & i && (S(1), fc("width", o.progress + "%"), S(1), B("ngIf", o.programmaError), S(1), B("ngIf", o.uitslagenError), S(4), lt(" ", o.hasProgramma || !o.hasUitslagen ? "Kleedkamerindeling" : "Uitslagen", " "), S(2), B("ngIf", o.hasProgramma), S(1), B("ngIf", (o.isLoadingProgramma || o.isLoadingUitslagen) && !o.hasUitslagen && !o.hasProgramma), S(1), B("ngIf", !(o.hasUitslagen || o.hasProgramma || o.programmaError || o.uitslagenError || o.isLoadingProgramma || o.isLoadingUitslagen)), S(1), B("ngIf", o.hasUitslagen && !o.hasProgramma));
           },
-          dependencies: [Br, tO, oO],
+          dependencies: [Br, XP, nO],
           styles: [".refresh-progress-bar[_ngcontent-%COMP%]{position:fixed;top:0;left:0;width:100%;height:3px;background:rgba(255,255,255,.3);z-index:1000}.refresh-progress-fill[_ngcontent-%COMP%]{height:100%;background:linear-gradient(90deg,#b50102 0%,#d32f2f 50%,#b50102 100%);transition:width .1s ease-out;box-shadow:0 0 5px #b5010280}.white-background[_ngcontent-%COMP%]{position:fixed;left:0;top:0;width:100%;height:100%;z-index:-1;background-image:url(home_grass.171cec7ac0b8cbd1.jpg);background-repeat:repeat}.loading-container[_ngcontent-%COMP%]{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 20px;gap:16px;color:#fff;text-align:center}.loading-spinner[_ngcontent-%COMP%]{width:40px;height:40px;border:3px solid rgba(255,255,255,.3);border-top:3px solid #b50102;border-radius:50%;animation:_ngcontent-%COMP%_spin 1s linear infinite}.loading-text[_ngcontent-%COMP%]{font-size:18px;font-weight:300;text-transform:uppercase;letter-spacing:1px}@keyframes _ngcontent-%COMP%_spin{0%{transform:rotate(0)}to{transform:rotate(360deg)}}.error-message[_ngcontent-%COMP%]{background:#d32f2f;color:#fff;margin:10px 20px;padding:15px;text-align:center;font-weight:600;border-radius:8px;box-shadow:2px 0 5px #0009}.info-message[_ngcontent-%COMP%]{background:#b50102;margin:0 20px;padding:15px;color:#fff;text-align:center;font-size:14px;font-weight:300;line-height:1.4;text-transform:uppercase;box-shadow:2px 0 5px #0009;border-radius:8px}.titel-container[_ngcontent-%COMP%]{margin:20px 40px;display:flex;justify-content:space-between;align-items:center}@media (max-width: 1199px){.titel-container[_ngcontent-%COMP%]{margin:10px 16px;justify-content:flex-start;gap:12px}.titel-container[_ngcontent-%COMP%]   img[_ngcontent-%COMP%]:last-child{display:none}.titel-container[_ngcontent-%COMP%]   img[_ngcontent-%COMP%]:first-child{width:40px;height:40px;flex-shrink:0;object-fit:contain}}.titel[_ngcontent-%COMP%]{background:#b50102;width:100%;font-weight:700;margin:20px;line-height:150px;text-transform:uppercase;text-align:center;font-size:24px;color:#fff;box-shadow:2px 0 5px #0009;border-radius:8px;max-width:1400px}@media (max-width: 1199px){.titel[_ngcontent-%COMP%]{margin:0;padding:8px 16px;line-height:1.2;font-size:18px;border-radius:6px;flex:1;display:flex;align-items:center;justify-content:center}}@media (min-width: 1200px){.titel[_ngcontent-%COMP%]{font-size:72px;line-height:150px;letter-spacing:2px}}"]
         }), e;
       })(),
-      hO = (() => {
+      lO = (() => {
         const t = class {
           intercept(r, i) {
             const o = r.clone({
@@ -10677,25 +10654,25 @@
           factory: t.ɵfac
         }), e;
       })(),
-      pO = (() => {
+      dO = (() => {
         const t = class {};
         let e = t;
         return t.ɵfac = function (i) {
           return new (i || t)();
         }, t.ɵmod = An({
           type: t,
-          bootstrap: [fO]
+          bootstrap: [cO]
         }), t.ɵinj = pn({
           providers: [{
             provide: pv,
-            useClass: hO,
+            useClass: lO,
             multi: !0
           }],
           imports: [qT, E1, mP.forRoot([])]
         }), e;
       })();
-    WT().bootstrapModule(pO).catch(e => console.error(e));
+    WT().bootstrapModule(dO).catch(e => console.error(e));
   }
 }, xn => {
-  xn(xn.s = 925);
+  xn(xn.s = 370);
 }]);
