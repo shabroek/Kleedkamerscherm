@@ -25,9 +25,21 @@ export class ProgrammaComponent implements OnInit {
       );
 
       this.bezigeWedstrijden$ = this.programma$.pipe(
-        map((list) =>
-          list
-            .filter((w) => w.isGestart)
+        map((list) => {
+          const now = Date.now();
+          const TWO_HOURS = 2 * 60 * 60 * 1000;
+          return list
+            .filter((w) => {
+              if (!w.isGestart) return false;
+              if (w.afgelast) {
+                // Alleen tonen als de begintijd minder dan 2 uur geleden is
+                const start = new Date(w.wedstrijddatum).getTime();
+                if (now - start > TWO_HOURS) {
+                  return false;
+                }
+              }
+              return true;
+            })
             .sort((a, b) => {
               // Eerst aflopend op tijd (laatst gestarte eerst)
               const timeComparison =
@@ -37,8 +49,8 @@ export class ProgrammaComponent implements OnInit {
 
               // Dan op veld
               return a.veld.localeCompare(b.veld);
-            })
-        )
+            });
+        })
       );
 
       this.toekomstigeWedstrijden$ = this.programma$.pipe(
