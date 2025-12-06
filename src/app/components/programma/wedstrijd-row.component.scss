@@ -21,6 +21,20 @@
 .grid-row.afgelast {
   background: rgba(255, 240, 240, 1);
 }
+.grid-row.afgelast .grid-item.team {
+  text-decoration: line-through;
+}
+.grid-row.afgelast .grid-item.time,
+.grid-row.afgelast .grid-item.time .date,
+.grid-row.afgelast .grid-item.time .time-only,
+.grid-row.afgelast .grid-item.kleedkamer,
+.grid-row.afgelast .grid-item.kleedkamer .kleedkamer-value,
+.grid-row.afgelast .grid-item.veld {
+  color: #999;
+}
+.grid-row.afgelast .afgelast-text {
+  font-weight: 700;
+}
 .grid-row.gestart {
   color: #388e3c;
   font-style: italic;

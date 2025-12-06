@@ -12,6 +12,7 @@
   transition: box-shadow 0.2s;
   &.afgelast {
     background: #fff0f0;
+    text-decoration: line-through;
   }
   &.gestart {
     background: #f0fff0;
@@ -59,12 +60,15 @@
   display: flex;
   align-items: center;
   gap: 6px;
+  flex: 1;
+  min-width: 0;
   .team-name {
     font-weight: 600;
     font-size: 1.08em;
     color: #222;
     margin-right: 2px;
-    max-width: 200px;
+    flex: 1;
+    min-width: 0;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;

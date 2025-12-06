@@ -48,8 +48,11 @@
   <div class="grid-item veld">
     <div class="veld-type">{{ wedstrijd.veld | veldType }}</div>
     <div class="veld-nummer">
-      {{ wedstrijd.afgelast ? "AFGELAST" : (wedstrijd.veld | veld) }}
+      {{ wedstrijd.veld | veld }}
     </div>
   </div>
-  <div class="grid-item scheids">{{ wedstrijd.scheidsrechter }}</div>
+  <div class="grid-item scheids">
+    <span *ngIf="wedstrijd.afgelast" class="afgelast-text">AFGELAST</span>
+    <span *ngIf="!wedstrijd.afgelast">{{ wedstrijd.scheidsrechter }}</span>
+  </div>
 </div>
